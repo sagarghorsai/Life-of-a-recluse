@@ -2,4 +2,15 @@ License
 
 Link: https://limezu.itch.io/moderninteriors
 Date: 9/10/2024
+Asset: Modern Tiles
 Author: LimeZu
+
+Link:https://www.dafont.com
+Date: 9/10/24
+Font: Soda Shake
+Author: Khurasan 
+
+Link:https://penzilla.itch.io/vector-icon-pack
+Date: 9/10/24
+Asset:Vector-icon-pack
+Author: Penzilla
