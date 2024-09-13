@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fe98239797fd9ad49abf17ad298e8a21
+guid: 7cf9f436b9c172b4daedbf14c86d5597
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Adam_run_right_0
+      name: Adam_run_16x16_0
       rect:
         serializedVersion: 2
         x: 0
@@ -105,20 +105,20 @@ TextureImporter:
         width: 16
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a47868b2daf4d094a9f54da7aa71314f
-      internalID: 244642895
+      spriteID: d5fb48c42fc751d4083fe8566840f7dc
+      internalID: 1601864709
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Adam_run_right_1
+      name: Adam_run_16x16_1
       rect:
         serializedVersion: 2
         x: 16
@@ -126,20 +126,20 @@ TextureImporter:
         width: 16
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dea5229cdd067aa4098fa38ee8741c3d
-      internalID: -532564918
+      spriteID: 64b0355beb12b5d4f8feec5e97632408
+      internalID: 1198429194
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Adam_run_right_2
+      name: Adam_run_16x16_2
       rect:
         serializedVersion: 2
         x: 32
@@ -147,20 +147,20 @@ TextureImporter:
         width: 16
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2f4deb1e6e6bdf442b302e2ac07779de
-      internalID: 757625530
+      spriteID: 2a4eb29fe89ac174e96c5608e72da0c4
+      internalID: -1356507892
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Adam_run_right_3
+      name: Adam_run_16x16_3
       rect:
         serializedVersion: 2
         x: 48
@@ -168,20 +168,20 @@ TextureImporter:
         width: 16
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a3a6d94ba30fef4c8ca965c4811ddef
-      internalID: 170827942
+      spriteID: d874073162ed13245a8ede41b0625f92
+      internalID: 580883493
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Adam_run_right_4
+      name: Adam_run_16x16_4
       rect:
         serializedVersion: 2
         x: 64
@@ -189,20 +189,20 @@ TextureImporter:
         width: 16
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e770e05787fb4a498610ffe17ba19d1
-      internalID: -2052931433
+      spriteID: 3327cb6285d883c4088da18229f8e498
+      internalID: 1485339957
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Adam_run_right_5
+      name: Adam_run_16x16_5
       rect:
         serializedVersion: 2
         x: 80
@@ -210,20 +210,20 @@ TextureImporter:
         width: 16
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa1d683a93120024ab385600e5c93f75
-      internalID: 1548972415
+      spriteID: 2fc75ea77d59e8a4b96be55b0bd906d1
+      internalID: 460522698
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Adam_run_back_0
+      name: Adam_run_16x16_6
       rect:
         serializedVersion: 2
         x: 96
@@ -231,20 +231,20 @@ TextureImporter:
         width: 16
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5aff653ac5841b04bab64c9e1d0a3265
-      internalID: 742703323
+      spriteID: 6eb8afbbb62ec9648bb7c42ec56deb80
+      internalID: -1957454023
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Adam_run_back_1
+      name: Adam_run_16x16_7
       rect:
         serializedVersion: 2
         x: 112
@@ -252,20 +252,20 @@ TextureImporter:
         width: 16
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1133c87f1643994fba29fa3865428a2
-      internalID: -1313724875
+      spriteID: 15e1a664f70555242bbd04069d7383ee
+      internalID: 986094577
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Adam_run_back_2
+      name: Adam_run_16x16_8
       rect:
         serializedVersion: 2
         x: 128
@@ -273,20 +273,20 @@ TextureImporter:
         width: 16
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 13c4fc5449c0bf54eb227ec605b931fc
-      internalID: 1303865279
+      spriteID: 0d2ed97db32eb1c4db30039e5cd1736c
+      internalID: -758832209
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Adam_run_back_3
+      name: Adam_run_16x16_9
       rect:
         serializedVersion: 2
         x: 144
@@ -294,20 +294,20 @@ TextureImporter:
         width: 16
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 061aec72769484b429d06eba7880f4f8
-      internalID: 1119343410
+      spriteID: ca5dc24d5bbf7914baf57fcf4e434adc
+      internalID: 918581026
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Adam_run_back_4
+      name: Adam_run_16x16_10
       rect:
         serializedVersion: 2
         x: 160
@@ -315,20 +315,20 @@ TextureImporter:
         width: 16
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 74f02b0ce700cc24fa4dbd31a774614d
-      internalID: -1135691316
+      spriteID: 47e3f788a8211db41be15b27855fa875
+      internalID: 1089798691
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Adam_run_back_5
+      name: Adam_run_16x16_11
       rect:
         serializedVersion: 2
         x: 176
@@ -336,20 +336,20 @@ TextureImporter:
         width: 16
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 30e282099ce308941b4e963f4b1d2d31
-      internalID: 1900289999
+      spriteID: 737ea22947fe1be478d23ebf92ddf5c4
+      internalID: 204417165
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Adam_run_left_0
+      name: Adam_run_16x16_12
       rect:
         serializedVersion: 2
         x: 192
@@ -357,20 +357,20 @@ TextureImporter:
         width: 16
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ecb38d2e9f626954083b4cdc451e45cc
-      internalID: 2063709363
+      spriteID: c546594dc4850094e8be96f1f6606dfc
+      internalID: 1270356345
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Adam_run_left_1
+      name: Adam_run_16x16_13
       rect:
         serializedVersion: 2
         x: 208
@@ -378,20 +378,20 @@ TextureImporter:
         width: 16
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ba4e9d2101ae7b41862e10d39263bf3
-      internalID: -252909054
+      spriteID: e122f1a1d923628438903269a1c32705
+      internalID: 625484982
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Adam_run_left_2
+      name: Adam_run_16x16_14
       rect:
         serializedVersion: 2
         x: 224
@@ -399,20 +399,20 @@ TextureImporter:
         width: 16
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 972760c7c13790345a7ac1a250f2dfb6
-      internalID: -230240955
+      spriteID: e85e1aaa47754db4b9d63165d1408ce1
+      internalID: -175585200
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Adam_run_left_3
+      name: Adam_run_16x16_15
       rect:
         serializedVersion: 2
         x: 240
@@ -420,20 +420,20 @@ TextureImporter:
         width: 16
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c717a1af0b02f204284219849fe5f3b6
-      internalID: 1877084431
+      spriteID: 15b8b02020594654394cd113944b245c
+      internalID: 28428105
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Adam_run_left_4
+      name: Adam_run_16x16_16
       rect:
         serializedVersion: 2
         x: 256
@@ -441,20 +441,20 @@ TextureImporter:
         width: 16
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb3b610be05942d478235bc1209346a7
-      internalID: 148179963
+      spriteID: 2818b2a327fee2a448a21574cc40b0be
+      internalID: -509401328
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Adam_run_left_5
+      name: Adam_run_16x16_17
       rect:
         serializedVersion: 2
         x: 272
@@ -462,20 +462,20 @@ TextureImporter:
         width: 16
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90b629534264fa24589c2048c4201c5e
-      internalID: 2054020340
+      spriteID: be80443ef1243d04da085c6a5d6b514f
+      internalID: 1594707244
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Adam_run_front_0
+      name: Adam_run_16x16_18
       rect:
         serializedVersion: 2
         x: 288
@@ -483,20 +483,20 @@ TextureImporter:
         width: 16
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 595634469676dd540b46e24894164e10
-      internalID: 1750272193
+      spriteID: 61b7e1e45a6d99e498e347dfe935d73a
+      internalID: 490976096
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Adam_run_front_1
+      name: Adam_run_16x16_19
       rect:
         serializedVersion: 2
         x: 304
@@ -504,20 +504,20 @@ TextureImporter:
         width: 16
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4eefe1d45b3c7414d88aa7cc64db27fb
-      internalID: 972670566
+      spriteID: 5cda6ba31ca1cd64cb4ebf61a95ffb99
+      internalID: -1505987498
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Adam_run_front_2
+      name: Adam_run_16x16_20
       rect:
         serializedVersion: 2
         x: 320
@@ -525,20 +525,20 @@ TextureImporter:
         width: 16
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3b1f533fe41a72b48a4cf7043cd11ecd
-      internalID: -2037067510
+      spriteID: 970c78c7eb320f94cb5cc94734abbbab
+      internalID: -611903548
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Adam_run_front_3
+      name: Adam_run_16x16_21
       rect:
         serializedVersion: 2
         x: 336
@@ -546,20 +546,20 @@ TextureImporter:
         width: 16
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ec2aadae6685b694eb31ec4aaea89189
-      internalID: -1665039748
+      spriteID: 12bf9bd2c34df8f419206e66c38332bd
+      internalID: -1880619424
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Adam_run_front_4
+      name: Adam_run_16x16_22
       rect:
         serializedVersion: 2
         x: 352
@@ -567,20 +567,20 @@ TextureImporter:
         width: 16
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d26a329f01455ad44b754ac40664d1b4
-      internalID: -612093539
+      spriteID: e23e414bd13cfcc41be669e5bf17fefe
+      internalID: -1049587427
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Adam_run_front_5
+      name: Adam_run_16x16_23
       rect:
         serializedVersion: 2
         x: 368
@@ -588,14 +588,14 @@ TextureImporter:
         width: 16
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f2875f62cb608e343ba9c6f5b2cab73d
-      internalID: 1889064523
+      spriteID: 90142ba32295adf4e89aaeaf52d12d68
+      internalID: -512229116
       vertices: []
       indices: 
       edges: []
@@ -611,30 +611,30 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Adam_run_back_0: 742703323
-      Adam_run_back_1: -1313724875
-      Adam_run_back_2: 1303865279
-      Adam_run_back_3: 1119343410
-      Adam_run_back_4: -1135691316
-      Adam_run_back_5: 1900289999
-      Adam_run_front_0: 1750272193
-      Adam_run_front_1: 972670566
-      Adam_run_front_2: -2037067510
-      Adam_run_front_3: -1665039748
-      Adam_run_front_4: -612093539
-      Adam_run_front_5: 1889064523
-      Adam_run_left_0: 2063709363
-      Adam_run_left_1: -252909054
-      Adam_run_left_2: -230240955
-      Adam_run_left_3: 1877084431
-      Adam_run_left_4: 148179963
-      Adam_run_left_5: 2054020340
-      Adam_run_right_0: 244642895
-      Adam_run_right_1: -532564918
-      Adam_run_right_2: 757625530
-      Adam_run_right_3: 170827942
-      Adam_run_right_4: -2052931433
-      Adam_run_right_5: 1548972415
+      Adam_run_16x16_0: 1601864709
+      Adam_run_16x16_1: 1198429194
+      Adam_run_16x16_10: 1089798691
+      Adam_run_16x16_11: 204417165
+      Adam_run_16x16_12: 1270356345
+      Adam_run_16x16_13: 625484982
+      Adam_run_16x16_14: -175585200
+      Adam_run_16x16_15: 28428105
+      Adam_run_16x16_16: -509401328
+      Adam_run_16x16_17: 1594707244
+      Adam_run_16x16_18: 490976096
+      Adam_run_16x16_19: -1505987498
+      Adam_run_16x16_2: -1356507892
+      Adam_run_16x16_20: -611903548
+      Adam_run_16x16_21: -1880619424
+      Adam_run_16x16_22: -1049587427
+      Adam_run_16x16_23: -512229116
+      Adam_run_16x16_3: 580883493
+      Adam_run_16x16_4: 1485339957
+      Adam_run_16x16_5: 460522698
+      Adam_run_16x16_6: -1957454023
+      Adam_run_16x16_7: 986094577
+      Adam_run_16x16_8: -758832209
+      Adam_run_16x16_9: 918581026
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
