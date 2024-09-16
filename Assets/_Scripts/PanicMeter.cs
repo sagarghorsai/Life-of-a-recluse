@@ -1,0 +1,100 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+/*PhantomRealm Studio - Life of a Recluse
+ * Austin Horn
+ * CSCI 448, Davenport University
+ * Instructor: David Kroggman
+ * 
+ * Title: PanicMeter
+ * Summary: When the player enters the interaction area of an enemy (most likely designated by a hitbox) a "panic" value should increase. 
+ *      Panic value should be tied to a UI element to provide a visual representation for the player
+ *      Panic value should slowly decrease overtime, to a limit of 0, as long as it is not in the enemy interaction zones
+ *      If panic reaches a max value it should initiate the "Lose" process
+ */
+
+public class PanicMeter : MonoBehaviour
+{
+    float panicValue;
+    float panicMax = 10; //Maximum number the panic value can go up to
+
+    float panicScale = 1; //How quickly panic increases
+    float calmDownScale = 1; //How quickly the player calms down
+    float calmDownPause = 10; // Pause before the calming down process starts
+    float calmDownPauseTimer; //The timer to count down the pause
+
+    bool inInteractionZone;
+    bool freakedOut; //Whether or not the panic max has been reached and player has "freaked out" (resulting in game loss or life loss)
+
+    // Update is called once per frame
+    void FixedUpdate()
+    {
+        
+
+        if (panicValue >= panicMax)
+        {
+            freakedOut = true;
+        }
+
+        if (freakedOut)
+        {
+            //Start Lose Process
+            FreakedOut();
+        }
+
+        if (!freakedOut) 
+        {
+            Debug.Log("Panic Value: " + panicValue + " CalmDown Pause Timer: " + calmDownPauseTimer); //Debug display current panic value & calm Down pause time
+
+            if (inInteractionZone) // Increase panic when in an interaction zone
+            {
+                panicValue = panicValue + (panicScale * Time.deltaTime);
+            }
+
+
+            if (!inInteractionZone) //Decreases panic when outside an interaction zone
+            {
+                calmDownPauseTimer = calmDownPauseTimer - Time.deltaTime;
+
+                if (calmDownPauseTimer <= 0) //If pause is over
+                {
+
+                    if (panicValue > 0) // Panic value cannot go below 0
+                    {
+                        panicValue = panicValue - (calmDownScale * Time.deltaTime);
+                    }
+                    if (panicValue < 0)
+                    {
+                        panicValue = 0;
+                    }
+
+                    calmDownPauseTimer = 0;
+                }
+            }
+        }
+        
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "InteractionZone") 
+        {
+            inInteractionZone = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "InteractionZone")
+        {
+            inInteractionZone = false;
+            calmDownPauseTimer = calmDownPause;
+        }
+    }
+
+    private void FreakedOut()
+    {
+        Debug.Log("You freakedOut");
+    }
+}
