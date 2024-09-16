@@ -4,26 +4,70 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public float movSpeed;  // Movement speed
+    float speedX, speedY;   // Movement speed on X and Y axes
+    Rigidbody2D rb;         // Reference to Rigidbody2D component
+    Animator anim;          // Reference to Animator component
 
-    public float movSpeed;  // Assigning the variable name
-    float speedX, speedY;   // Assigning variable sub-names (Line above is name of line while these 2 names are variables for the x axis and y axis and how fast one moves in each direction.)
-    Rigidbody2D rb;         // This is to have it assigned to assets with a 'Rigidbody2D' game component/component.
+    // Directions for movement (right, up, left, down)
+    private Vector2[] directions = new Vector2[]
+    { Vector2.right, Vector2.up, Vector2.left, Vector2.down };
 
+    // Key bindings for movement (arrow keys and WASD)
+    private KeyCode[] keys = new KeyCode[]
+    {
+        KeyCode.RightArrow, KeyCode.UpArrow, KeyCode.LeftArrow, KeyCode.DownArrow,
+        KeyCode.D,          KeyCode.W,       KeyCode.A,         KeyCode.S
+    };
+
+    private int lastDirHeld = 0; // Stores the last direction the player was moving in
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();   // This line is to call out or look for game objects with the Rigidbody2D component.
-
+        rb = GetComponent<Rigidbody2D>();   // Get the Rigidbody2D component
+        anim = GetComponent<Animator>();    // Get the Animator component
     }
 
     // Update is called once per frame
     void Update()
     {
+        speedX = Input.GetAxisRaw("Horizontal") * movSpeed;
+        speedY = Input.GetAxisRaw("Vertical") * movSpeed;
 
-        speedX = Input.GetAxisRaw("Horizontal") * movSpeed;         // Dictates how fast one moves in the X axis
-        speedY = Input.GetAxisRaw("Vertical") * movSpeed;           // Dictates how fast one moves in the Y axis
-        rb.velocity = new Vector2(speedX, speedY);                  // Determines the velocity based on inputs multiplied by movSpeed variable
+        int dirHeld = -1; // Tracks which direction key is held
 
+        // Check for key press and determine direction
+        for (int i = 0; i < keys.Length; i++)
+        {
+            if (Input.GetKey(keys[i]))
+            {
+                dirHeld = i % 4;  // Get corresponding direction from array
+                break; // Exit loop once a key is found
+            }
+        }
+
+        Vector2 vel = Vector2.zero;
+
+        // Apply velocity based on direction held
+        if (dirHeld > -1)
+        {
+            vel = directions[dirHeld];
+            lastDirHeld = dirHeld; // Update last direction when a key is pressed
+        }
+
+        rb.velocity = vel * movSpeed; // Set velocity
+
+        // Animation logic
+        if (dirHeld == -1) // No key pressed, play idle animation based on last direction
+        {
+            anim.Play("AdamIdle_" + lastDirHeld);
+        }
+        else // A key is pressed, run the corresponding run animation
+        {
+            anim.Play("AdamRun_" + dirHeld);
+        }
+
+        anim.speed = 1; // Ensure animation speed is set to 1
     }
 }
