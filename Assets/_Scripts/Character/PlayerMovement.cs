@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     float speedX, speedY;   // Movement speed on X and Y axes
     Rigidbody2D rb;         // Reference to Rigidbody2D component
     Animator anim;          // Reference to Animator component
+    public Vector2Int FacingDirection { get; private set; } = Vector2Int.right;
 
     // Directions for movement (right, up, left, down)
     private Vector2[] directions = new Vector2[]
@@ -43,6 +44,7 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKey(keys[i]))
             {
                 dirHeld = i % 4;  // Get corresponding direction from array
+                FacingDirection = new Vector2Int(Mathf.RoundToInt(directions[dirHeld].x), Mathf.RoundToInt(directions[dirHeld].y));
                 break; // Exit loop once a key is found
             }
         }
@@ -70,4 +72,5 @@ public class PlayerMovement : MonoBehaviour
 
         anim.speed = 1; // Ensure animation speed is set to 1
     }
+
 }
