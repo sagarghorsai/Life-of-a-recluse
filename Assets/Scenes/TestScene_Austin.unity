@@ -138,7 +138,7 @@ GameObject:
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &36242683
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -456,7 +456,7 @@ Transform:
   m_GameObject: {fileID: 708076792}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.2, y: 1.8260739, z: 0}
+  m_LocalPosition: {x: -0.45, y: 0.69, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -525,7 +525,7 @@ GameObject:
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &811870666
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -602,7 +602,7 @@ GameObject:
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1818622011
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -679,7 +679,7 @@ GameObject:
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1947187585
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -750,11 +750,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 232582944940699180, guid: e2744a9f7cf1a854ebf1cbe1c1ea77e4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.49
       objectReference: {fileID: 0}
     - target: {fileID: 232582944940699180, guid: e2744a9f7cf1a854ebf1cbe1c1ea77e4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.57
       objectReference: {fileID: 0}
     - target: {fileID: 232582944940699180, guid: e2744a9f7cf1a854ebf1cbe1c1ea77e4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -805,6 +805,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3044454569833939868, guid: e2744a9f7cf1a854ebf1cbe1c1ea77e4, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3044454569833939868, guid: e2744a9f7cf1a854ebf1cbe1c1ea77e4, type: 3}
       propertyPath: enemyWaypoints.Array.size
       value: 5
       objectReference: {fileID: 0}
@@ -828,6 +832,22 @@ PrefabInstance:
       propertyPath: enemyWaypoints.Array.data[4]
       value: 
       objectReference: {fileID: 36242682}
+    - target: {fileID: 6032279871763305988, guid: e2744a9f7cf1a854ebf1cbe1c1ea77e4, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6032279871763305988, guid: e2744a9f7cf1a854ebf1cbe1c1ea77e4, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7054729886951145186, guid: e2744a9f7cf1a854ebf1cbe1c1ea77e4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8617052777042080038, guid: e2744a9f7cf1a854ebf1cbe1c1ea77e4, type: 3}
+      propertyPath: m_Radius
+      value: 1.25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -888,6 +908,10 @@ PrefabInstance:
     - target: {fileID: 3250219421765204150, guid: ed4f8bb3ff4178f4fae9dde3491ca043, type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3250219421765204150, guid: ed4f8bb3ff4178f4fae9dde3491ca043, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8217306704317795414, guid: ed4f8bb3ff4178f4fae9dde3491ca043, type: 3}
       propertyPath: m_ExcludeLayers.m_Bits
