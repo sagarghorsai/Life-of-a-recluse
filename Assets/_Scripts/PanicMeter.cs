@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 /*PhantomRealm Studio - Life of a Recluse
  * Austin Horn
@@ -16,8 +17,8 @@ using UnityEngine;
 
 public class PanicMeter : MonoBehaviour
 {
-    float panicValue;
-    float panicMax = 10; //Maximum number the panic value can go up to
+    public float panicValue;
+    public float panicMax = 10; //Maximum number the panic value can go up to
 
     float panicScale = 1; //How quickly panic increases
     float calmDownScale = 1; //How quickly the player calms down
@@ -30,7 +31,7 @@ public class PanicMeter : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        
+
 
         if (panicValue >= panicMax)
         {
@@ -43,7 +44,7 @@ public class PanicMeter : MonoBehaviour
             FreakedOut();
         }
 
-        if (!freakedOut) 
+        if (!freakedOut)
         {
             Debug.Log("Panic Value: " + panicValue + " CalmDown Pause Timer: " + calmDownPauseTimer); //Debug display current panic value & calm Down pause time
 
@@ -73,12 +74,12 @@ public class PanicMeter : MonoBehaviour
                 }
             }
         }
-        
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "InteractionZone") 
+        if (collision.gameObject.tag == "InteractionZone")
         {
             inInteractionZone = true;
         }
@@ -86,7 +87,7 @@ public class PanicMeter : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "InteractionZone")
+        if (collision.gameObject.tag == "InteractionZone")
         {
             inInteractionZone = false;
             calmDownPauseTimer = calmDownPause;
@@ -97,4 +98,5 @@ public class PanicMeter : MonoBehaviour
     {
         Debug.Log("You freakedOut");
     }
-}
+
+}  
