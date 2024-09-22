@@ -23,16 +23,27 @@ public class PlayerMovement : MonoBehaviour
 
     private int lastDirHeld = 0; // Stores the last direction the player was moving in
 
+    private float activeMoveSpeed;
+    public float dashSpeed;     // A public variable where you can set how fast the player can dash.
+
+    public float dashLength = .5f, dashCooldown = 1f;   // Set how long the dash lasts and the cooldown before another dash.
+
+    private float dashCounter;            // How long the dash is active.      
+    private float dashCoolCounter;        // Cooldown time before dash is available again.
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();   // Get the Rigidbody2D component
         anim = GetComponent<Animator>();    // Get the Animator component
+
+        activeMoveSpeed = movSpeed;     // Set dash to player's normal movement speed initially.
     }
 
     // Update is called once per frame
     void Update()
     {
+        // Standard movement
         speedX = Input.GetAxisRaw("Horizontal") * movSpeed;
         speedY = Input.GetAxisRaw("Vertical") * movSpeed;
 
@@ -58,7 +69,33 @@ public class PlayerMovement : MonoBehaviour
             lastDirHeld = dirHeld; // Update last direction when a key is pressed
         }
 
-        rb.velocity = vel * movSpeed; // Set velocity
+        // Handle dashing
+        if (Input.GetKeyDown(KeyCode.Space))    // Dash activation with Space key
+        {
+            if (dashCoolCounter <= 0 && dashCounter <= 0)    // Dash is available
+            {
+                activeMoveSpeed = dashSpeed;   // Set movement speed to dash speed
+                dashCounter = dashLength;      // Set dash duration
+            }
+        }
+
+        if (dashCounter > 0)        // If dashing is active
+        {
+            dashCounter -= Time.deltaTime;  // Count down dash time
+
+            if (dashCounter <= 0)       // Dash duration over
+            {
+                activeMoveSpeed = movSpeed;  // Reset movement speed to normal
+                dashCoolCounter = dashCooldown;  // Start cooldown
+            }
+        }
+
+        if (dashCoolCounter > 0)    // If in cooldown period
+        {
+            dashCoolCounter -= Time.deltaTime;  // Count down cooldown time
+        }
+
+        rb.velocity = vel * activeMoveSpeed;    // Set velocity (using activeMoveSpeed to account for dashing)
 
         // Animation logic
         if (dirHeld == -1) // No key pressed, play idle animation based on last direction
@@ -72,5 +109,4 @@ public class PlayerMovement : MonoBehaviour
 
         anim.speed = 1; // Ensure animation speed is set to 1
     }
-
 }

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58aee8e1b93998345a77b8b218490576, type: 3}
   m_Name: Passion Fruit
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 651780421, guid: 40ea1775353b1034297a8e14aeeecd0f, type: 3}
+  m_Sprite: {fileID: 947009019, guid: 40ea1775353b1034297a8e14aeeecd0f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
