@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 /*PhantomRealm Studio - Life of a Recluse
@@ -10,20 +11,35 @@ using UnityEngine;
  * Script: EnemyController
  * Summary: A script for universal items for each enemy.
  *          Including: 
- *                 + Change Perspectives based on direction the enemy is moving
- *                 + 
+ *                 + Change Animations based on direction the enemy is moving
+ *                 + flip directions when necessary
+ *                 + rotate towards next designation
+ *                 
  */
 public class EnemyController : MonoBehaviour
 {
+    [SerializeField]
+    private float _rotationSpeed;
+
+    //public ScriptReference movementScript;
+    Vector2 _targetDirection;
+
     // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        
+        _targetDirection = transform.up;
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        rotateInDirectionOfMovement();
+    }
+
+    private void rotateInDirectionOfMovement()
+    {
+
+        Quaternion targetRotation = Quaternion.LookRotation(transform.forward , _targetDirection);
+        Quaternion rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, _rotationSpeed * Time.deltaTime);
     }
 }

@@ -18,7 +18,6 @@ public class PanicMeterUI : MonoBehaviour
     public PanicMeter panicScript; //Attach game object containing the instance of script you want
 
     float panicSliderValue;
-    float maxPanic = 10f;
 
     void Start()
     {
