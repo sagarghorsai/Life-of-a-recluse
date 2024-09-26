@@ -56,6 +56,7 @@ public class TaskList : MonoBehaviour
 
     private void OnAllTasksCompleted()
     {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Win");
         Debug.Log("All tasks completed! Loading win scene...");
     }
 

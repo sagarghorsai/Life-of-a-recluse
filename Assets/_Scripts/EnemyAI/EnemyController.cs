@@ -21,25 +21,96 @@ public class EnemyController : MonoBehaviour
     [SerializeField]
     private float _rotationSpeed;
 
-    //public ScriptReference movementScript;
-    Vector2 _targetDirection;
+    WaypointMovement _waypointMovement;
 
+    //public ScriptReference movementScript;
+    private Rigidbody2D _rigidbody;
+    private Vector2 CurrentDestination;
+    private Vector2 PreviousDestination;
+    private Vector2 _targetDirection;
+    public Animator anim;
+    public GameObject interactorZone;
+
+    public bool movingRight;
+    public bool movingLeft;
+    public bool movingUp;
+    public bool movingDown;
+    bool directionChange;
     // Start is called before the first frame update
     private void Awake()
     {
-        _targetDirection = transform.up;
+        anim.GetComponent<Animator>();
+        _waypointMovement = GetComponent<WaypointMovement>();
+        _rigidbody = GetComponent<Rigidbody2D>();
+        //_targetDirection = transform.up;
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-        rotateInDirectionOfMovement();
+        PreviousDestination = _waypointMovement.GetPreviousDestination();
+        CurrentDestination = _waypointMovement.GetCurrentDestination();
+        UpdateAnimation();
+
+        if (PreviousDestination.x < CurrentDestination.x)
+        {
+            movingRight = true;
+            movingLeft = false;
+            movingUp = false;
+            movingDown = false;
+            // _rigidbody.transform.up = CurrentDestination;
+            _rigidbody.MoveRotation(ConvertToDegrees(Mathf.Atan2(CurrentDestination.y, CurrentDestination.x)));
+
+            interactorZone.transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+        if (PreviousDestination.x > CurrentDestination.x)
+        {
+            interactorZone.transform.rotation = Quaternion.Euler(0, 0, 180);
+
+            movingLeft = true;
+            movingRight = false;
+            movingUp = false;
+            movingDown = false;
+            // _rigidbody.transform.up = CurrentDestination;
+            _rigidbody.MoveRotation(ConvertToDegrees(Mathf.Atan2(CurrentDestination.y, CurrentDestination.x)));
+        }
+        if (PreviousDestination.y < CurrentDestination.y)
+        {
+            interactorZone.transform.rotation = Quaternion.Euler(0, 0, 90);
+
+            movingUp = true;
+            movingRight = false;
+            movingLeft = false;
+            movingDown = false;
+            //_rigidbody.transform.up = CurrentDestination;
+            _rigidbody.MoveRotation(ConvertToDegrees(Mathf.Atan2(CurrentDestination.y, CurrentDestination.x)));
+        }
+        if (PreviousDestination.y > CurrentDestination.y)
+        {
+            interactorZone.transform.rotation = Quaternion.Euler(0, 0, 270);
+
+            movingDown = true;
+            movingRight = false;
+            movingLeft = false;
+            movingUp = false;
+            //_rigidbody.transform.up = CurrentDestination;
+            _rigidbody.MoveRotation(ConvertToDegrees(Mathf.Atan2(CurrentDestination.y, CurrentDestination.x)));
+        }
     }
 
-    private void rotateInDirectionOfMovement()
+    void UpdateAnimation()
     {
+        anim.SetBool("isMovingUp", movingUp);
+        anim.SetBool("isMovingDown", movingDown);
+        anim.SetBool("isMovingLeft", movingLeft);
+        anim.SetBool("isMovingRight", movingRight);
 
-        Quaternion targetRotation = Quaternion.LookRotation(transform.forward , _targetDirection);
-        Quaternion rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, _rotationSpeed * Time.deltaTime);
+
+    }
+
+    public static float ConvertToDegrees(float radians)
+    {
+        float angle = radians * 180f / Mathf.PI;
+        return angle;
     }
 }

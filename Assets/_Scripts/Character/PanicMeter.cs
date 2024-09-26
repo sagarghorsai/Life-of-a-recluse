@@ -20,9 +20,9 @@ public class PanicMeter : MonoBehaviour
     public float panicValue;
     public float panicMax = 10; //Maximum number the panic value can go up to
 
-    float panicScale = 1; //How quickly panic increases
-    float calmDownScale = 1; //How quickly the player calms down
-    float calmDownPause = 10; // Pause before the calming down process starts
+    public float panicScale = 1; //How quickly panic increases
+    public float calmDownScale = 1; //How quickly the player calms down
+    public float calmDownPause = 10; // Pause before the calming down process starts
     float calmDownPauseTimer; //The timer to count down the pause
 
     bool inInteractionZone;
@@ -96,7 +96,8 @@ public class PanicMeter : MonoBehaviour
 
     private void FreakedOut()
     {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Lose");
         Debug.Log("You freakedOut");
     }
 
-}  
+}
