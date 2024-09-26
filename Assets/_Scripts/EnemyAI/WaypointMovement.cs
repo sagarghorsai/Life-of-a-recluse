@@ -24,6 +24,7 @@ public class WaypointMovement : MonoBehaviour
 
     public float speed = 1.0f;
 
+
     private void FixedUpdate()
     {
 
@@ -48,6 +49,7 @@ public class WaypointMovement : MonoBehaviour
               speed * Time.fixedDeltaTime);
 
         }
+
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
@@ -81,10 +83,17 @@ public class WaypointMovement : MonoBehaviour
         }
     }
 
-    public Vector2 GetCurrentDestination ()
+    public Vector2 GetCurrentDestination()
     {
         return currentDestination.transform.position;
     }
+
+    public Vector2 GetPreviousDestination()
+    {
+        return previousDestination.transform.position;
+    }
+
+
 
     public Vector2 GetPreviousDestination()
     {
