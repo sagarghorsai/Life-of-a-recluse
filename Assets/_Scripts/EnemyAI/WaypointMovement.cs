@@ -79,6 +79,11 @@ public class WaypointMovement : MonoBehaviour
         }
     }
 
+    Vector2 GetDirection()
+    {
+
+    }
+
     
 
 }

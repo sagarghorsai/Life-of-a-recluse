@@ -22,7 +22,8 @@ public class EnemyController : MonoBehaviour
     private float _rotationSpeed;
 
     //public ScriptReference movementScript;
-    Vector2 _targetDirection;
+    private Rigidbody2D _rigidbody;
+    private Vector2 _targetDirection;
 
     // Start is called before the first frame update
     private void Awake()
@@ -41,5 +42,7 @@ public class EnemyController : MonoBehaviour
 
         Quaternion targetRotation = Quaternion.LookRotation(transform.forward , _targetDirection);
         Quaternion rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, _rotationSpeed * Time.deltaTime);
+
+        _rigidbody.SetRotation(rotation);
     }
 }
