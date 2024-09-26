@@ -5851,7 +5851,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 16_Grocery_store_16x16_320
+      name: 1_checkoutSensorLeft_Top
       rect:
         serializedVersion: 2
         x: 128
@@ -5872,7 +5872,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 16_Grocery_store_16x16_321
+      name: 1_checkoutSensoRight_Top
       rect:
         serializedVersion: 2
         x: 144
@@ -6082,7 +6082,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 16_Grocery_store_16x16_331
+      name: 1_CheckOut_Top
       rect:
         serializedVersion: 2
         x: 80
@@ -6145,7 +6145,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 16_Grocery_store_16x16_334
+      name: 1_checkoutSensorLeft_Bottom
       rect:
         serializedVersion: 2
         x: 128
@@ -6166,7 +6166,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 16_Grocery_store_16x16_335
+      name: 1_checkoutSensoRight_Bottom
       rect:
         serializedVersion: 2
         x: 144
@@ -6376,7 +6376,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 16_Grocery_store_16x16_345
+      name: 1_CheckOut_Mid
       rect:
         serializedVersion: 2
         x: 80
@@ -6670,7 +6670,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 16_Grocery_store_16x16_359
+      name: 1_CheckOut_Left
       rect:
         serializedVersion: 2
         x: 64
@@ -6691,7 +6691,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 16_Grocery_store_16x16_360
+      name: 1_CheckOut_Bottom
       rect:
         serializedVersion: 2
         x: 80
@@ -23573,8 +23573,6 @@ TextureImporter:
       16_Grocery_store_16x16_318: -124886978
       16_Grocery_store_16x16_319: -458648842
       16_Grocery_store_16x16_32: -2127633493
-      16_Grocery_store_16x16_320: -1199001421
-      16_Grocery_store_16x16_321: -1203887889
       16_Grocery_store_16x16_322: 1251271657
       16_Grocery_store_16x16_323: 1579711502
       16_Grocery_store_16x16_324: -1657558005
@@ -23585,11 +23583,8 @@ TextureImporter:
       16_Grocery_store_16x16_329: -896809875
       16_Grocery_store_16x16_33: 1978075990
       16_Grocery_store_16x16_330: -1053588707
-      16_Grocery_store_16x16_331: -417644251
       16_Grocery_store_16x16_332: 1365905700
       16_Grocery_store_16x16_333: 2127694667
-      16_Grocery_store_16x16_334: -1686975939
-      16_Grocery_store_16x16_335: -60990605
       16_Grocery_store_16x16_336: -955237389
       16_Grocery_store_16x16_337: 1257820385
       16_Grocery_store_16x16_338: -1011079017
@@ -23600,7 +23595,6 @@ TextureImporter:
       16_Grocery_store_16x16_342: 1523433613
       16_Grocery_store_16x16_343: 1287912514
       16_Grocery_store_16x16_344: -287761396
-      16_Grocery_store_16x16_345: 2006416299
       16_Grocery_store_16x16_346: 1248242427
       16_Grocery_store_16x16_347: -1591316623
       16_Grocery_store_16x16_348: -1281350298
@@ -23615,9 +23609,7 @@ TextureImporter:
       16_Grocery_store_16x16_356: 456101494
       16_Grocery_store_16x16_357: 2088423740
       16_Grocery_store_16x16_358: -780296450
-      16_Grocery_store_16x16_359: -28731508
       16_Grocery_store_16x16_36: -812333370
-      16_Grocery_store_16x16_360: 1666982231
       16_Grocery_store_16x16_361: -1344079851
       16_Grocery_store_16x16_362: -653525100
       16_Grocery_store_16x16_363: 1525244495
@@ -24305,6 +24297,10 @@ TextureImporter:
       16_Grocery_store_16x16_999: -2137384911
       1_Apple: 1655761600
       1_Bananna: -2140151227
+      1_CheckOut_Bottom: 1666982231
+      1_CheckOut_Left: -28731508
+      1_CheckOut_Mid: 2006416299
+      1_CheckOut_Top: -417644251
       1_Cucumber: -773844181
       1_DragonFruit: 159637764
       1_Grapes: 1220443751
@@ -24315,6 +24311,10 @@ TextureImporter:
       1_Pear: -964432587
       1_PineApple: -816492096
       1_Strawberry: 1785996167
+      1_checkoutSensoRight_Bottom: -60990605
+      1_checkoutSensoRight_Top: -1203887889
+      1_checkoutSensorLeft_Bottom: -1686975939
+      1_checkoutSensorLeft_Top: -1199001421
       Bakery_Left_Bottom: -1177912975
       Bakery_Left_Mid: -1196941720
       Bakery_Left_Top: -295694422

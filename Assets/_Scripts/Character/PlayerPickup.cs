@@ -1,7 +1,6 @@
-using TMPro;
-using UnityEngine;
 using UnityEngine.Tilemaps;
-using UnityEngine.UI;
+using UnityEngine;
+using TMPro;
 
 public class GroceryPickup : MonoBehaviour
 {
@@ -10,6 +9,8 @@ public class GroceryPickup : MonoBehaviour
     private PlayerMovement playerMovement;  // Reference to the PlayerMovement script
     private GroceryTile currentGroceryTile;  // The tile in front of the player (if it's a grocery item)
     private Vector3Int frontTilePosition;  // Position of the tile in front of the player
+
+    public TaskList taskList;  // Reference to the TaskList script
 
     void Start()
     {
@@ -39,7 +40,7 @@ public class GroceryPickup : MonoBehaviour
         {
             currentGroceryTile = groceryTile;
             pickUpText.gameObject.SetActive(true);  // Show the pickup text
-            pickUpText.text = "[E] \r\npick up:" + groceryTile.groceryName;  // Update the text
+            pickUpText.text = "[E] \r\npick up: " + groceryTile.groceryName;  // Update the text
         }
         else
         {
@@ -50,9 +51,13 @@ public class GroceryPickup : MonoBehaviour
 
     private void PickUpGrocery()
     {
-        Debug.Log("Pressed E to pick up:" + currentGroceryTile.groceryName);
+        Debug.Log("Pressed E to pick up: " + currentGroceryTile.groceryName);
         groceryTilemap.SetTile(frontTilePosition, null);  // Remove the tile from the tilemap
         pickUpText.gameObject.SetActive(false);  // Hide the text after picking up
+
+        // Notify the TaskList to strike through the item
+        taskList.StrikeThroughItem(currentGroceryTile.groceryName);
+
         currentGroceryTile = null;  // Clear the current tile reference
     }
 }
