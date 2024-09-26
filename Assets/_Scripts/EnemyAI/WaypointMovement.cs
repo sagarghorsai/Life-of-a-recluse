@@ -16,7 +16,7 @@ using UnityEngine;
 
 public class WaypointMovement : MonoBehaviour
 {
-    
+
     public List<GameObject> enemyWaypoints; //Waypoint list to designate where the enemy should move towards
     private GameObject currentDestination; //The waypoint the enemy is set to move to
     private GameObject previousDestination; //The waypoint the enemy just passed through
@@ -26,20 +26,22 @@ public class WaypointMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        
+
         if (enemyWaypoints == null) { Debug.Log("No waypoint(s) listed"); } //if there are no waypoints in the list, return console error
 
-        
-        if (currentDestination == null) { //if no previous waypoint, go to first waypoint in list
+
+        if (currentDestination == null)
+        { //if no previous waypoint, go to first waypoint in list
             currentDestination = enemyWaypoints[1]; // set to 1 as 0 should be same as starting point, not first destination
             previousDestination = enemyWaypoints[0];
             waypointIndex = 1;
         }
 
-       // Debug.Log("Move called");
+        // Debug.Log("Move called");
 
         //Go to current Destination
-        if (currentDestination != null) {
+        if (currentDestination != null)
+        {
             transform.position = Vector3.MoveTowards(
               transform.position,
               currentDestination.transform.position,
@@ -79,6 +81,6 @@ public class WaypointMovement : MonoBehaviour
         }
     }
 
-    
+
 
 }

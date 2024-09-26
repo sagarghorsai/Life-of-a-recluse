@@ -1,52 +1,62 @@
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;  // For scene loading
 
 public class TaskList : MonoBehaviour
 {
-
-    public List<string> items;
+    public List<GroceryTile> items;
     public GameObject buttonPrefab;
-
+    public int taskNum = 1;
     public RectTransform scrollViewContent;
-
-    public float buttonHeight = 50f;
-    public float spacing = 10f;
-
+    private Dictionary<string, TextMeshProUGUI> itemButtons = new Dictionary<string, TextMeshProUGUI>();
+    private int completedTasks = 0;
 
     void Start()
     {
-        float contentHeight = items.Count * (buttonHeight + spacing) - spacing;
-        scrollViewContent.sizeDelta = new Vector2(scrollViewContent.sizeDelta.x, contentHeight);
-
         for (int i = 0; i < items.Count; i++)
         {
             GameObject newButton = Instantiate(buttonPrefab, scrollViewContent);
-            newButton.GetComponentInChildren<TextMeshProUGUI>().text = items[i];
-
             TextMeshProUGUI buttonText = newButton.GetComponentInChildren<TextMeshProUGUI>();
-            buttonText.text = items[i];
+            var buttonImage = newButton.transform.GetChild(1).GetComponent<Image>();
 
+            // Set the sprite for the image
+            buttonImage.sprite = items[i].sprite;
 
-            RectTransform buttonRectTransform = newButton.GetComponent<RectTransform>();
-            buttonRectTransform.anchoredPosition = new Vector2(0, -i * (buttonHeight + spacing));
+            // Set the text for the button
+            buttonText.text = $"{taskNum}X " + items[i].groceryName;
 
-            string currentItem = items[i];
+            // Store button references
+            itemButtons[items[i].groceryName] = buttonText;
+
+            // Add listener for manual clicking if needed
             newButton.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(buttonText));
-
         }
-
-
-
     }
 
-    // Update is called once per frame
-    void Update()
+    public void StrikeThroughItem(string itemName)
     {
+        if (itemButtons.ContainsKey(itemName))
+        {
+            TextMeshProUGUI buttonText = itemButtons[itemName];
+            if (!buttonText.text.Contains("<s>"))
+            {
+                buttonText.text = $"<s>{buttonText.text}</s>";
+                completedTasks++;
 
+                // Check if all tasks are completed
+                if (completedTasks >= items.Count)
+                {
+                    OnAllTasksCompleted();
+                }
+            }
+        }
+    }
+
+    private void OnAllTasksCompleted()
+    {
+        Debug.Log("All tasks completed! Loading win scene...");
     }
 
     void OnButtonClick(TextMeshProUGUI buttonText)
@@ -54,9 +64,13 @@ public class TaskList : MonoBehaviour
         if (!buttonText.text.Contains("<s>"))
         {
             buttonText.text = $"<s>{buttonText.text}</s>";
+            completedTasks++;
 
-
+            // Check if all tasks are completed
+            if (completedTasks >= items.Count)
+            {
+                OnAllTasksCompleted();
+            }
         }
-
     }
 }
