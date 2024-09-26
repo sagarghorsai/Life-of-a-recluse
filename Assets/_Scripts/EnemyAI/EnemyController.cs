@@ -21,28 +21,74 @@ public class EnemyController : MonoBehaviour
     [SerializeField]
     private float _rotationSpeed;
 
+    WaypointMovement _waypointMovement;
+
     //public ScriptReference movementScript;
     private Rigidbody2D _rigidbody;
+    private Vector2 CurrentDestination;
+    private Vector2 PreviousDestination;
     private Vector2 _targetDirection;
 
+    public bool movingRight;
+    public bool movingLeft;
+    public bool movingUp;
+    public bool movingDown;
+    bool directionChange;
     // Start is called before the first frame update
     private void Awake()
     {
-        _targetDirection = transform.up;
+        _waypointMovement = GetComponent<WaypointMovement>();
+        _rigidbody = GetComponent<Rigidbody2D>();
+        //_targetDirection = transform.up;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        rotateInDirectionOfMovement();
+        PreviousDestination = _waypointMovement.GetPreviousDestination();
+        CurrentDestination = _waypointMovement.GetCurrentDestination();
+
+        if (PreviousDestination.x < CurrentDestination.x)
+        {
+            movingRight = true;
+            movingLeft = false;
+            movingUp = false;
+            movingDown = false;
+           // _rigidbody.transform.up = CurrentDestination;
+            _rigidbody.MoveRotation(ConvertToDegrees(Mathf.Atan2(CurrentDestination.y, CurrentDestination.x)));
+        }
+        if (PreviousDestination.x > CurrentDestination.x)
+        {
+            movingLeft = true;
+            movingRight = false;
+            movingUp = false;
+            movingDown = false;
+            // _rigidbody.transform.up = CurrentDestination;
+            _rigidbody.MoveRotation(ConvertToDegrees(Mathf.Atan2(CurrentDestination.y, CurrentDestination.x)));
+        }
+        if (PreviousDestination.y < CurrentDestination.y)
+        {
+            movingUp = true;
+            movingRight = false;
+            movingLeft = false;
+            movingDown = false;
+            //_rigidbody.transform.up = CurrentDestination;
+            _rigidbody.MoveRotation(ConvertToDegrees(Mathf.Atan2(CurrentDestination.y, CurrentDestination.x)));
+        }
+        if (PreviousDestination.y > CurrentDestination.y)
+        {
+            movingDown = true;
+            movingRight = false;
+            movingLeft = false;
+            movingUp = false;
+            //_rigidbody.transform.up = CurrentDestination;
+            _rigidbody.MoveRotation(ConvertToDegrees(Mathf.Atan2(CurrentDestination.y, CurrentDestination.x)));
+        }
     }
 
-    private void rotateInDirectionOfMovement()
+    public static float ConvertToDegrees(float radians)
     {
-
-        Quaternion targetRotation = Quaternion.LookRotation(transform.forward , _targetDirection);
-        Quaternion rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, _rotationSpeed * Time.deltaTime);
-
-        _rigidbody.SetRotation(rotation);
+        float angle = radians * 180f / Mathf.PI;
+        return angle;
     }
 }

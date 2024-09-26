@@ -81,6 +81,13 @@ public class WaypointMovement : MonoBehaviour
         }
     }
 
+    public Vector2 GetCurrentDestination ()
+    {
+        return currentDestination.transform.position;
+    }
 
-
+    public Vector2 GetPreviousDestination()
+    {
+        return previousDestination.transform.position;
+    }
 }
