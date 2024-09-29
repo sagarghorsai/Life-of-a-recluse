@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEditor;  // This is to reference the Unity Editor
 
 public class SceneManager : MonoBehaviour
 { 
@@ -11,12 +12,23 @@ public class SceneManager : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
+
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit;
+#endif
     }
 
     public void Options()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("Options");
 
+    }
+
+    public void Menu()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Menu");
     }
 
 
