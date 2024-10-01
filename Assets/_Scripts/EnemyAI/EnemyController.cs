@@ -42,7 +42,6 @@ public class EnemyController : MonoBehaviour
         anim.GetComponent<Animator>();
         _waypointMovement = GetComponent<WaypointMovement>();
         _rigidbody = GetComponent<Rigidbody2D>();
-        //_targetDirection = transform.up;
     }
 
     // Update is called once per frame
@@ -58,8 +57,7 @@ public class EnemyController : MonoBehaviour
             movingLeft = false;
             movingUp = false;
             movingDown = false;
-            // _rigidbody.transform.up = CurrentDestination;
-            _rigidbody.MoveRotation(ConvertToDegrees(Mathf.Atan2(CurrentDestination.y, CurrentDestination.x)));
+
 
             interactorZone.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
@@ -71,8 +69,7 @@ public class EnemyController : MonoBehaviour
             movingRight = false;
             movingUp = false;
             movingDown = false;
-            // _rigidbody.transform.up = CurrentDestination;
-            _rigidbody.MoveRotation(ConvertToDegrees(Mathf.Atan2(CurrentDestination.y, CurrentDestination.x)));
+
         }
         if (PreviousDestination.y < CurrentDestination.y)
         {
@@ -82,8 +79,7 @@ public class EnemyController : MonoBehaviour
             movingRight = false;
             movingLeft = false;
             movingDown = false;
-            //_rigidbody.transform.up = CurrentDestination;
-            _rigidbody.MoveRotation(ConvertToDegrees(Mathf.Atan2(CurrentDestination.y, CurrentDestination.x)));
+            
         }
         if (PreviousDestination.y > CurrentDestination.y)
         {
@@ -93,65 +89,19 @@ public class EnemyController : MonoBehaviour
             movingRight = false;
             movingLeft = false;
             movingUp = false;
-            //_rigidbody.transform.up = CurrentDestination;
-            _rigidbody.MoveRotation(ConvertToDegrees(Mathf.Atan2(CurrentDestination.y, CurrentDestination.x)));
+            
         }
-    void FixedUpdate()
-    {
-        PreviousDestination = _waypointMovement.GetPreviousDestination();
-        CurrentDestination = _waypointMovement.GetCurrentDestination();
 
-        if (PreviousDestination.x < CurrentDestination.x)
+        void UpdateAnimation()
         {
-            movingRight = true;
-            movingLeft = false;
-            movingUp = false;
-            movingDown = false;
-           // _rigidbody.transform.up = CurrentDestination;
-            _rigidbody.MoveRotation(ConvertToDegrees(Mathf.Atan2(CurrentDestination.y, CurrentDestination.x)));
-        }
-        if (PreviousDestination.x > CurrentDestination.x)
-        {
-            movingLeft = true;
-            movingRight = false;
-            movingUp = false;
-            movingDown = false;
-            // _rigidbody.transform.up = CurrentDestination;
-            _rigidbody.MoveRotation(ConvertToDegrees(Mathf.Atan2(CurrentDestination.y, CurrentDestination.x)));
-        }
-        if (PreviousDestination.y < CurrentDestination.y)
-        {
-            movingUp = true;
-            movingRight = false;
-            movingLeft = false;
-            movingDown = false;
-            //_rigidbody.transform.up = CurrentDestination;
-            _rigidbody.MoveRotation(ConvertToDegrees(Mathf.Atan2(CurrentDestination.y, CurrentDestination.x)));
-        }
-        if (PreviousDestination.y > CurrentDestination.y)
-        {
-            movingDown = true;
-            movingRight = false;
-            movingLeft = false;
-            movingUp = false;
-            //_rigidbody.transform.up = CurrentDestination;
-            _rigidbody.MoveRotation(ConvertToDegrees(Mathf.Atan2(CurrentDestination.y, CurrentDestination.x)));
-        }
-    }
-
-    void UpdateAnimation()
-    {
-        anim.SetBool("isMovingUp", movingUp);
-        anim.SetBool("isMovingDown", movingDown);
-        anim.SetBool("isMovingLeft", movingLeft);
-        anim.SetBool("isMovingRight", movingRight);
+            anim.SetBool("isMovingUp", movingUp);
+            anim.SetBool("isMovingDown", movingDown);
+            anim.SetBool("isMovingLeft", movingLeft);
+            anim.SetBool("isMovingRight", movingRight);
 
 
-    }
+        }
 
-    public static float ConvertToDegrees(float radians)
-    {
-        float angle = radians * 180f / Mathf.PI;
-        return angle;
+        
     }
 }

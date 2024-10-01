@@ -92,11 +92,4 @@ public class WaypointMovement : MonoBehaviour
     {
         return previousDestination.transform.position;
     }
-
-
-
-    public Vector2 GetPreviousDestination()
-    {
-        return previousDestination.transform.position;
-    }
 }
