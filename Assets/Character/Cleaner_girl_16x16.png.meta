@@ -1,0 +1,1104 @@
+fileFormatVersion: 2
+guid: 0346334018a4d7b48874393d0e2b3617
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Cleaner_girl_16x16_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 74.66667
+        width: 16
+        height: 37.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f960e54487436a34c9f9df22deb990d1
+      internalID: 718603322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cleaner_girl_16x16_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 74.66667
+        width: 16
+        height: 37.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19503ec9218549148a28b0624d092509
+      internalID: -421196293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cleaner_girl_16x16_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 74.66667
+        width: 16
+        height: 37.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d13fb7de163977e47ac83dfd653cb135
+      internalID: -737134523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cleaner_girl_16x16_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 74.66667
+        width: 16
+        height: 37.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dfb8134cf3ed804b834c4886cf0f589
+      internalID: -912988559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cleaner_girl_16x16_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 37.666668
+        width: 16
+        height: 37.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e258b39c26b9ba349ad1286fd10739b3
+      internalID: -1324067276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cleaner_girl_16x16_5
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 37.666668
+        width: 16
+        height: 37.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f4261bc156e92145923d299f7a99c9d
+      internalID: -1900575062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cleaner_girl_16x16_6
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 37.666668
+        width: 16
+        height: 37.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a7a10c930513754588d2490cf526994
+      internalID: -750708374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cleaner_girl_16x16_7
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 37.666668
+        width: 16
+        height: 37.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e3417aabe8448949bd011229f871ea1
+      internalID: 559844716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cleaner_girl_16x16_8
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 37.666668
+        width: 16
+        height: 37.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffdc46967b578c0498e7472d05c96557
+      internalID: -1578629239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cleaner_girl_16x16_9
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 37.666668
+        width: 16
+        height: 37.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e1c304740e7b7c47962b8b67a5d99ec
+      internalID: 895869733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cleaner_girl_16x16_10
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 37.666668
+        width: 16
+        height: 37.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6883b755b9c957745bfbe545002e09c6
+      internalID: 1521374740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cleaner_girl_16x16_11
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 37.666668
+        width: 16
+        height: 37.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b91b0a8f96b06f4a87fd4c1db109015
+      internalID: -1721195631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cleaner_girl_16x16_12
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 37.666668
+        width: 16
+        height: 37.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41f34dc373ab5314eaac2a5ecd377e89
+      internalID: 1194271801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cleaner_girl_16x16_13
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 37.666668
+        width: 16
+        height: 37.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 201f0dde14fc504429182e21abbd807a
+      internalID: -1872253933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cleaner_girl_16x16_14
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 37.666668
+        width: 16
+        height: 37.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f31baa2aa92fc640a3c2c1f7d8ecc0a
+      internalID: 1600332772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cleaner_girl_16x16_15
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 37.666668
+        width: 16
+        height: 37.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11c3b38b03a096345a3548a7014aa623
+      internalID: 137555116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cleaner_girl_16x16_16
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 37.666668
+        width: 16
+        height: 37.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91d4f974de6eb6141b48592de752b616
+      internalID: -632853349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cleaner_girl_16x16_17
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 37.666668
+        width: 16
+        height: 37.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 171fd2e6b1721c84db1756edcb4e0ec6
+      internalID: 148175883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cleaner_girl_16x16_18
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 37.666668
+        width: 16
+        height: 37.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da9eb0b7d74664047a2078405cdd6eda
+      internalID: -489707934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cleaner_girl_16x16_19
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 37.666668
+        width: 16
+        height: 37.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0866ba93d5facf549baff4e0f6937607
+      internalID: 1370946159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cleaner_girl_16x16_20
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 37.666668
+        width: 16
+        height: 37.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 095b1375c87b328408d9d67383859869
+      internalID: -1600771196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cleaner_girl_16x16_21
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 37.666668
+        width: 16
+        height: 37.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d653f07a9dff8d41aae522c59693c24
+      internalID: -1708521735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cleaner_girl_16x16_22
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 37.666668
+        width: 16
+        height: 37.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee53caefed613a54393067d414ac5e7d
+      internalID: 572583102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cleaner_girl_16x16_23
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 37.666668
+        width: 16
+        height: 37.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36408ad0af24e874b97fcedd2eb53657
+      internalID: -195041608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cleaner_girl_16x16_24
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 37.666668
+        width: 16
+        height: 37.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91c550557909d074d82fda0cd129e580
+      internalID: 1829905382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cleaner_girl_16x16_25
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 37.666668
+        width: 16
+        height: 37.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f23b5264e05a680428850213e14c285f
+      internalID: -1132793327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cleaner_girl_16x16_26
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 37.666668
+        width: 16
+        height: 37.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 801aa8c8f4a308540b53502f564eb416
+      internalID: -1761444694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cleaner_girl_16x16_27
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 37.666668
+        width: 16
+        height: 37.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7b5b9f965af0db468225fbb109d58c1
+      internalID: 729788101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cleaner_girl_16x16_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0.66666794
+        width: 16
+        height: 37.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3e16133e3e9a264e8bc01af17e2d3ca
+      internalID: -584337841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cleaner_girl_16x16_29
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0.66666794
+        width: 16
+        height: 37.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01a204f47c7b4604dad0201e4e2978b0
+      internalID: -120077142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cleaner_girl_16x16_30
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0.66666794
+        width: 16
+        height: 37.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28c425a01c38bff4ab15b7de64803d3e
+      internalID: 716974503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cleaner_girl_16x16_31
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0.66666794
+        width: 16
+        height: 37.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0306e89f5a5d3b34885e034c871a4054
+      internalID: 1175022077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cleaner_girl_16x16_32
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0.66666794
+        width: 16
+        height: 37.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e8bb9f1286a1c04db80032467751064
+      internalID: 2082989591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cleaner_girl_16x16_33
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0.66666794
+        width: 16
+        height: 37.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e74aac3c393379f48926de254a36963f
+      internalID: 9504881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CleanerGirl_1
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 0.66666794
+        width: 16
+        height: 37.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 359497012b85e0344bcdefeedd909e57
+      internalID: 1351784620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CleanerGirl_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0.66666794
+        width: 16
+        height: 37.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa7b1d41401838a47a853fc99d4d9fa1
+      internalID: 704187829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CleanerGirl_3
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0.66666794
+        width: 16
+        height: 37.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d05a6b155f580fc428b5ca75f6996684
+      internalID: 173034169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CleanerGirl_4
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0.66666794
+        width: 16
+        height: 37.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bb7866720c880249a25d622dd4e3627
+      internalID: -1350437726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CleanerGirl_5
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 0.66666794
+        width: 16
+        height: 37.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb8765af5d23f1241890643268660dd2
+      internalID: 1289333810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CleanerGirl_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0.66666794
+        width: 16
+        height: 37.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83e39c34a6eb13d47ba534ba0ac720c1
+      internalID: -1821362759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CleanerGirl_7
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 0.66666794
+        width: 16
+        height: 37.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 507fa28df9aaf814895935f023c2832e
+      internalID: 2019095028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CleanerGirl_8
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0.66666794
+        width: 16
+        height: 37.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0aae686738c89644a25613a4b835a78
+      internalID: 2126838565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CleanerGirl_9
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0.66666794
+        width: 16
+        height: 37.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0122c89d10058434188eff8a1c70551f
+      internalID: -1560762323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CleanerGirl_10
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0.66666794
+        width: 16
+        height: 37.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dc5597a3606110448d23b1d11dccbff
+      internalID: -1191560306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CleanerGirl_11
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 0.66666794
+        width: 16
+        height: 37.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5938204b8f23bca43a30189041ad3cc8
+      internalID: 484811114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      CleanerGirl_1: 1351784620
+      CleanerGirl_10: -1191560306
+      CleanerGirl_11: 484811114
+      CleanerGirl_2: 704187829
+      CleanerGirl_3: 173034169
+      CleanerGirl_4: -1350437726
+      CleanerGirl_5: 1289333810
+      CleanerGirl_6: -1821362759
+      CleanerGirl_7: 2019095028
+      CleanerGirl_8: 2126838565
+      CleanerGirl_9: -1560762323
+      Cleaner_girl_16x16_0: 718603322
+      Cleaner_girl_16x16_1: -421196293
+      Cleaner_girl_16x16_10: 1521374740
+      Cleaner_girl_16x16_11: -1721195631
+      Cleaner_girl_16x16_12: 1194271801
+      Cleaner_girl_16x16_13: -1872253933
+      Cleaner_girl_16x16_14: 1600332772
+      Cleaner_girl_16x16_15: 137555116
+      Cleaner_girl_16x16_16: -632853349
+      Cleaner_girl_16x16_17: 148175883
+      Cleaner_girl_16x16_18: -489707934
+      Cleaner_girl_16x16_19: 1370946159
+      Cleaner_girl_16x16_2: -737134523
+      Cleaner_girl_16x16_20: -1600771196
+      Cleaner_girl_16x16_21: -1708521735
+      Cleaner_girl_16x16_22: 572583102
+      Cleaner_girl_16x16_23: -195041608
+      Cleaner_girl_16x16_24: 1829905382
+      Cleaner_girl_16x16_25: -1132793327
+      Cleaner_girl_16x16_26: -1761444694
+      Cleaner_girl_16x16_27: 729788101
+      Cleaner_girl_16x16_28: -584337841
+      Cleaner_girl_16x16_29: -120077142
+      Cleaner_girl_16x16_3: -912988559
+      Cleaner_girl_16x16_30: 716974503
+      Cleaner_girl_16x16_31: 1175022077
+      Cleaner_girl_16x16_32: 2082989591
+      Cleaner_girl_16x16_33: 9504881
+      Cleaner_girl_16x16_4: -1324067276
+      Cleaner_girl_16x16_5: -1900575062
+      Cleaner_girl_16x16_6: -750708374
+      Cleaner_girl_16x16_7: 559844716
+      Cleaner_girl_16x16_8: -1578629239
+      Cleaner_girl_16x16_9: 895869733
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

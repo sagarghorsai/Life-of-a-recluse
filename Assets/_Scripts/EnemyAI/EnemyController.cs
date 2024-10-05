@@ -18,8 +18,6 @@ using UnityEngine;
  */
 public class EnemyController : MonoBehaviour
 {
-    [SerializeField]
-    private float _rotationSpeed;
 
     WaypointMovement _waypointMovement;
 
@@ -37,7 +35,7 @@ public class EnemyController : MonoBehaviour
     public bool movingDown;
     bool directionChange;
     // Start is called before the first frame update
-    private void Awake()
+    protected virtual void Awake()
     {
         anim.GetComponent<Animator>();
         _waypointMovement = GetComponent<WaypointMovement>();
@@ -46,11 +44,11 @@ public class EnemyController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
+        UpdateAnimation();
         PreviousDestination = _waypointMovement.GetPreviousDestination();
         CurrentDestination = _waypointMovement.GetCurrentDestination();
-        UpdateAnimation();
 
         if (PreviousDestination.x < CurrentDestination.x)
         {
@@ -98,7 +96,9 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    void UpdateAnimation()
+
+
+    protected virtual void UpdateAnimation()
     {
         anim.SetBool("isMovingUp", movingUp);
         anim.SetBool("isMovingDown", movingDown);

@@ -40,7 +40,7 @@ public class GroceryPickup : MonoBehaviour
         {
             currentGroceryTile = groceryTile;
             pickUpText.gameObject.SetActive(true);  // Show the pickup text
-            pickUpText.text = "[E] \r\npick up: " + groceryTile.groceryName;  // Update the text
+            pickUpText.text = "[E] \r\npick up: \n"+ groceryTile.groceryName;  // Update the text
         }
         else
         {

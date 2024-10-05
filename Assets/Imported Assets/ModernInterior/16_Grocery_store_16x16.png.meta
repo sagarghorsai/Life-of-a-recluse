@@ -17884,7 +17884,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 16_Grocery_store_16x16_908
+      name: BrownBox_Left_Top
       rect:
         serializedVersion: 2
         x: 64
@@ -17905,7 +17905,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 16_Grocery_store_16x16_909
+      name: BrownBox_Lef_Top
       rect:
         serializedVersion: 2
         x: 80
@@ -18199,7 +18199,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 16_Grocery_store_16x16_924
+      name: BrownBox_Left_Bottom
       rect:
         serializedVersion: 2
         x: 64
@@ -18220,7 +18220,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 16_Grocery_store_16x16_925
+      name: BrownBox_Right_Top
       rect:
         serializedVersion: 2
         x: 80
@@ -24197,8 +24197,6 @@ TextureImporter:
       16_Grocery_store_16x16_905: 604838145
       16_Grocery_store_16x16_906: 877444671
       16_Grocery_store_16x16_907: 236982927
-      16_Grocery_store_16x16_908: 835103357
-      16_Grocery_store_16x16_909: -106168244
       16_Grocery_store_16x16_91: -1919619117
       16_Grocery_store_16x16_910: -381110417
       16_Grocery_store_16x16_911: -2130204865
@@ -24214,8 +24212,6 @@ TextureImporter:
       16_Grocery_store_16x16_921: -327666671
       16_Grocery_store_16x16_922: 1828675355
       16_Grocery_store_16x16_923: -1218935794
-      16_Grocery_store_16x16_924: 5650757
-      16_Grocery_store_16x16_925: 977207234
       16_Grocery_store_16x16_927: 725508198
       16_Grocery_store_16x16_929: -886824053
       16_Grocery_store_16x16_93: -1357855227
@@ -24321,6 +24317,10 @@ TextureImporter:
       Bakery_Right_Bottom: 1715676922
       Bakery_Right_Mid: 1262874549
       Bakery_Right_Top: 720779647
+      BrownBox_Lef_Top: -106168244
+      BrownBox_Left_Bottom: 5650757
+      BrownBox_Left_Top: 835103357
+      BrownBox_Right_Top: 977207234
       FlowerTable_Left_Bottom: 1895505719
       FlowerTable_Left_Top: 818631435
       FlowerTable_MId_Bottom: 691301810

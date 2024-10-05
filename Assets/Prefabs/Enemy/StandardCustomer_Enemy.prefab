@@ -222,11 +222,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  speed: 1.29
-  isMovingUp: 0
-  isMovingDown: 0
-  isMovingRight: 0
-  isMovingLeft: 0
+  speed: 3
 --- !u!114 &9120805397528580471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,7 +235,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed91e98e12aa70642864ffe74a0c0951, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rotationSpeed: 0
+  anim: {fileID: 5316300067298440515}
+  interactorZone: {fileID: 4222204240253969010}
+  movingRight: 0
+  movingLeft: 0
+  movingUp: 0
+  movingDown: 1
 --- !u!50 &3637989996852002389
 Rigidbody2D:
   serializedVersion: 4
@@ -266,7 +267,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &2995338227316318420
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -337,7 +338,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4222204240253969010}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: -0, z: 0.7071068, w: -0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -345,7 +346,7 @@ Transform:
   - {fileID: 979824031851089597}
   - {fileID: 2187902806244701906}
   m_Father: {fileID: 5793570741334858043}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 270}
 --- !u!60 &7405090355893087017
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -426,7 +427,7 @@ GameObject:
   - component: {fileID: 3040834407931434521}
   - component: {fileID: 5316300067298440515}
   m_Layer: 0
-  m_Name: Amelia_shopping_cart_16x16_2
+  m_Name: Amelia
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -489,8 +490,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -2135781163
-  m_SortingLayer: 5
+  m_SortingLayerID: 1729502109
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: -690015186, guid: 2cf798bf7c1f5a5418c5c32091052069, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -846,8 +847,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1298174291
-  m_SortingLayer: 6
+  m_SortingLayerID: 1729502109
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -291228188, guid: 73780a9fdf06df94e985238d2a27d22b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

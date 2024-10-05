@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4153181175275985820
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8383283084679857380}
+  - component: {fileID: 2946010284361534661}
+  m_Layer: 0
+  m_Name: TaskManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8383283084679857380
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4153181175275985820}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2946010284361534661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4153181175275985820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a5daf0e0394a8e4f8696cb542be4312, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 11400000, guid: 5012541d64c81ec48a188f93b1d36f83, type: 2}
+  - {fileID: 11400000, guid: 81d4eb36db90de54092542a9b5b0682f, type: 2}
+  - {fileID: 11400000, guid: 7ee48111366dac745beadfae1ffec087, type: 2}
+  - {fileID: 11400000, guid: 87f4e2c6f307c854f8707a43f9f3e74e, type: 2}
+  - {fileID: 11400000, guid: 2882de091a28d4d4699aad1719d2d4c6, type: 2}
+  - {fileID: 11400000, guid: 376042e2ae39fb24a97107f57ed91379, type: 2}
+  - {fileID: 11400000, guid: 1ad8bf9e109f7a24497383ce08763104, type: 2}
+  - {fileID: 11400000, guid: 12944dd8540e1fd458090009d3a17238, type: 2}
+  - {fileID: 11400000, guid: 503c782ef7c0008438620bd431c9b0cc, type: 2}
+  - {fileID: 11400000, guid: bf5c1324974b46d429add8f7f70fd2bb, type: 2}
+  - {fileID: 11400000, guid: d10a395cec59cee4aa4482b5a651c2c0, type: 2}
+  - {fileID: 11400000, guid: d0e42c8a76f38fe43bf89728a4e1c4e8, type: 2}
+  buttonPrefab: {fileID: 4946906161401202771, guid: d35379b40fe63fd4086958f9e7111f64, type: 3}
+  taskNum: 1
+  scrollViewContent: {fileID: 0}
