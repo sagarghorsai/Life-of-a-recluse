@@ -17842,7 +17842,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BrownBox_Lef_Top
+      name: BrownBox_Righ_Top
       rect:
         serializedVersion: 2
         x: 80
@@ -24292,9 +24292,9 @@ TextureImporter:
       Bakery_Right_Mid: 1262874549
       Bakery_Right_Top: 720779647
       BlueFlower_Top: -265146483
-      BrownBox_Lef_Top: -106168244
       BrownBox_Left_Bottom: 5650757
       BrownBox_Left_Top: 835103357
+      BrownBox_Righ_Top: -106168244
       BrownBox_Right_Top: 977207234
       Cod: -251996720
       Cod_Top: 1732097570

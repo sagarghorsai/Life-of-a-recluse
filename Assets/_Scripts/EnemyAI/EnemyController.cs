@@ -93,15 +93,14 @@ public class EnemyController : MonoBehaviour
 
 
 
+
     protected virtual void UpdateAnimation()
     {
         anim.SetBool("isMovingUp", movingUp);
         anim.SetBool("isMovingDown", movingDown);
         anim.SetBool("isMovingLeft", movingLeft);
         anim.SetBool("isMovingRight", movingRight);
-
-
-        }
-
-        
     }
+
+
+}
