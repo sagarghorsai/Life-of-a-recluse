@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float movSpeed;  // Movement speed
     float speedX, speedY;   // Movement speed on X and Y axes
     Rigidbody2D rb;         // Reference to Rigidbody2D component
     Animator anim;          // Reference to Animator component
@@ -23,13 +21,20 @@ public class PlayerMovement : MonoBehaviour
 
     private int lastDirHeld = 0; // Stores the last direction the player was moving in
 
-    private float activeMoveSpeed;
-    public float dashSpeed;     // A public variable where you can set how fast the player can dash.
+    [Header("Sprint Settings")]
+    public float sprintSpeed = 10f;           // Speed while sprinting
+    public float walkSpeed = 5f;              // Speed while walking
+    public float maxStamina = 1f;             // Maximum stamina value
+    public float staminaDecreaseRate = 0.5f;  // Rate at which stamina decreases when sprinting
+    public float staminaRegenRate = 0.2f;     // Rate at which stamina regenerates when not sprinting
 
-    public float dashLength = .5f, dashCooldown = 1f;   // Set how long the dash lasts and the cooldown before another dash.
+    [Header("UI Components")]
+    public Image staminaImage;              // Reference to the stamina UI slider
 
-    private float dashCounter;            // How long the dash is active.      
-    private float dashCoolCounter;        // Cooldown time before dash is available again.
+    public float currentStamina;             // Current stamina value
+    private bool isSprinting = false;         // Whether the player is currently sprinting
+    private bool canSprint = true;            // Whether the player is allowed to sprint
+    private float activeSpeed;                // Variable to track current speed
 
     // Start is called before the first frame update
     void Start()
@@ -37,15 +42,28 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();   // Get the Rigidbody2D component
         anim = GetComponent<Animator>();    // Get the Animator component
 
-        activeMoveSpeed = movSpeed;     // Set dash to player's normal movement speed initially.
+        activeSpeed = walkSpeed;     // Set dash to player's normal movement speed initially.
+        currentStamina = maxStamina;
+        if (staminaImage != null)
+        {
+            staminaImage.fillAmount = currentStamina;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        Movement();
+        HandleSprintInput();          // Check for sprint input
+        UpdateStamina();              // Update stamina based on sprinting state
+        UpdateUI();                   // Update the UI to reflect current stamina
+    }
+
+    void Movement()
+    {
         // Standard movement
-        speedX = Input.GetAxisRaw("Horizontal") * movSpeed;
-        speedY = Input.GetAxisRaw("Vertical") * movSpeed;
+        speedX = Input.GetAxisRaw("Horizontal") * activeSpeed;
+        speedY = Input.GetAxisRaw("Vertical") * activeSpeed;
 
         int dirHeld = -1; // Tracks which direction key is held
 
@@ -69,33 +87,7 @@ public class PlayerMovement : MonoBehaviour
             lastDirHeld = dirHeld; // Update last direction when a key is pressed
         }
 
-        // Handle dashing
-        if (Input.GetKeyDown(KeyCode.Space))    // Dash activation with Space key
-        {
-            if (dashCoolCounter <= 0 && dashCounter <= 0)    // Dash is available
-            {
-                activeMoveSpeed = dashSpeed;   // Set movement speed to dash speed
-                dashCounter = dashLength;      // Set dash duration
-            }
-        }
-
-        if (dashCounter > 0)        // If dashing is active
-        {
-            dashCounter -= Time.deltaTime;  // Count down dash time
-
-            if (dashCounter <= 0)       // Dash duration over
-            {
-                activeMoveSpeed = movSpeed;  // Reset movement speed to normal
-                dashCoolCounter = dashCooldown;  // Start cooldown
-            }
-        }
-
-        if (dashCoolCounter > 0)    // If in cooldown period
-        {
-            dashCoolCounter -= Time.deltaTime;  // Count down cooldown time
-        }
-
-        rb.velocity = vel * activeMoveSpeed;    // Set velocity (using activeMoveSpeed to account for dashing)
+        rb.velocity = vel * activeSpeed;    // Set velocity (using activeMoveSpeed to account for dashing)
 
         // Animation logic
         if (dirHeld == -1) // No key pressed, play idle animation based on last direction
@@ -108,5 +100,59 @@ public class PlayerMovement : MonoBehaviour
         }
 
         anim.speed = 1; // Ensure animation speed is set to 1
+    }
+
+    private void HandleSprintInput()
+    {
+        // Prevent sprinting if stamina is not full or sprint key is not pressed
+        if (Input.GetKey(KeyCode.LeftShift) && currentStamina > 0 && canSprint)
+        {
+            isSprinting = true;
+            activeSpeed = sprintSpeed;
+        }
+        else
+        {
+            isSprinting = false;
+            activeSpeed = walkSpeed;
+        }
+    }
+
+    private void UpdateStamina()
+    {
+        if (isSprinting)
+        {
+            // Reduce stamina while sprinting
+            currentStamina -= staminaDecreaseRate * Time.deltaTime;
+            currentStamina = Mathf.Clamp(currentStamina, 0, maxStamina);
+
+            // If stamina reaches 0, stop sprinting and set canSprint to false
+            if (currentStamina <= 0)
+            {
+                isSprinting = false;
+                canSprint = false;
+                activeSpeed = walkSpeed;
+            }
+        }
+        else
+        {
+            // Regenerate stamina when not sprinting
+            currentStamina += staminaRegenRate * Time.deltaTime;
+            currentStamina = Mathf.Clamp(currentStamina, 0, maxStamina);
+
+            // Allow sprinting again only when stamina is full
+            if (currentStamina >= maxStamina)
+            {
+                canSprint = true;
+            }
+        }
+    }
+
+    private void UpdateUI()
+    {
+        // Update the stamina slider value to reflect current stamina
+        if (staminaImage != null)
+        {
+            staminaImage.fillAmount = currentStamina / maxStamina;
+        }
     }
 }

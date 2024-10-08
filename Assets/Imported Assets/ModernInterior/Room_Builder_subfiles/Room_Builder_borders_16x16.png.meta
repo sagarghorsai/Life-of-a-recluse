@@ -790,7 +790,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Room_Builder_borders_16x16_33
+      name: TopWall
       rect:
         serializedVersion: 2
         x: 112
@@ -5185,7 +5185,6 @@ TextureImporter:
       Room_Builder_borders_16x16_3: -157232247
       Room_Builder_borders_16x16_30: 719567830
       Room_Builder_borders_16x16_31: 1738617221
-      Room_Builder_borders_16x16_33: 2093460542
       Room_Builder_borders_16x16_35: -150744157
       Room_Builder_borders_16x16_36: 227321766
       Room_Builder_borders_16x16_37: 1352448872
@@ -5255,6 +5254,7 @@ TextureImporter:
       Room_Builder_borders_16x16_97: 606258262
       Room_Builder_borders_16x16_98: -1546730825
       Room_Builder_borders_16x16_99: -1197553586
+      TopWall: 2093460542
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

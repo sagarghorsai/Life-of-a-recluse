@@ -6,15 +6,20 @@ using UnityEngine.UI;  // For scene loading
 
 public class TaskList : MonoBehaviour
 {
-    public List<GroceryTile> items;
+    public List<GroceryTile> allGroceryTiles; // All available grocery tiles
+    public List<GroceryTile> items; // Selected items for the task list
     public GameObject buttonPrefab;
     public int taskNum = 1;
     public RectTransform scrollViewContent;
     private Dictionary<string, TextMeshProUGUI> itemButtons = new Dictionary<string, TextMeshProUGUI>();
     private int completedTasks = 0;
+    public int numberOfTasks = 5; // Number of tasks to select randomly
 
     void Start()
     {
+        // Randomly select items from allGroceryTiles
+        SelectRandomItems();
+
         for (int i = 0; i < items.Count; i++)
         {
             GameObject newButton = Instantiate(buttonPrefab, scrollViewContent);
@@ -25,13 +30,28 @@ public class TaskList : MonoBehaviour
             buttonImage.sprite = items[i].sprite;
 
             // Set the text for the button
-            buttonText.text = $"{taskNum}X " + items[i].groceryName;
+            buttonText.text = $"{taskNum} X " + items[i].groceryName;
 
             // Store button references
             itemButtons[items[i].groceryName] = buttonText;
 
             // Add listener for manual clicking if needed
             newButton.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(buttonText));
+        }
+    }
+
+    private void SelectRandomItems()
+    {
+        HashSet<int> selectedIndices = new HashSet<int>();
+        while (selectedIndices.Count < numberOfTasks && selectedIndices.Count < allGroceryTiles.Count)
+        {
+            int randomIndex = Random.Range(0, allGroceryTiles.Count);
+            selectedIndices.Add(randomIndex);
+        }
+
+        foreach (int index in selectedIndices)
+        {
+            items.Add(allGroceryTiles[index]);
         }
     }
 

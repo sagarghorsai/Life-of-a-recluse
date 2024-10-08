@@ -46,7 +46,6 @@ public class PanicMeter : MonoBehaviour
 
         if (!freakedOut)
         {
-            Debug.Log("Panic Value: " + panicValue + " CalmDown Pause Timer: " + calmDownPauseTimer); //Debug display current panic value & calm Down pause time
 
             if (inInteractionZone) // Increase panic when in an interaction zone
             {
