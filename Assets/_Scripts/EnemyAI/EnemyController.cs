@@ -77,7 +77,7 @@ public class EnemyController : MonoBehaviour
             movingRight = false;
             movingLeft = false;
             movingDown = false;
-            
+
         }
         if (PreviousDestination.y > CurrentDestination.y)
         {
@@ -87,8 +87,9 @@ public class EnemyController : MonoBehaviour
             movingRight = false;
             movingLeft = false;
             movingUp = false;
-            
+
         }
+    }
 
 
 
@@ -104,4 +105,3 @@ public class EnemyController : MonoBehaviour
 
         
     }
-}
