@@ -92,8 +92,4 @@ public class WaypointMovement : MonoBehaviour
     {
         return previousDestination.transform.position;
     }
-
-
-
-
 }

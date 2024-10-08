@@ -40,7 +40,6 @@ public class EnemyController : MonoBehaviour
         anim.GetComponent<Animator>();
         _waypointMovement = GetComponent<WaypointMovement>();
         _rigidbody = GetComponent<Rigidbody2D>();
-        //_targetDirection = transform.up;
     }
 
     // Update is called once per frame
@@ -56,8 +55,7 @@ public class EnemyController : MonoBehaviour
             movingLeft = false;
             movingUp = false;
             movingDown = false;
-            // _rigidbody.transform.up = CurrentDestination;
-            _rigidbody.MoveRotation(ConvertToDegrees(Mathf.Atan2(CurrentDestination.y, CurrentDestination.x)));
+
 
             interactorZone.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
@@ -69,8 +67,7 @@ public class EnemyController : MonoBehaviour
             movingRight = false;
             movingUp = false;
             movingDown = false;
-            // _rigidbody.transform.up = CurrentDestination;
-            _rigidbody.MoveRotation(ConvertToDegrees(Mathf.Atan2(CurrentDestination.y, CurrentDestination.x)));
+
         }
         if (PreviousDestination.y < CurrentDestination.y)
         {
@@ -80,8 +77,7 @@ public class EnemyController : MonoBehaviour
             movingRight = false;
             movingLeft = false;
             movingDown = false;
-            //_rigidbody.transform.up = CurrentDestination;
-            _rigidbody.MoveRotation(ConvertToDegrees(Mathf.Atan2(CurrentDestination.y, CurrentDestination.x)));
+            
         }
         if (PreviousDestination.y > CurrentDestination.y)
         {
@@ -91,10 +87,8 @@ public class EnemyController : MonoBehaviour
             movingRight = false;
             movingLeft = false;
             movingUp = false;
-            //_rigidbody.transform.up = CurrentDestination;
-            _rigidbody.MoveRotation(ConvertToDegrees(Mathf.Atan2(CurrentDestination.y, CurrentDestination.x)));
+            
         }
-    }
 
 
 
@@ -106,11 +100,8 @@ public class EnemyController : MonoBehaviour
         anim.SetBool("isMovingRight", movingRight);
 
 
-    }
+        }
 
-    public static float ConvertToDegrees(float radians)
-    {
-        float angle = radians * 180f / Mathf.PI;
-        return angle;
+        
     }
 }
