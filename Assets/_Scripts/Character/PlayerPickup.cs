@@ -4,6 +4,7 @@ using TMPro;
 
 public class GroceryPickup : MonoBehaviour
 {
+
     public Tilemap groceryTilemap;  // Reference to the grocery Tilemap
     public TextMeshProUGUI pickUpText;  // Reference to UI Text for pickup
     private PlayerMovement playerMovement;  // Reference to the PlayerMovement script
@@ -26,6 +27,7 @@ public class GroceryPickup : MonoBehaviour
         if (currentGroceryTile != null && Input.GetKeyDown(KeyCode.E))
         {
             PickUpGrocery();
+            
         }
     }
 
@@ -59,5 +61,7 @@ public class GroceryPickup : MonoBehaviour
         taskList.StrikeThroughItem(currentGroceryTile.groceryName);
 
         currentGroceryTile = null;  // Clear the current tile reference
+
+        
     }
 }

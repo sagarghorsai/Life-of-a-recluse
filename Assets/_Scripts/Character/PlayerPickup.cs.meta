@@ -3,7 +3,11 @@ guid: 0e3f435c92fa0a84f996427882512ded
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - collectSoundClip: {fileID: 8300000, guid: f27b4065d5f25674fbd1dd8b9ee14513, type: 3}
+  - groceryTilemap: {instanceID: 0}
+  - pickUpText: {instanceID: 0}
+  - taskList: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
