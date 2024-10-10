@@ -93,7 +93,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4494346629672854042}
-  - component: {fileID: 541597591810598532}
   - component: {fileID: 2308119706020560781}
   m_Layer: 0
   m_Name: TasteStandEmployee_Enemy
@@ -119,27 +118,6 @@ Transform:
   - {fileID: 6220971901519414899}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &541597591810598532
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1131519532873590242}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e4305895fc58bc4fa3123a845c9b272, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CurrentRotation: 0
-  RotateLeftToPoint: 50
-  RotateRightToPoint: -50
-  RotationSpeed: 0.5
-  TurningLeft: 0
-  TurningRight: 0
-  FacingRight: 0
-  FacingLeft: 0
-  FacingForward: 0
 --- !u!50 &2308119706020560781
 Rigidbody2D:
   serializedVersion: 4

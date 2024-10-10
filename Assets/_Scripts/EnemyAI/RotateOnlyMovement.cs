@@ -29,26 +29,30 @@ public class RotateOnlyMovement : EnemyController
     //Designate How Quickly you would like the enemy to rotate. (Reccomended 0.5 for more realistic outcome)
     [SerializeField]
     float RotationSpeed = 0.5f;
-    
+
+    public Animator anim;
 
     [SerializeField]
     bool TurningLeft;
     [SerializeField]
     bool TurningRight;
-
+    
     //Direction booleans for Animations
     [SerializeField]
     bool FacingRight;
     [SerializeField]
     bool FacingLeft;
     [SerializeField]
-    bool FacingForward;
-    
+    bool FacingUp;
+    [SerializeField]
+    bool FacingDown;
+
 
 
     // Start is called before the first frame update
     void Start()
     {
+        anim.GetComponent<Animator>();
         CurrentRotation = 0;
         transform.up = transform.forward;
         TurningLeft = true;
@@ -58,7 +62,8 @@ public class RotateOnlyMovement : EnemyController
     void FixedUpdate()
     {
         Debug.Log("Update Triggered");
-        
+        UpdateAnimation();
+
         //Checks to see if its reached designated points and then changes direction of rotation
         if (CurrentRotation >= RotateLeftToPoint) 
         {
@@ -96,6 +101,44 @@ public class RotateOnlyMovement : EnemyController
             CurrentRotation = NewRotation;
         }
 
+        //Check angles -------------------------
 
+        if (CurrentRotation < 45 && CurrentRotation > -45 || CurrentRotation < 45 && CurrentRotation > 315)
+        {
+            FacingUp = true;
+            FacingDown = false;
+            FacingLeft = false;
+            FacingRight = false;
+        }
+        else if (CurrentRotation < 135 && CurrentRotation > 45)
+        {
+            FacingLeft = true;
+            FacingDown = false;
+            FacingUp = false;
+            FacingRight = false;
+        }
+        else if (CurrentRotation < 225 && CurrentRotation > 135)
+        {
+            FacingDown = true;
+            FacingUp = false;
+            FacingLeft = false;
+            FacingRight = false;
+        }
+        else if (CurrentRotation < 315 && CurrentRotation > 225 || CurrentRotation < -45 && CurrentRotation > -135)
+        {
+            FacingRight = true;
+            FacingDown = false;
+            FacingLeft = false;
+            FacingUp = false;
+        }
     }
+
+    void UpdateAnimation()
+    {
+        anim.SetBool("isFacingUp", FacingUp);
+        anim.SetBool("isFacingDown", FacingDown);
+        anim.SetBool("isFacingLeft", FacingLeft);
+        anim.SetBool("isfacingRight", FacingRight);
+    }
+
 }
