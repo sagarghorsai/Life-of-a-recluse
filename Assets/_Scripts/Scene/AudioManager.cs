@@ -14,10 +14,17 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioSource SFXSource;
 
     [Header("---------- Audio Clip ----------")]
+    public AudioClip background;
     public AudioClip[] AudioList;
 
+    private void Start()
+    {
+        musicSource.clip = background;
+        musicSource.Play();
+    }
 
-
-
-
+    public void PlaySFX(AudioClip clip)
+    {
+        SFXSource.PlayOneShot(clip);
+    }
 }
