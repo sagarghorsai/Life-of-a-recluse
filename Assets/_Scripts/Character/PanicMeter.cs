@@ -17,12 +17,14 @@ using UnityEngine.Events;
 
 public class PanicMeter : MonoBehaviour
 {
+    [Header("---------- Panic Values ----------")]
     public float panicValue;
     public float panicMax = 10; //Maximum number the panic value can go up to
-
     public float panicScale = 1; //How quickly panic increases
     public float calmDownScale = 1; //How quickly the player calms down
     public float calmDownPause = 10; // Pause before the calming down process starts
+
+
     float calmDownPauseTimer; //The timer to count down the pause
 
     bool inInteractionZone;

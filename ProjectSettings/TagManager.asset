@@ -8,6 +8,7 @@ TagManager:
   - InteractionZone
   - Interactor
   - Enemy
+  - Cashier
   layers:
   - Default
   - TransparentFX
@@ -42,6 +43,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: UI
+    uniqueID: 2448356147
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

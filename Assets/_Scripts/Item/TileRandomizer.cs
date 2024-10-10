@@ -4,12 +4,17 @@ using UnityEngine.Tilemaps;
 
 public class TileRandomizer : MonoBehaviour
 {
+    [Header("---------- TileMap References ----------")]
     public Tilemap collisionTilemap; // Assign this in the Inspector
+    public Tilemap interactorTilemap; // The Tilemap where both grocery and flower tiles will be placed
+    [Header("---------- GroceryTiles ----------")]
     public TileBase[] groceryPlacementTiles; // Array of grocery placement tiles
     public TileBase[] groceryTiles; // Array of grocery tiles to place
+
+    [Header("---------- FlowerTiles ----------")]
     public TileBase[] flowerPlacementTiles; // Array of flower placement tiles
     public TileBase[] flowerTiles; // Array of flower tiles to place
-    public Tilemap interactorTilemap; // The Tilemap where both grocery and flower tiles will be placed
+ 
 
     void Start()
     {

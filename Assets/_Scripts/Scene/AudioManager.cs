@@ -15,4 +15,9 @@ public class AudioManager : MonoBehaviour
 
     [Header("---------- Audio Clip ----------")]
     public AudioClip[] AudioList;
+
+
+
+
+
 }

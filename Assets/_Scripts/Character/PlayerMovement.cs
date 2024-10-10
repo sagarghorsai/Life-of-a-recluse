@@ -21,16 +21,15 @@ public class PlayerMovement : MonoBehaviour
 
     private int lastDirHeld = 0; // Stores the last direction the player was moving in
 
-    [Header("Sprint Settings")]
+    [Header("---------- Sprint Setting ----------")]
     public float sprintSpeed = 10f;           // Speed while sprinting
     public float walkSpeed = 5f;              // Speed while walking
     public float maxStamina = 1f;             // Maximum stamina value
     public float staminaDecreaseRate = 0.5f;  // Rate at which stamina decreases when sprinting
     public float staminaRegenRate = 0.2f;     // Rate at which stamina regenerates when not sprinting
 
-    [Header("UI Components")]
+    [Header("---------- UI Component----------")]
     public Image staminaImage;              // Reference to the stamina UI slider
-
     public float currentStamina;             // Current stamina value
     private bool isSprinting = false;         // Whether the player is currently sprinting
     private bool canSprint = true;            // Whether the player is allowed to sprint

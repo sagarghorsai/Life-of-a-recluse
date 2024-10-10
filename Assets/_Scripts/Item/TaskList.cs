@@ -2,18 +2,29 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;  // For scene loading
+using UnityEngine.UI;
 
 public class TaskList : MonoBehaviour
 {
+    [Header("---------- Item List ----------")]
     public List<GroceryTile> allGroceryTiles; // All available grocery tiles
     public List<GroceryTile> items; // Selected items for the task list
+
+    [Header("---------- References ----------")]
     public GameObject buttonPrefab;
-    public int taskNum = 1;
     public RectTransform scrollViewContent;
+    public TextMeshProUGUI checkoutMessageText; // UI Text to show the message
     private Dictionary<string, TextMeshProUGUI> itemButtons = new Dictionary<string, TextMeshProUGUI>();
+
+    [Header("---------- Task List ----------")]
+    public int taskNum = 1;
     private int completedTasks = 0;
     public int numberOfTasks = 5; // Number of tasks to select randomly
+    public bool canCheckout = false; // Flag to indicate if player can checkout
+
+    public GameObject uiText; // Reference to your Text or TextMeshPro object
+    public GameObject strikeLinePrefab; // Prefab for the line renderer (or use a UI Image)
+    public int StrikeHeight;
 
     void Start()
     {
@@ -34,10 +45,10 @@ public class TaskList : MonoBehaviour
 
             // Store button references
             itemButtons[items[i].groceryName] = buttonText;
-
-            // Add listener for manual clicking if needed
-            newButton.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(buttonText));
         }
+
+
+       
     }
 
     private void SelectRandomItems()
@@ -62,8 +73,17 @@ public class TaskList : MonoBehaviour
             TextMeshProUGUI buttonText = itemButtons[itemName];
             if (!buttonText.text.Contains("<s>"))
             {
-                buttonText.text = $"<s>{buttonText.text}</s>";
                 completedTasks++;
+
+                // Create a new strike line
+                GameObject strikeLine = Instantiate(strikeLinePrefab, buttonText.transform);
+                RectTransform lineTransform = strikeLine.GetComponent<RectTransform>();
+
+                // Match the width of the text
+                lineTransform.sizeDelta = new Vector2(buttonText.preferredWidth * 0.8f, StrikeHeight); // Set to 80% of the preferred width
+                lineTransform.anchoredPosition = new Vector2(0, 0); // Adjust position to match the center of the text
+
+
 
                 // Check if all tasks are completed
                 if (completedTasks >= items.Count)
@@ -72,26 +92,21 @@ public class TaskList : MonoBehaviour
                 }
             }
         }
+
+      
+
+
+
     }
 
     private void OnAllTasksCompleted()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Win");
-        Debug.Log("All tasks completed! Loading win scene...");
+        // Set canCheckout to true to enable the player to check out
+        canCheckout = true;
+        Debug.Log("All tasks completed! You can now check out at the cashier.");
+
+        checkoutMessageText.text = "All tasks completed! Head to the cashier to check out.";
     }
 
-    void OnButtonClick(TextMeshProUGUI buttonText)
-    {
-        if (!buttonText.text.Contains("<s>"))
-        {
-            buttonText.text = $"<s>{buttonText.text}</s>";
-            completedTasks++;
-
-            // Check if all tasks are completed
-            if (completedTasks >= items.Count)
-            {
-                OnAllTasksCompleted();
-            }
-        }
-    }
+    
 }

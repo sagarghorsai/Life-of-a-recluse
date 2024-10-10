@@ -27,7 +27,6 @@ public class GroceryPickup : MonoBehaviour
         if (currentGroceryTile != null && Input.GetKeyDown(KeyCode.E))
         {
             PickUpGrocery();
-            
         }
     }
 
@@ -59,7 +58,6 @@ public class GroceryPickup : MonoBehaviour
 
         // Notify the TaskList to strike through the item
         taskList.StrikeThroughItem(currentGroceryTile.groceryName);
-
         currentGroceryTile = null;  // Clear the current tile reference
 
         

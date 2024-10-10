@@ -14146,7 +14146,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Yellow_Fish
+      name: Yellow_Fish_Bottom
       rect:
         serializedVersion: 2
         x: 48
@@ -23176,7 +23176,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 16_Grocery_store_16x16_88
+      name: Yellow_Fish_Top
       rect:
         serializedVersion: 2
         x: 48
@@ -24143,7 +24143,6 @@ TextureImporter:
       16_Grocery_store_16x16_872: -1848447663
       16_Grocery_store_16x16_873: 1710010827
       16_Grocery_store_16x16_874: -502329347
-      16_Grocery_store_16x16_88: -1745478785
       16_Grocery_store_16x16_880: -2050697335
       16_Grocery_store_16x16_882: -930217895
       16_Grocery_store_16x16_883: 446973922
@@ -24353,7 +24352,8 @@ TextureImporter:
       Vertical_Shelf_Right_Mid: 1969139593
       Vertical_Shelf_Right_Top: -1285472706
       WhiteFlower_Top: -1637740164
-      Yellow_Fish: -215336922
+      Yellow_Fish_Bottom: -215336922
+      Yellow_Fish_Top: -1745478785
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

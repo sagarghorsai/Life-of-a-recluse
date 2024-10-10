@@ -14,7 +14,7 @@ using UnityEngine;
  *          
  *          +++++++Consider following player if player enters view, then return to normal pattern when they leave view?
  */
-public class RotateOnlyMovement : MonoBehaviour
+public class RotateOnlyMovement : EnemyController
 {
     [SerializeField]
     float CurrentRotation;
@@ -53,7 +53,7 @@ public class RotateOnlyMovement : MonoBehaviour
         transform.up = transform.forward;
         TurningLeft = true;
     }
-
+   
     // Update is called once per frame
     void FixedUpdate()
     {
