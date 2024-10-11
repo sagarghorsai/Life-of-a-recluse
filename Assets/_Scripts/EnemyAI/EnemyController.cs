@@ -18,89 +18,34 @@ using UnityEngine;
  */
 public class EnemyController : MonoBehaviour
 {
+    [Header("---------- Refrences ----------")]
 
-    WaypointMovement _waypointMovement;
-
+    public WaypointMovement _waypointMovement;
     //public ScriptReference movementScript;
     private Rigidbody2D _rigidbody;
-    private Vector2 CurrentDestination;
-    private Vector2 PreviousDestination;
-    private Vector2 _targetDirection;
+    public Vector2 CurrentDestination;
+    public Vector2 PreviousDestination;
+    public Vector2 _targetDirection;
     public Animator anim;
     public GameObject interactorZone;
+
+    [Header("---------- Direction ----------")]
 
     public bool movingRight;
     public bool movingLeft;
     public bool movingUp;
     public bool movingDown;
     bool directionChange;
+    public float movementSpeed;
     // Start is called before the first frame update
     protected virtual void Awake()
     {
         anim.GetComponent<Animator>();
         _waypointMovement = GetComponent<WaypointMovement>();
         _rigidbody = GetComponent<Rigidbody2D>();
+        _waypointMovement.speed = movementSpeed;
     }
 
-    // Update is called once per frame
-    protected virtual void Update()
-    {
-        UpdateAnimation();
-        PreviousDestination = _waypointMovement.GetPreviousDestination();
-        CurrentDestination = _waypointMovement.GetCurrentDestination();
-
-        if (PreviousDestination.x < CurrentDestination.x)
-        {
-            movingRight = true;
-            movingLeft = false;
-            movingUp = false;
-            movingDown = false;
-
-
-            interactorZone.transform.rotation = Quaternion.Euler(0, 0, 0);
-        }
-        if (PreviousDestination.x > CurrentDestination.x)
-        {
-            interactorZone.transform.rotation = Quaternion.Euler(0, 0, 180);
-
-            movingLeft = true;
-            movingRight = false;
-            movingUp = false;
-            movingDown = false;
-
-        }
-        if (PreviousDestination.y < CurrentDestination.y)
-        {
-            interactorZone.transform.rotation = Quaternion.Euler(0, 0, 90);
-
-            movingUp = true;
-            movingRight = false;
-            movingLeft = false;
-            movingDown = false;
-
-        }
-        if (PreviousDestination.y > CurrentDestination.y)
-        {
-            interactorZone.transform.rotation = Quaternion.Euler(0, 0, 270);
-
-            movingDown = true;
-            movingRight = false;
-            movingLeft = false;
-            movingUp = false;
-
-        }
-    }
-
-
-
-
-    protected virtual void UpdateAnimation()
-    {
-        anim.SetBool("isMovingUp", movingUp);
-        anim.SetBool("isMovingDown", movingDown);
-        anim.SetBool("isMovingLeft", movingLeft);
-        anim.SetBool("isMovingRight", movingRight);
-    }
 
 
 }

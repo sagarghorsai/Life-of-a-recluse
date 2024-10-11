@@ -6,6 +6,8 @@ public class PlayerMovement : MonoBehaviour
     float speedX, speedY;   // Movement speed on X and Y axes
     Rigidbody2D rb;         // Reference to Rigidbody2D component
     Animator anim;          // Reference to Animator component
+    AudioManager audioManager; // Reference to the AudioManager
+
     public Vector2Int FacingDirection { get; private set; } = Vector2Int.right;
 
     // Directions for movement (right, up, left, down)
@@ -20,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     };
 
     private int lastDirHeld = 0; // Stores the last direction the player was moving in
+    private bool isMoving = false; // Track whether the player is moving
 
     [Header("---------- Sprint Setting ----------")]
     public float sprintSpeed = 10f;           // Speed while sprinting
@@ -40,12 +43,17 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();   // Get the Rigidbody2D component
         anim = GetComponent<Animator>();    // Get the Animator component
+        audioManager = FindObjectOfType<AudioManager>(); // Find the AudioManager in the scene
 
         activeSpeed = walkSpeed;     // Set dash to player's normal movement speed initially.
         currentStamina = maxStamina;
         if (staminaImage != null)
         {
             staminaImage.fillAmount = currentStamina;
+        }
+        if (audioManager == null)
+        {
+            Debug.Log("AudioManager not found on the scene");
         }
     }
 
@@ -84,8 +92,16 @@ public class PlayerMovement : MonoBehaviour
         {
             vel = directions[dirHeld];
             lastDirHeld = dirHeld; // Update last direction when a key is pressed
+            if (!isMoving)
+            {
+                PlayFootstepAudio(); // Play footstep audio when movement starts
+                isMoving = true; // Set moving state to true
+            }
         }
-
+        else
+        {
+            isMoving = false; // Set moving state to false
+        }
         rb.velocity = vel * activeSpeed;    // Set velocity (using activeMoveSpeed to account for dashing)
 
         // Animation logic
@@ -152,6 +168,15 @@ public class PlayerMovement : MonoBehaviour
         if (staminaImage != null)
         {
             staminaImage.fillAmount = currentStamina / maxStamina;
+        }
+    }
+
+    private void PlayFootstepAudio()
+    {
+        // Play footstep audio based on movement
+        if (audioManager != null)
+        {
+            audioManager.PlaySFX("Footstep");
         }
     }
 }

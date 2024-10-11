@@ -14,7 +14,7 @@ using UnityEngine;
  *          
  *          +++++++Consider following player if player enters view, then return to normal pattern when they leave view?
  */
-public class RotateOnlyMovement : EnemyController
+public class RotateOnlyMovement : MonoBehaviour
 {
     [SerializeField]
     float CurrentRotation;
@@ -138,7 +138,7 @@ public class RotateOnlyMovement : EnemyController
         anim.SetBool("isFacingUp", FacingUp);
         anim.SetBool("isFacingDown", FacingDown);
         anim.SetBool("isFacingLeft", FacingLeft);
-        anim.SetBool("isfacingRight", FacingRight);
+        anim.SetBool("isFacingRight", FacingRight);
     }
 
 }
