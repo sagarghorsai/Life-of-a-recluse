@@ -61,7 +61,7 @@ public class RotateOnlyMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Debug.Log("Update Triggered");
+        //Debug.Log("Update Triggered");
         UpdateAnimation();
 
         //Checks to see if its reached designated points and then changes direction of rotation
@@ -79,11 +79,11 @@ public class RotateOnlyMovement : MonoBehaviour
         //Rotates the gameobject based off of rotation direction
         if (TurningRight) 
         {
-            Debug.Log("Rotation Right triggered");
+            //Debug.Log("Rotation Right triggered");
             NewRotation = CurrentRotation - RotationSpeed;
             
             transform.rotation = Quaternion.Euler(0, 0, NewRotation);
-            Debug.Log("Rotation Triggered: " + NewRotation);
+            //Debug.Log("Rotation Triggered: " + NewRotation);
             //CurrentRotation = gameObject.transform.rotation.z;
             //Debug.Log("CurrentRotation according to system: " + CurrentRotation);
             CurrentRotation = NewRotation;
@@ -91,11 +91,11 @@ public class RotateOnlyMovement : MonoBehaviour
         
         if (TurningLeft )
         {
-            Debug.Log("Rotation Left triggered");
+            //Debug.Log("Rotation Left triggered");
             NewRotation = CurrentRotation + RotationSpeed;
             
             transform.rotation = Quaternion.Euler(0, 0, NewRotation);
-            Debug.Log("Rotation Triggered: " + NewRotation);
+            //Debug.Log("Rotation Triggered: " + NewRotation);
             //CurrentRotation = gameObject.transform.rotation.z;
             //Debug.Log("CurrentRotation according to system: " + CurrentRotation);
             CurrentRotation = NewRotation;
