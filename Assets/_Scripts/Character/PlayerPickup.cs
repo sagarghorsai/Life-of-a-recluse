@@ -12,11 +12,18 @@ public class GroceryPickup : MonoBehaviour
     private Vector3Int frontTilePosition;  // Position of the tile in front of the player
 
     public TaskList taskList;  // Reference to the TaskList script
+    AudioManager audioManager;
 
     void Start()
     {
         playerMovement = GetComponent<PlayerMovement>(); // Get PlayerMovement component
         pickUpText.gameObject.SetActive(false);  // Hide pickup text initially
+
+        if (audioManager != null)
+        {
+            audioManager = FindObjectOfType<AudioManager>(); // Find the AudioManager in the scene
+        }
+
     }
 
     void Update()
@@ -41,7 +48,7 @@ public class GroceryPickup : MonoBehaviour
         {
             currentGroceryTile = groceryTile;
             pickUpText.gameObject.SetActive(true);  // Show the pickup text
-            pickUpText.text = "[E] \r\npick up: \n"+ groceryTile.groceryName;  // Update the text
+            pickUpText.text = "[E] \r\nPICK UP:: \n" + groceryTile.groceryName;  // Update the text
         }
         else
         {
@@ -60,6 +67,6 @@ public class GroceryPickup : MonoBehaviour
         taskList.StrikeThroughItem(currentGroceryTile.groceryName);
         currentGroceryTile = null;  // Clear the current tile reference
 
-        
+        audioManager.PlaySFX("PickUP");
     }
 }

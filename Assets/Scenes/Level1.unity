@@ -16285,6 +16285,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickUpText
       objectReference: {fileID: 0}
+    - target: {fileID: 8623196082961329103, guid: df7ee864e4cb53f4bb5599d92877c099, type: 3}
+      propertyPath: m_text
+      value: "[E] \nPICK UP:"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8623196082961329103, guid: df7ee864e4cb53f4bb5599d92877c099, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8b24b97e00dfc4049b972bed232d626d, type: 2}
+    - target: {fileID: 8623196082961329103, guid: df7ee864e4cb53f4bb5599d92877c099, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 5212190068505998125, guid: 8b24b97e00dfc4049b972bed232d626d, type: 2}
+    - target: {fileID: 8623196082961329103, guid: df7ee864e4cb53f4bb5599d92877c099, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17734,8 +17750,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 869cbfb49b93182409ceef681131aa3b, type: 2}
-  m_sharedMaterial: {fileID: -4127164522333101707, guid: 869cbfb49b93182409ceef681131aa3b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8b24b97e00dfc4049b972bed232d626d, type: 2}
+  m_sharedMaterial: {fileID: 5212190068505998125, guid: 8b24b97e00dfc4049b972bed232d626d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -17841,7 +17857,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "[E] \nCheckOut:"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 869cbfb49b93182409ceef681131aa3b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8b24b97e00dfc4049b972bed232d626d, type: 2}
   m_sharedMaterial: {fileID: -4127164522333101707, guid: 869cbfb49b93182409ceef681131aa3b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -17905,7 +17921,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &3057919523710378333
