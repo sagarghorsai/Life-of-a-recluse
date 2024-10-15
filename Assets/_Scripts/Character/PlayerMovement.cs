@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
     float speedX, speedY;   // Movement speed on X and Y axes
     Rigidbody2D rb;         // Reference to Rigidbody2D component
     Animator anim;          // Reference to Animator component
+
     public Vector2Int FacingDirection { get; private set; } = Vector2Int.right;
 
     // Directions for movement (right, up, left, down)
@@ -31,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("---------- UI Component----------")]
     public Image staminaImage;              // Reference to the stamina UI slider
     public float currentStamina;             // Current stamina value
-    private bool isSprinting = false;         // Whether the player is currently sprinting
+    private bool isSprinting = false;           // Whether the player is currently sprinting
     private bool canSprint = true;            // Whether the player is allowed to sprint
     private float activeSpeed;                // Variable to track current speed
 
@@ -84,6 +85,9 @@ public class PlayerMovement : MonoBehaviour
         {
             vel = directions[dirHeld];
             lastDirHeld = dirHeld; // Update last direction when a key is pressed
+            {
+                
+            }
         }
 
         rb.velocity = vel * activeSpeed;    // Set velocity (using activeMoveSpeed to account for dashing)
@@ -154,4 +158,6 @@ public class PlayerMovement : MonoBehaviour
             staminaImage.fillAmount = currentStamina / maxStamina;
         }
     }
+
+    
 }

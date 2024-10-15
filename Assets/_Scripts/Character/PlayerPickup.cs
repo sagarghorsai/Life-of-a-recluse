@@ -13,6 +13,8 @@ public class GroceryPickup : MonoBehaviour
 
     public TaskList taskList;  // Reference to the TaskList script
 
+    // public AudioManager PlaySFX; // Reference to the AudioManager script
+
     void Start()
     {
         playerMovement = GetComponent<PlayerMovement>(); // Get PlayerMovement component
@@ -60,6 +62,5 @@ public class GroceryPickup : MonoBehaviour
         taskList.StrikeThroughItem(currentGroceryTile.groceryName);
         currentGroceryTile = null;  // Clear the current tile reference
 
-        
     }
 }

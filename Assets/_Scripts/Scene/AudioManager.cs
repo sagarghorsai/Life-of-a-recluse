@@ -4,18 +4,31 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+    private static AudioManager instance;
+
     private void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        // Singleton pattern to ensure only one instance exists
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     [Header("---------- Audio Source ----------")]
     [SerializeField] AudioSource musicSource;
     [SerializeField] AudioSource SFXSource;
 
-    [Header("---------- Audio Clip ----------")]
+    [Header("---------- Background Music ----------")]
     public AudioClip background;
-    public AudioClip[] AudioList;
+
+    [Header("---------- Audio Clips ----------")]
+    public AudioClipInfo[] audioList; // Using the custom class
 
     private void Start()
     {
@@ -23,8 +36,28 @@ public class AudioManager : MonoBehaviour
         musicSource.Play();
     }
 
-    public void PlaySFX(AudioClip clip)
+    public void PlaySFX(string audioName)
     {
-        SFXSource.PlayOneShot(clip);
+        foreach (AudioClipInfo audioInfo in audioList)
+        {
+            if (audioInfo.name == audioName)
+            {
+                SFXSource.PlayOneShot(audioInfo.clip);
+                Debug.Log($"Player{audioInfo.name}");
+                return; // Exit once the clip is found and played
+            }
+        }
+
+        Debug.LogWarning($"Audio clip with name '{audioName}' not found.");
     }
+}
+
+
+
+
+[System.Serializable]
+public class AudioClipInfo
+{
+    public string name; // Word associated with the audio clip
+    public AudioClip clip; // The audio clip
 }

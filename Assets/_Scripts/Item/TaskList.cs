@@ -90,6 +90,7 @@ public class TaskList : MonoBehaviour
                 {
                     OnAllTasksCompleted();
                 }
+
             }
         }
 
