@@ -304,10 +304,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 7533092779340827246}
   SFXSource: {fileID: 5349724729127924086}
-  Background: {fileID: 0}
-  Footstep: {fileID: 8300000, guid: 694bb0f5e50c48a41908d4fb3bddf16a, type: 3}
-  Dash: {fileID: 0}
-  Collect: {fileID: 0}
-  Scan: {fileID: 0}
-  LoseScream: {fileID: 0}
-  WinCheer: {fileID: 0}
+  background: {fileID: 0}
+  AudioList:
+  - {fileID: 8300000, guid: 694bb0f5e50c48a41908d4fb3bddf16a, type: 3}
+  - {fileID: 8300000, guid: 6172d4eddcf27d94b8cbf9199630383d, type: 3}
+  - {fileID: 8300000, guid: f27b4065d5f25674fbd1dd8b9ee14513, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
