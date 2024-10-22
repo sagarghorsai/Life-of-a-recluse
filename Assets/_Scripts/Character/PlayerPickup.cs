@@ -12,7 +12,7 @@ public class GroceryPickup : MonoBehaviour
     private Vector3Int frontTilePosition;  // Position of the tile in front of the player
 
     public TaskList taskList;  // Reference to the TaskList script
-    AudioManager audioManager;
+    public AudioManager audioManager; // Reference to the AudioManager script
 
     void Start()
     {
@@ -67,6 +67,6 @@ public class GroceryPickup : MonoBehaviour
         taskList.StrikeThroughItem(currentGroceryTile.groceryName);
         currentGroceryTile = null;  // Clear the current tile reference
 
-        audioManager.PlaySFX("PickUP");
+        AudioManager.Instance.PlaySFX("PickUP");
     }
 }

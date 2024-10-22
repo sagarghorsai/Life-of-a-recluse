@@ -64,6 +64,7 @@ public class PlayerMovement : MonoBehaviour
         HandleSprintInput();          // Check for sprint input
         UpdateStamina();              // Update stamina based on sprinting state
         UpdateUI();                   // Update the UI to reflect current stamina
+        
     }
 
     void Movement()
@@ -96,6 +97,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 PlayFootstepAudio(); // Play footstep audio when movement starts
                 isMoving = true; // Set moving state to true
+                AudioManager.Instance.PlaySFX("Footsteps");
             }
         }
         else
@@ -124,6 +126,7 @@ public class PlayerMovement : MonoBehaviour
         {
             isSprinting = true;
             activeSpeed = sprintSpeed;
+            AudioManager.Instance.PlaySFX("Dashing");
         }
         else
         {
