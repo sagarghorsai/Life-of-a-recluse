@@ -17,15 +17,13 @@ using UnityEngine;
 
 public class RandomizedMovement : MonoBehaviour
 {
-    [SerializeField]
     float randomizedDirection;
-    [SerializeField]
     float randomizedDistance;
     private Vector3 PreviousDestination;
     private Vector3 CurrentDestination;
-    [SerializeField]
-    private float movementSpeed = 1f;
 
+    public float movementSpeed = 1f;
+    public float directionChangeCooldown;
     public Animator anim;
 
     [Header("-------Directions------")]
@@ -33,19 +31,12 @@ public class RandomizedMovement : MonoBehaviour
     public bool movingDown;
     public bool movingLeft;
     public bool movingRight;
+    public bool isStationary;
 
-    [SerializeField]
-    private float rotationSpeed;
-
-    private Rigidbody2D _rigidbody;
-    private Vector2 newDirection;
-    private float directionChangeCooldown;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        //PreviousDestination = transform.position;  
-        _rigidbody = GetComponent<Rigidbody2D>();
-        newDirection = transform.up;
+        PreviousDestination = transform.position;
         anim.GetComponent<Animator>();
     }
 
@@ -53,56 +44,75 @@ public class RandomizedMovement : MonoBehaviour
     void FixedUpdate()
     {
         Debug.Log("Update triggered");
+        PreviousDestination = transform.position;
+        RandomDirectionChange();
+        MoveTowardsCurrentDestination();
+        IsStationaryCheck();
+        UpdateAnimation();
 
-        randomizedDirection = Random.Range(1, 5);
-        Debug.Log("Randomized Direction: " + randomizedDirection);
+    }
 
-        randomizedDistance = Random.Range(1, 15);
-        Debug.Log("Randomized Distance: " + randomizedDirection);
+    private void RandomDirectionChange()
+    {
+        directionChangeCooldown -= Time.deltaTime;
 
-        switch (randomizedDirection)
+        if (directionChangeCooldown <= 0)
         {
-            case 1: //Go Up
-                Debug.Log("Switch triggerd 1");
-                movingUp = true;
-                movingRight = false;
-                movingDown = false;
-                movingLeft = false;
-                CurrentDestination = new Vector3(transform.position.x, transform.position.y + randomizedDistance, 0f);
-                break;
+            randomizedDirection = Random.Range(1, 5);
+            Debug.Log("Randomized Direction: " + randomizedDirection);
 
-            case 2: //Go Right
-                Debug.Log("Switch triggerd 2");
-                movingRight = true;
-                movingUp = false;
-                movingDown = false;
-                movingLeft = false;
-                CurrentDestination = new Vector3(transform.position.x + randomizedDistance, transform.position.y, 0f);
-                break;
+            randomizedDistance = Random.Range(1, 15);
+            Debug.Log("Randomized Distance: " + randomizedDirection);
 
-            case 3: //Go Down
-                Debug.Log("Switch triggerd 3");
-                movingDown = true;
-                movingRight = false;
-                movingUp = false;
-                movingLeft = false;
-                CurrentDestination = new Vector3(transform.position.x, transform.position.y - randomizedDistance, 0f);
-                break;
+            switch (randomizedDirection)
+            {
+                case 1: //Go Up
+                    Debug.Log("Switch triggerd 1");
+                    movingUp = true;
+                    movingRight = false;
+                    movingDown = false;
+                    movingLeft = false;
+                    CurrentDestination = new Vector3(transform.position.x, transform.position.y + randomizedDistance, 0f);
+                    break;
 
-            case 4: //Go Left
-                Debug.Log("Switch triggerd 4");
-                movingLeft = true;
-                movingRight = false;
-                movingUp = false;
-                movingDown = false;
-                CurrentDestination = new Vector3(transform.position.x - randomizedDistance, transform.position.y, 0f);
-                break;
+                case 2: //Go Right
+                    Debug.Log("Switch triggerd 2");
+                    movingRight = true;
+                    movingUp = false;
+                    movingDown = false;
+                    movingLeft = false;
+                    CurrentDestination = new Vector3(transform.position.x + randomizedDistance, transform.position.y, 0f);
+                    break;
 
-            default:
-                Debug.Log("default switch triggered");
-                break;
+                case 3: //Go Down
+                    Debug.Log("Switch triggerd 3");
+                    movingDown = true;
+                    movingRight = false;
+                    movingUp = false;
+                    movingLeft = false;
+                    CurrentDestination = new Vector3(transform.position.x, transform.position.y - randomizedDistance, 0f);
+                    break;
+
+                case 4: //Go Left
+                    Debug.Log("Switch triggerd 4");
+                    movingLeft = true;
+                    movingRight = false;
+                    movingUp = false;
+                    movingDown = false;
+                    CurrentDestination = new Vector3(transform.position.x - randomizedDistance, transform.position.y, 0f);
+                    break;
+
+                default:
+                    Debug.Log("default switch triggered");
+                    break;
+            }
+
+            directionChangeCooldown = Random.Range(1f, 5f);
         }
+    }
 
+    private void MoveTowardsCurrentDestination()
+    {
         if (movingUp)
         {
             Debug.Log("move up triggered");
@@ -123,71 +133,6 @@ public class RandomizedMovement : MonoBehaviour
             Debug.Log("move right triggered");
             transform.position = Vector3.MoveTowards(transform.position, CurrentDestination, movementSpeed * Time.deltaTime);
         }
-
-        //PreviousDestination = CurrentDestination;
-        //RandomDirectionChange();
-        //RotateTowardsTarget();
-        //SetVelocity();
-        //UpdateAnimation();
-
-        //Vector3 CurrentRotation = gameObject.transform.rotation.eulerAngles;
-        //if (CurrentRotation.z < 45 && CurrentRotation.z > -45 || CurrentRotation.z < 45 && CurrentRotation.z > 315)
-        //{
-        //    movingUp = true;
-        //    movingDown = false;
-        //    movingLeft = false;
-        //    movingRight = false;
-        //}
-        //else if (CurrentRotation.z < 135 && CurrentRotation.z > 45)
-        //{
-        //    movingLeft = true;
-        //    movingDown = false;
-        //    movingUp = false;
-        //    movingRight = false;
-        //}
-        //else if (CurrentRotation.z < 225 && CurrentRotation.z > 135)
-        //{
-        //    movingDown = true;
-        //    movingUp = false;
-        //    movingLeft = false;
-        //    movingRight = false;
-        //}
-        //else if (CurrentRotation.z < 315 && CurrentRotation.z > 225 || CurrentRotation.z < -45 && CurrentRotation.z > -135)
-        //{
-        //    movingRight = true;
-        //    movingDown = false;
-        //    movingLeft = false;
-        //    movingUp = false;
-        //}
-
-
-    }
-
-    private void RandomDirectionChange()
-    {
-        directionChangeCooldown -= Time.deltaTime;
-
-        if (directionChangeCooldown <= 0)
-        {
-            float angleChange = Random.Range(-90f, 90f);
-            Quaternion rotation = Quaternion.AngleAxis(angleChange, transform.forward);
-            newDirection = rotation * newDirection;
-
-            directionChangeCooldown = Random.Range(1f, 5f);
-        }
-    }
-
-    private void RotateTowardsTarget()
-    {
-        Quaternion targetRotation = Quaternion.LookRotation(transform.forward, newDirection);
-        Quaternion rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
-
-        _rigidbody.SetRotation(rotation);
-    }
-
-    private void SetVelocity()
-    {
-        _rigidbody.velocity = transform.up * movementSpeed;
     }
 
     protected virtual void UpdateAnimation()
@@ -196,5 +141,41 @@ public class RandomizedMovement : MonoBehaviour
         anim.SetBool("isMovingDown", movingDown);
         anim.SetBool("isMovingLeft", movingLeft);
         anim.SetBool("isMovingRight", movingRight);
+        anim.SetBool("isStationary", isStationary);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Walls") 
+        {
+            directionChangeCooldown = 0;
+            RandomDirectionChange();
+            MoveTowardsCurrentDestination();
+            UpdateAnimation();
+        }
+        
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Walls")
+        {
+            directionChangeCooldown = 0;
+            RandomDirectionChange();
+            MoveTowardsCurrentDestination();
+            UpdateAnimation();
+        }
+    }
+
+    private void IsStationaryCheck()
+    {
+        if(PreviousDestination == CurrentDestination)
+        {
+            isStationary = true;
+        }
+        else
+        {
+            isStationary = false;
+        }
     }
 }
