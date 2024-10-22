@@ -6,6 +6,13 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false; // Static variable to track game state
     public GameObject pauseMenuUI;           // Reference to the pause menu UI
+    public GameObject resumeButton;
+    public GameObject menuButton;
+    public GameObject optionButton;
+    public GameObject quitButton;
+    public GameObject returnButton;
+    public GameObject settingsMenu;
+
 
     private void Update()
     {
@@ -16,6 +23,8 @@ public class PauseMenu : MonoBehaviour
             if (GameIsPaused)
             {
                 Resume();  // If the game is already paused, resume it
+                Return();  // Unpauses the game but resets 'Pause Menus' back to normal status
+
             }
             else
             {
@@ -57,7 +66,24 @@ public class PauseMenu : MonoBehaviour
 
     public void Options()
     {
+        resumeButton.SetActive(false);
+        menuButton.SetActive(false);
+        optionButton.SetActive(false);
+        quitButton.SetActive(false);
+        returnButton.SetActive(true);
+        settingsMenu.SetActive(true);
         Debug.Log("Load Options");
         // Add options menu loading logic here
+    }
+
+    public void Return()
+    {
+        resumeButton.SetActive(true);
+        menuButton.SetActive(true);
+        optionButton.SetActive(true);
+        quitButton.SetActive(true);
+        returnButton.SetActive(false);
+        settingsMenu.SetActive(false);
+        Debug.Log("Load Return");
     }
 }

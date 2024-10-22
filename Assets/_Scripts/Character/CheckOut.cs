@@ -8,6 +8,7 @@ public class CheckOut : MonoBehaviour
     public DayCounter dayCounter;
     public TextMeshProUGUI dayText;
     public TextMeshProUGUI highText;
+    public AudioManager audioManager;
 
     private TaskList tasklist;
     private void Start()
@@ -36,6 +37,7 @@ public class CheckOut : MonoBehaviour
             {
                 DayCounter.Instance.Next();
                 dayCounter.dayCount += 1;
+                AudioManager.Instance.PlaySFX("Checkout");
                 Debug.Log(dayCounter.HighCount);
                 Debug.Log("Player checked out! Day count increased to: " + dayCounter.dayCount);
 

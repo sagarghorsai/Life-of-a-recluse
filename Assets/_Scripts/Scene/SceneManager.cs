@@ -4,6 +4,7 @@ using UnityEditor;  // This is to reference the Unity Editor
 
 public class SceneManager : MonoBehaviour
 {
+    public ScoreManager scoreManager;
     public GameObject settingOption;
     public GameObject MenuSetting;
 
@@ -35,6 +36,11 @@ public class SceneManager : MonoBehaviour
     {
         settingOption.SetActive(false);
         MenuSetting.SetActive(true);
+    }
+
+    public void Reset()
+    {
+        // PlayerPrefs.DeleteKey("HighestDay", highscoreCounter);
     }
 
 
