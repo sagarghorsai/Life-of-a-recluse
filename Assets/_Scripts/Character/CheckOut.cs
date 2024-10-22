@@ -7,6 +7,8 @@ public class CheckOut : MonoBehaviour
 {
     public DayCounter dayCounter;
     public TextMeshProUGUI dayText;
+    public TextMeshProUGUI highText;
+
     private TaskList tasklist;
     private void Start()
     {
@@ -20,9 +22,11 @@ public class CheckOut : MonoBehaviour
             Debug.LogError("DayCounter not found in the scene! Make sure you have a DayCounter component.");
         }
         dayText.text = $"Day \n{dayCounter.dayCount}";
-        
+        highText.text = $"Day \n{dayCounter.HighCount}";
+
+
     }
-  
+
     public void Checkout()
     {
         if (tasklist.canCheckout)
@@ -30,8 +34,11 @@ public class CheckOut : MonoBehaviour
             // Increment the day counter
             if (dayCounter != null)
             {
+                DayCounter.Instance.Next();
                 dayCounter.dayCount += 1;
+                Debug.Log(dayCounter.HighCount);
                 Debug.Log("Player checked out! Day count increased to: " + dayCounter.dayCount);
+
             }
 
             UnityEngine.SceneManagement.SceneManager.LoadScene("Level1");

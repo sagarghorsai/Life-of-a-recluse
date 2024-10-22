@@ -9,6 +9,7 @@ TagManager:
   - Interactor
   - Enemy
   - Cashier
+  - CollisionLayer
   layers:
   - Default
   - TransparentFX

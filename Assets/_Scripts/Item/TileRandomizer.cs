@@ -14,13 +14,141 @@ public class TileRandomizer : MonoBehaviour
     [Header("---------- FlowerTiles ----------")]
     public TileBase[] flowerPlacementTiles; // Array of flower placement tiles
     public TileBase[] flowerTiles; // Array of flower tiles to place
- 
+
+    [Header("---------- LeftShelvingTiles ----------")]
+    public TileBase[] leftShelvingPlacementTiles; // Array of shelving placement tiles
+    public TileBase[] leftShelvingTiles; // Array of shelving tiles to place
+
+    [Header("---------- RightShelvingTiles ----------")]
+    public TileBase[] rightShelvingPlacementTiles; // Array of shelving placement tiles
+    public TileBase[] rightShelvingTiles; // Array of shelving tiles to place
+
+    [Header("---------- BakeryTiles ----------")]
+    public TileBase[] bakeryPlacementTiles; // Array of bakery Placement Tiles
+    public TileBase[] bakeryTiles; // Array of Bakery Tiles to place
+
+    [Header("---------- MeatTiles ----------")]
+    public TileBase[] meatPlacementTiles; // Array of bakery Placement Tiles
+    public TileBase[] meatTiles; // Array of Bakery Tiles to place
+
+
 
     void Start()
     {
         PlaceGroceryTiles();
         PlaceFlowerTiles();
+        PlaceLeftShelvingTiles();
+        PlaceRightShelvingTiles();
+        PlaceBakeryTiles();
+        PlaceMeatTiles();
     }
+
+    void PlaceBakeryTiles()
+    {
+        List<Vector3Int> availablePositions = GetAvailablePositions(bakeryPlacementTiles);
+
+        // Shuffle available positions to randomize placement
+        Shuffle(availablePositions);
+
+        // Place all grocery tiles in the available positions
+        int shelvingTileCount = bakeryTiles.Length;
+        int positionsCount = availablePositions.Count;
+
+        for (int i = 0; i < shelvingTileCount && i < positionsCount; i++)
+        {
+            interactorTilemap.SetTile(availablePositions[i], bakeryTiles[i]);
+        }
+
+        // If there are still available positions left, place additional grocery tiles randomly
+        for (int i = shelvingTileCount; i < positionsCount; i++)
+        {
+            TileBase tileToPlace = bakeryTiles[Random.Range(0, bakeryTiles.Length)];
+            interactorTilemap.SetTile(availablePositions[i], tileToPlace);
+        }
+
+        Debug.Log($"Placed {shelvingTileCount} grocery tiles initially, and {positionsCount - shelvingTileCount} additional tiles in the remaining spaces.");
+    }
+    void PlaceMeatTiles()
+    {
+        List<Vector3Int> availablePositions = GetAvailablePositions(meatPlacementTiles);
+
+        // Shuffle available positions to randomize placement
+        Shuffle(availablePositions);
+
+        // Place all grocery tiles in the available positions
+        int shelvingTileCount = meatTiles.Length;
+        int positionsCount = availablePositions.Count;
+
+        for (int i = 0; i < shelvingTileCount && i < positionsCount; i++)
+        {
+            interactorTilemap.SetTile(availablePositions[i], meatTiles[i]);
+        }
+
+        // If there are still available positions left, place additional grocery tiles randomly
+        for (int i = shelvingTileCount; i < positionsCount; i++)
+        {
+            TileBase tileToPlace = meatTiles[Random.Range(0, meatTiles.Length)];
+            interactorTilemap.SetTile(availablePositions[i], tileToPlace);
+        }
+
+        Debug.Log($"Placed {shelvingTileCount} grocery tiles initially, and {positionsCount - shelvingTileCount} additional tiles in the remaining spaces.");
+    }
+
+
+
+
+    void PlaceLeftShelvingTiles()
+    {
+        List<Vector3Int> availablePositions = GetAvailablePositions(leftShelvingPlacementTiles);
+
+        // Shuffle available positions to randomize placement
+        Shuffle(availablePositions);
+
+        // Place all grocery tiles in the available positions
+        int shelvingTileCount = leftShelvingTiles.Length;
+        int positionsCount = availablePositions.Count;
+
+        for (int i = 0; i < shelvingTileCount && i < positionsCount; i++)
+        {
+            interactorTilemap.SetTile(availablePositions[i], leftShelvingTiles[i]);
+        }
+
+        // If there are still available positions left, place additional grocery tiles randomly
+        for (int i = shelvingTileCount; i < positionsCount; i++)
+        {
+            TileBase tileToPlace = leftShelvingTiles[Random.Range(0, leftShelvingTiles.Length)];
+            interactorTilemap.SetTile(availablePositions[i], tileToPlace);
+        }
+
+        Debug.Log($"Placed {shelvingTileCount} grocery tiles initially, and {positionsCount - shelvingTileCount} additional tiles in the remaining spaces.");
+    }
+    void PlaceRightShelvingTiles()
+    {
+        List<Vector3Int> availablePositions = GetAvailablePositions(rightShelvingPlacementTiles);
+
+        // Shuffle available positions to randomize placement
+        Shuffle(availablePositions);
+
+        // Place all grocery tiles in the available positions
+        int shelvingTileCount = rightShelvingTiles.Length;
+        int positionsCount = availablePositions.Count;
+
+        for (int i = 0; i < shelvingTileCount && i < positionsCount; i++)
+        {
+            interactorTilemap.SetTile(availablePositions[i], rightShelvingTiles[i]);
+        }
+
+        // If there are still available positions left, place additional grocery tiles randomly
+        for (int i = shelvingTileCount; i < positionsCount; i++)
+        {
+            TileBase tileToPlace = rightShelvingTiles[Random.Range(0, rightShelvingTiles.Length)];
+            interactorTilemap.SetTile(availablePositions[i], tileToPlace);
+        }
+
+        Debug.Log($"Placed {shelvingTileCount} grocery tiles initially, and {positionsCount - shelvingTileCount} additional tiles in the remaining spaces.");
+    }
+
+
 
     void PlaceGroceryTiles()
     {

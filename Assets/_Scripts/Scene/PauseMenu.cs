@@ -40,21 +40,21 @@ public class PauseMenu : MonoBehaviour
         GameIsPaused = true;           // Update the pause state
     }
 
-    // Placeholder for quit function
     public void Quit()
     {
         Debug.Log("Quit Game");
-        // Add quit logic here, e.g., Application.Quit();
+        Application.Quit();
     }
 
-    // Placeholder for loading the main menu
     public void Menu()
     {
         Debug.Log("Load Menu");
-        // Add menu loading logic here
+        Time.timeScale = 1f;           
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Menu");
+
+
     }
 
-    // Placeholder for loading options
     public void Options()
     {
         Debug.Log("Load Options");

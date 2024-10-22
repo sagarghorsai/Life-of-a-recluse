@@ -43,9 +43,21 @@ public class EnemyController : MonoBehaviour
         anim.GetComponent<Animator>();
         _waypointMovement = GetComponent<WaypointMovement>();
         _rigidbody = GetComponent<Rigidbody2D>();
-        _waypointMovement.speed = movementSpeed;
+
+        if (_waypointMovement != null)
+        {
+
+
+            _waypointMovement.speed = movementSpeed;
+        }
     }
 
-
+    protected virtual void UpdateAnimation()
+    {
+        anim.SetBool("isMovingUp", movingUp);
+        anim.SetBool("isMovingDown", movingDown);
+        anim.SetBool("isMovingLeft", movingLeft);
+        anim.SetBool("isMovingRight", movingRight);
+    }
 
 }

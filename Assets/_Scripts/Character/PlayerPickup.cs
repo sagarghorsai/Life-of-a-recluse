@@ -33,7 +33,15 @@ public class GroceryPickup : MonoBehaviour
         // If the player presses "E" and a grocery tile is detected
         if (currentGroceryTile != null && Input.GetKeyDown(KeyCode.E))
         {
-            PickUpGrocery();
+            if (taskList.items.Contains(currentGroceryTile))
+            {
+                PickUpGrocery();
+
+            }
+            else
+            {
+                Debug.Log("Not in the groceryList");
+            }
         }
     }
 
@@ -67,6 +75,6 @@ public class GroceryPickup : MonoBehaviour
         taskList.StrikeThroughItem(currentGroceryTile.groceryName);
         currentGroceryTile = null;  // Clear the current tile reference
 
-        audioManager.PlaySFX("PickUP");
+       // audioManager.PlaySFX("PickUP");
     }
 }
