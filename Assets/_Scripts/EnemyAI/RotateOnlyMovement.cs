@@ -53,8 +53,8 @@ public class RotateOnlyMovement : MonoBehaviour
     void Start()
     {
         anim.GetComponent<Animator>();
-        CurrentRotation = 0;
-        transform.up = transform.forward;
+        //CurrentRotation = 0;
+        //transform.up = transform.forward;
         TurningLeft = true;
     }
    

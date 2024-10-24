@@ -15,7 +15,7 @@ using UnityEngine.AI;
  * Summary: A movement script intended for the Manager Enemy in "Life of a Recluse"
  *          Script should identify current location of player, move towards player and try to avoid enviromental objects (shelves, displays, etc.)
  *          
- *          Used the following tutorial as a reference: https://www.youtube.com/watch?v=WK0fBiytW_8&ab_channel=KetraGames
+ *          Utilizes NavMeshPlus to avoid obstacles
  *          
  */
 
@@ -32,25 +32,11 @@ public class HuntPlayerMovement : EnemyController
 
     private Rigidbody2D thisRigidbody;
     private Vector3 targetDirection;
-    private float directionChangeCooldown;
+
 
     // NavMesh
     NavMeshAgent agent;
 
-    //Collision Avoidance variables
-    [SerializeField]
-    private float obstacleCheckCircleRadius;
-
-    [SerializeField]
-    private float obstacleCheckDistance;
-
-    [SerializeField]
-    private LayerMask obstacleLayerMask;
-
-
-    private RaycastHit2D[] obstacleCollisions;
-    private Vector2 _obstacleAvoidanceTargetDirection;
-    private float _obstacleAvoidanceCooldown;
 
     private void Awake()
     {
@@ -59,22 +45,13 @@ public class HuntPlayerMovement : EnemyController
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
-
-        //obstacleCollisions = new RaycastHit2D[10];
-
-        //if(movementSpeed == null || movementSpeed == 0)
-        //{
-        //    movementSpeed = 1;
-        //}
     }
 
      void FixedUpdate()
     {
         HandlePlayerTargeting();
         SetAgentPosition();
-        //HandleObstacles();
         UpdateDirection();
-        //MoveTowardsTargetDestination();
         UpdateAnimation();
     }
 
@@ -85,10 +62,6 @@ public class HuntPlayerMovement : EnemyController
 
     private void UpdateDirection() 
     {
-        //directionChangeCooldown -= Time.deltaTime;
-
-        //if (directionChangeCooldown <= 0)
-        //{
 
             float changeInY = transform.position.y - targetDirection.y;
             float changeInX = transform.position.x - targetDirection.x;
@@ -110,24 +83,22 @@ public class HuntPlayerMovement : EnemyController
                     movingLeft = false;
                 }
             }
-            if (Mathf.Abs(changeInY) < Mathf.Abs(changeInX)) // if X is greater difference, then move in the x direction
+        if (Mathf.Abs(changeInY) < Mathf.Abs(changeInX)) // if X is greater difference, then move in the x direction
+        {
+            if (changeInX > 0) //if a positive number then enemy must move left
             {
-                if (changeInX > 0) //if a positive number then enemy must move left
-                {
-                    movingDown = false;
-                    movingUp = false;
-                    movingRight = false;
-                    movingLeft = true;
-                }
-                if (changeInX < 0) //if negative number then enemy must move right
-                {
-                    movingDown = false;
-                    movingUp = false;
-                    movingRight = true;
-                    movingLeft = false;
-                }
-        //    }
-        //directionChangeCooldown = Random.Range(1f, 5f);
+                movingDown = false;
+                movingUp = false;
+                movingRight = false;
+                movingLeft = true;
+            }
+            if (changeInX < 0) //if negative number then enemy must move right
+            {
+                movingDown = false;
+                movingUp = false;
+                movingRight = true;
+                movingLeft = false;
+        }
     }
 
 }
@@ -137,42 +108,6 @@ public class HuntPlayerMovement : EnemyController
         targetDirection = player.transform.position;
     }
 
-    //private void MoveTowardsTargetDestination()
-    //{
-    //    transform.position = Vector3.MoveTowards(transform.position, targetDirection, movementSpeed * Time.deltaTime);
-    //}
-
-    //private void HandleObstacles()
-    //{
-    //    var contactFilter = new ContactFilter2D();
-    //    contactFilter.SetLayerMask(obstacleLayerMask);
-
-    //    int numberOfCollisions = Physics2D.CircleCast(transform.position, obstacleCheckCircleRadius, transform.up, contactFilter, obstacleCollisions, obstacleCheckDistance);
-
-    //    for (int index = 0; index < numberOfCollisions; index++)
-    //    {
-    //        var obstacleCollision = obstacleCollisions[index];
-
-    //        if (obstacleCollision.collider.gameObject == gameObject)
-    //        {
-    //            continue;
-    //        }
-
-    //        if (_obstacleAvoidanceCooldown <= 0)
-    //        {
-    //            _obstacleAvoidanceTargetDirection = obstacleCollision.normal;
-    //            _obstacleAvoidanceCooldown = 0.5f;
-    //        }
-
-    //        var targetRotation = Quaternion.LookRotation(transform.forward, _obstacleAvoidanceTargetDirection);
-    //        var rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
-
-    //        _targetDirection = rotation * Vector2.up;
-    //        thisRigidbody.velocity = transform.up * movementSpeed;
-    //        break;
-    //    }
-    //}
-
 
     protected virtual void UpdateAnimation()
     {
@@ -181,54 +116,4 @@ public class HuntPlayerMovement : EnemyController
         anim.SetBool("isMovingLeft", movingLeft);
         anim.SetBool("isMovingRight", movingRight);
     }
-
-    //private void OnCollisionStay(Collision collision)
-    //{
-
-    //    if (collision.gameObject.tag == "Walls")
-    //    {
-            
-    //        if(movingUp && movingRight)
-    //        {
-    //            targetDirection.x = targetDirection.x + 10;
-    //            targetDirection.y = targetDirection.y + 10;
-    //            transform.position = Vector3.MoveTowards(transform.position, targetDirection, movementSpeed * Time.deltaTime);
-                
-    //        }
-    //        if (movingUp && movingLeft)
-    //        {
-    //            targetDirection.x = targetDirection.x - 10;
-    //            targetDirection.y = targetDirection.y + 10;
-    //            transform.position = Vector3.MoveTowards(transform.position, targetDirection, movementSpeed * Time.deltaTime);
-    //        }
-    //        if (movingDown && movingRight)
-    //        {
-    //            targetDirection.x = targetDirection.x + 10;
-    //            targetDirection.y = targetDirection.y - 10;
-    //            transform.position = Vector3.MoveTowards(transform.position, targetDirection, movementSpeed * Time.deltaTime);
-    //        }
-    //        if (movingDown && movingLeft)
-    //        {
-    //            targetDirection.x = targetDirection.x - 10;
-    //            targetDirection.y = targetDirection.y - 10;
-    //            transform.position = Vector3.MoveTowards(transform.position, targetDirection, movementSpeed * Time.deltaTime);
-    //        }
-    //        if(movingUp || movingDown)
-    //        {
-    //            targetDirection.x += 10;
-    //            targetDirection.y = transform.position.y;
-    //            transform.position = Vector3.MoveTowards(transform.position, targetDirection, movementSpeed * Time.deltaTime);
-    //        }
-            
-    //        if (movingLeft || movingRight)
-    //        {
-    //            targetDirection.y += 10;
-    //            targetDirection.x = transform.position.x;
-    //            transform.position = Vector3.MoveTowards(transform.position, targetDirection, movementSpeed * Time.deltaTime);
-    //        }
-          
-
-    //        UpdateAnimation();
-    //    }
-    //}
 }
