@@ -4,6 +4,7 @@ using System.Runtime.CompilerServices;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AI;
 
 /*PhantomRealm Studio - Life of a Recluse
  * Austin Horn
@@ -30,9 +31,11 @@ public class HuntPlayerMovement : EnemyController
     private float rotationSpeed;
 
     private Rigidbody2D thisRigidbody;
-    private Vector2 targetDirection;
+    private Vector3 targetDirection;
     private float directionChangeCooldown;
 
+    // NavMesh
+    NavMeshAgent agent;
 
     //Collision Avoidance variables
     [SerializeField]
@@ -52,7 +55,12 @@ public class HuntPlayerMovement : EnemyController
     private void Awake()
     {
         thisRigidbody = GetComponent<Rigidbody2D>();
-        obstacleCollisions = new RaycastHit2D[10];
+
+        agent = GetComponent<NavMeshAgent>();
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
+
+        //obstacleCollisions = new RaycastHit2D[10];
 
         //if(movementSpeed == null || movementSpeed == 0)
         //{
@@ -63,10 +71,16 @@ public class HuntPlayerMovement : EnemyController
      void FixedUpdate()
     {
         HandlePlayerTargeting();
+        SetAgentPosition();
         //HandleObstacles();
         UpdateDirection();
-        MoveTowardsTargetDestination();
+        //MoveTowardsTargetDestination();
         UpdateAnimation();
+    }
+
+    void SetAgentPosition()
+    {
+        agent.SetDestination(new Vector3(targetDirection.x, targetDirection.y, transform.position.z));
     }
 
     private void UpdateDirection() 
@@ -123,41 +137,41 @@ public class HuntPlayerMovement : EnemyController
         targetDirection = player.transform.position;
     }
 
-    private void MoveTowardsTargetDestination()
-    {
-        transform.position = Vector3.MoveTowards(transform.position, targetDirection, movementSpeed * Time.deltaTime);
-    }
+    //private void MoveTowardsTargetDestination()
+    //{
+    //    transform.position = Vector3.MoveTowards(transform.position, targetDirection, movementSpeed * Time.deltaTime);
+    //}
 
-    private void HandleObstacles()
-    {
-        var contactFilter = new ContactFilter2D();
-        contactFilter.SetLayerMask(obstacleLayerMask);
+    //private void HandleObstacles()
+    //{
+    //    var contactFilter = new ContactFilter2D();
+    //    contactFilter.SetLayerMask(obstacleLayerMask);
 
-        int numberOfCollisions = Physics2D.CircleCast(transform.position, obstacleCheckCircleRadius, transform.up, contactFilter, obstacleCollisions, obstacleCheckDistance);
+    //    int numberOfCollisions = Physics2D.CircleCast(transform.position, obstacleCheckCircleRadius, transform.up, contactFilter, obstacleCollisions, obstacleCheckDistance);
 
-        for (int index = 0; index < numberOfCollisions; index++)
-        {
-            var obstacleCollision = obstacleCollisions[index];
+    //    for (int index = 0; index < numberOfCollisions; index++)
+    //    {
+    //        var obstacleCollision = obstacleCollisions[index];
 
-            if (obstacleCollision.collider.gameObject == gameObject)
-            {
-                continue;
-            }
+    //        if (obstacleCollision.collider.gameObject == gameObject)
+    //        {
+    //            continue;
+    //        }
 
-            if (_obstacleAvoidanceCooldown <= 0)
-            {
-                _obstacleAvoidanceTargetDirection = obstacleCollision.normal;
-                _obstacleAvoidanceCooldown = 0.5f;
-            }
+    //        if (_obstacleAvoidanceCooldown <= 0)
+    //        {
+    //            _obstacleAvoidanceTargetDirection = obstacleCollision.normal;
+    //            _obstacleAvoidanceCooldown = 0.5f;
+    //        }
 
-            var targetRotation = Quaternion.LookRotation(transform.forward, _obstacleAvoidanceTargetDirection);
-            var rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+    //        var targetRotation = Quaternion.LookRotation(transform.forward, _obstacleAvoidanceTargetDirection);
+    //        var rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 
-            _targetDirection = rotation * Vector2.up;
-            thisRigidbody.velocity = transform.up * movementSpeed;
-            break;
-        }
-    }
+    //        _targetDirection = rotation * Vector2.up;
+    //        thisRigidbody.velocity = transform.up * movementSpeed;
+    //        break;
+    //    }
+    //}
 
 
     protected virtual void UpdateAnimation()
