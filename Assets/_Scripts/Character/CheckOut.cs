@@ -23,7 +23,7 @@ public class CheckOut : MonoBehaviour
             Debug.LogError("DayCounter not found in the scene! Make sure you have a DayCounter component.");
         }
         dayText.text = $"Day \n{dayCounter.dayCount}";
-        highText.text = $"Day \n{dayCounter.HighCount}";
+        highText.text = $"Most Survived \n{dayCounter.HighCount}";
 
         if (audioManager != null)
         {

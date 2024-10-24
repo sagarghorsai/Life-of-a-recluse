@@ -5,7 +5,8 @@ public class DayCounter : MonoBehaviour
 {
     public static DayCounter Instance { get; private set; }
     public int dayCount = 1;
-    public int HighCount = 1;
+    public int HighCount = 0;
+
     private void Awake()
     {
         
