@@ -5,4 +5,14 @@ using UnityEngine.Tilemaps;
 public class GroceryTile : Tile
 {
     public string groceryName;  // To hold the name of the grocery
+    public int numItem;
+    public TileType tileType;
+}
+public enum TileType
+{
+    Grocery,
+    Flower,
+    Bakery,
+    Meat,
+    Shelving,
 }

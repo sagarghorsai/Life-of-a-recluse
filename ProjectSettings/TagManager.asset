@@ -9,7 +9,7 @@ TagManager:
   - Interactor
   - Enemy
   - Cashier
-  - CollisionLayer
+  - Walls
   layers:
   - Default
   - TransparentFX
@@ -19,7 +19,7 @@ TagManager:
   - UI
   - InteractionZones
   - Waypoints
-  - 
+  - InteractorTile
   - 
   - 
   - 

@@ -44,9 +44,9 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -1494543360681687895, guid: bdc203dcd6fc884408fa2430a1bf74eb, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.294
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -304,10 +304,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 7533092779340827246}
   SFXSource: {fileID: 5349724729127924086}
-  background: {fileID: 0}
-  AudioList:
-  - {fileID: 8300000, guid: 694bb0f5e50c48a41908d4fb3bddf16a, type: 3}
-  - {fileID: 8300000, guid: 6172d4eddcf27d94b8cbf9199630383d, type: 3}
-  - {fileID: 8300000, guid: f27b4065d5f25674fbd1dd8b9ee14513, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
+  backgroundlist:
+  - name: MenuMusic
+    clip: {fileID: 8300000, guid: 4ab761bcbcd3da245a56a6599ec55e17, type: 3}
+  - name: LevelMusic
+    clip: {fileID: 8300000, guid: e61cfc15ecec652439247052e0650cc3, type: 3}
+  audioList:
+  - name: Footstep
+    clip: {fileID: 8300000, guid: 694bb0f5e50c48a41908d4fb3bddf16a, type: 3}
+  - name: PickUp
+    clip: {fileID: 8300000, guid: f27b4065d5f25674fbd1dd8b9ee14513, type: 3}
+  - name: CheckOut
+    clip: {fileID: 8300000, guid: 96e58660ba90c7a44a4d37c9fa6c9400, type: 3}

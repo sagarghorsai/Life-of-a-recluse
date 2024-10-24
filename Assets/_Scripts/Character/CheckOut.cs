@@ -8,7 +8,7 @@ public class CheckOut : MonoBehaviour
     public DayCounter dayCounter;
     public TextMeshProUGUI dayText;
     public TextMeshProUGUI highText;
-    public AudioManager audioManager;
+    private AudioManager audioManager;
 
     private TaskList tasklist;
     private void Start()
@@ -24,6 +24,11 @@ public class CheckOut : MonoBehaviour
         }
         dayText.text = $"Day \n{dayCounter.dayCount}";
         highText.text = $"Day \n{dayCounter.HighCount}";
+
+        if (audioManager != null)
+        {
+            audioManager = FindObjectOfType<AudioManager>(); // Find the AudioManager in the scene
+        }
 
 
     }

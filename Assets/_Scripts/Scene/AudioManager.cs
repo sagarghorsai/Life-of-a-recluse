@@ -26,17 +26,34 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioSource SFXSource;
 
     [Header("---------- Background Music ----------")]
-    public AudioClip background;
+    public AudioClipInfo[] backgroundlist;
 
     [Header("---------- Audio Clips ----------")]
     public AudioClipInfo[] audioList; // Using the custom class
 
     private void Start()
     {
-        musicSource.clip = background;
+        musicSource.clip = backgroundlist[0].clip;
         musicSource.Play();
     }
 
+
+    public void PlayMusic(string audioName)
+    {
+        foreach (AudioClipInfo audioInfo in backgroundlist)
+        {
+            if (audioInfo.name == audioName)
+            {
+                musicSource.clip = audioInfo.clip;
+                musicSource.Play();
+
+                Debug.Log($"Player{audioInfo.name}");
+                return; // Exit once the clip is found and played
+            }
+        }
+
+        Debug.LogWarning($"Audio clip with name '{audioName}' not found.");
+    }
     public void PlaySFX(string audioName)
     {
         foreach (AudioClipInfo audioInfo in audioList)

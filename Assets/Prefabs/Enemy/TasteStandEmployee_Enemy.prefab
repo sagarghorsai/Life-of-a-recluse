@@ -27,8 +27,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 3, y: 2, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 5, y: 3.3333333, z: 1.6666666}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 6220971901519414899}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -70,8 +70,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1298174291
-  m_SortingLayer: 6
+  m_SortingLayerID: -2135781163
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
   m_Color: {r: 0.8627451, g: 0.21960786, b: 0.21960786, a: 0.19607843}
@@ -155,8 +155,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4669230110101290585}
   - component: {fileID: 1260939248475775218}
+  - component: {fileID: 3860081931594944791}
   m_Layer: 0
-  m_Name: Chef_Lucy_idle_16x16
+  m_Name: Chef
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -215,8 +216,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1729502109
-  m_SortingLayer: 2
+  m_SortingLayerID: -2135781163
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: -812349597, guid: cabb37916bb2c5a428d88410793576ed, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -229,6 +230,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &3860081931594944791
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5500970345457303211}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5d285a9a9763a614bb9535f1153ba654, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7992974130824823552
 GameObject:
   m_ObjectHideFlags: 0
@@ -271,6 +293,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6220971901519414899}
   - component: {fileID: 3422550821658054983}
+  - component: {fileID: 6374701867854111787}
   m_Layer: 0
   m_Name: InteractionZone
   m_TagString: InteractionZone
@@ -287,7 +310,7 @@ Transform:
   m_GameObject: {fileID: 8633504141379461395}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -338,9 +361,34 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.0059589013, y: 1.5839723}
-      - {x: -1.5111932, y: 1.5961394}
-      - {x: -0.0038128495, y: -0.15949678}
-      - {x: -0.008104801, y: -0.15353793}
-      - {x: 1.4992754, y: 1.5842218}
+    - - {x: -0.034572955, y: 2.003645}
+      - {x: -2.5126853, y: 1.97766}
+      - {x: -1.2916503, y: 0.50867724}
+      - {x: -0.47415736, y: -0.4227774}
+      - {x: -0.29949144, y: -0.6077837}
+      - {x: -0.008104801, y: -0.9070414}
+      - {x: 2.5103052, y: 1.9943565}
   m_UseDelaunayMesh: 0
+--- !u!114 &6374701867854111787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8633504141379461395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e4305895fc58bc4fa3123a845c9b272, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentRotation: 0
+  RotateLeftToPoint: 180
+  RotateRightToPoint: 0
+  RotationSpeed: 0.5
+  anim: {fileID: 3860081931594944791}
+  TurningLeft: 0
+  TurningRight: 0
+  FacingRight: 0
+  FacingLeft: 1
+  FacingUp: 0
+  FacingDown: 0

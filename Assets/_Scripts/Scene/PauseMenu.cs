@@ -23,7 +23,6 @@ public class PauseMenu : MonoBehaviour
             if (GameIsPaused)
             {
                 Resume();  // If the game is already paused, resume it
-                Return();  // Unpauses the game but resets 'Pause Menus' back to normal status
 
             }
             else
@@ -73,7 +72,6 @@ public class PauseMenu : MonoBehaviour
         returnButton.SetActive(true);
         settingsMenu.SetActive(true);
         Debug.Log("Load Options");
-        // Add options menu loading logic here
     }
 
     public void Return()

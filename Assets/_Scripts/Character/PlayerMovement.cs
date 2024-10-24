@@ -179,7 +179,7 @@ public class PlayerMovement : MonoBehaviour
         // Play footstep audio based on movement
         if (audioManager != null)
         {
-            audioManager.PlaySFX("Footstep");
+            audioManager.PlaySFX("Footsteps");
         }
     }
 }
