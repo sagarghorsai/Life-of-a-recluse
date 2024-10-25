@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
     public float maxStamina = 1f;             // Maximum stamina value
     public float staminaDecreaseRate = 0.5f;  // Rate at which stamina decreases when sprinting
     public float staminaRegenRate = 0.2f;     // Rate at which stamina regenerates when not sprinting
-    [SerializeField] private float footstepInterval = 0.5f; // Adjust based on speed
+    [SerializeField] private float footstepInterval = 0.4f; // Adjust based on speed
     private float footstepTimer;
 
     [Header("---------- UI Component----------")]
@@ -188,12 +188,15 @@ public class PlayerMovement : MonoBehaviour
                 if (isSprinting)
                 {
                     audioManager.PlaySFX("Sprint"); // Play sprint footstep sound
+                    footstepTimer = footstepInterval/2; // Reset the timer
+
                 }
                 else
                 {
                     audioManager.PlaySFX("Footstep"); // Play normal footstep sound
+                    footstepTimer = footstepInterval; // Reset the timer
+
                 }
-                footstepTimer = footstepInterval; // Reset the timer
             }
         }
         else

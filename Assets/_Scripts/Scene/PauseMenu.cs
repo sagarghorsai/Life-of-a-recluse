@@ -59,6 +59,8 @@ public class PauseMenu : MonoBehaviour
         Debug.Log("Load Menu");
         Time.timeScale = 1f;           
         UnityEngine.SceneManagement.SceneManager.LoadScene("Menu");
+        AudioManager.Instance.PlayMusic("MenuMusic");
+
 
 
     }
@@ -83,5 +85,16 @@ public class PauseMenu : MonoBehaviour
         returnButton.SetActive(false);
         settingsMenu.SetActive(false);
         Debug.Log("Load Return");
+    }
+
+    public void ResetScore()
+    {
+        PlayerPrefs.DeleteKey("HighCount"); // Deleting the high score
+        PlayerPrefs.Save(); // Save changes
+        Debug.Log("High score reset."); // Debug log for confirmation   
+        Debug.Log($"{DayCounter.Instance.HighCount}");
+
+
+
     }
 }

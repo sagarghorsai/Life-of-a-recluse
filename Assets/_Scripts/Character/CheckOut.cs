@@ -37,17 +37,17 @@ public class CheckOut : MonoBehaviour
     {
         if (tasklist.canCheckout)
         {
+            Debug.Log($"{dayCounter}+1");
             // Increment the day counter
             if (dayCounter != null)
             {
                 DayCounter.Instance.Next();
                 dayCounter.dayCount += 1;
                 AudioManager.Instance.PlaySFX("Checkout");
-                Debug.Log(dayCounter.HighCount);
                 Debug.Log("Player checked out! Day count increased to: " + dayCounter.dayCount);
 
             }
-
+            tasklist.canCheckout = false;
             UnityEngine.SceneManagement.SceneManager.LoadScene("Level1");
 
         }
