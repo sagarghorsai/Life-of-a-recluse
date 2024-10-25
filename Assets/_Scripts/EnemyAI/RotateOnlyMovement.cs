@@ -22,9 +22,9 @@ public class RotateOnlyMovement : MonoBehaviour
 
     //Designate how far in either direction you would like the enemy to turn to. This is in degrees. (Reccomended 50 and -50 for a 180 coverage on the taste stand employee)
     [SerializeField]
-    float RotateLeftToPoint = 50;
+    float CounterClockwiseToPoint = 50;
     [SerializeField]
-    float RotateRightToPoint = -50;
+    float ClockwiseToPoint = -50;
 
     //Designate How Quickly you would like the enemy to rotate. (Reccomended 0.5 for more realistic outcome)
     [SerializeField]
@@ -65,12 +65,12 @@ public class RotateOnlyMovement : MonoBehaviour
         UpdateAnimation();
 
         //Checks to see if its reached designated points and then changes direction of rotation
-        if (CurrentRotation >= RotateLeftToPoint) 
+        if (CurrentRotation >= CounterClockwiseToPoint) 
         {
             TurningLeft = false;
             TurningRight = true;
         }
-        if (CurrentRotation <= RotateRightToPoint)
+        if (CurrentRotation <= ClockwiseToPoint)
         {
             TurningLeft = true;
             TurningRight = false;
