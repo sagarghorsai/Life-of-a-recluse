@@ -43,7 +43,6 @@ public class RandomizedMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Debug.Log("Update triggered");
         PreviousDestination = transform.position;
         RandomDirectionChange();
         MoveTowardsCurrentDestination();
@@ -59,15 +58,12 @@ public class RandomizedMovement : MonoBehaviour
         if (directionChangeCooldown <= 0)
         {
             randomizedDirection = Random.Range(1, 5);
-            Debug.Log("Randomized Direction: " + randomizedDirection);
 
             randomizedDistance = Random.Range(1, 15);
-            Debug.Log("Randomized Distance: " + randomizedDirection);
 
             switch (randomizedDirection)
             {
                 case 1: //Go Up
-                    Debug.Log("Switch triggerd 1");
                     movingUp = true;
                     movingRight = false;
                     movingDown = false;
@@ -76,7 +72,6 @@ public class RandomizedMovement : MonoBehaviour
                     break;
 
                 case 2: //Go Right
-                    Debug.Log("Switch triggerd 2");
                     movingRight = true;
                     movingUp = false;
                     movingDown = false;
@@ -85,7 +80,6 @@ public class RandomizedMovement : MonoBehaviour
                     break;
 
                 case 3: //Go Down
-                    Debug.Log("Switch triggerd 3");
                     movingDown = true;
                     movingRight = false;
                     movingUp = false;
@@ -94,7 +88,6 @@ public class RandomizedMovement : MonoBehaviour
                     break;
 
                 case 4: //Go Left
-                    Debug.Log("Switch triggerd 4");
                     movingLeft = true;
                     movingRight = false;
                     movingUp = false;
@@ -103,7 +96,6 @@ public class RandomizedMovement : MonoBehaviour
                     break;
 
                 default:
-                    Debug.Log("default switch triggered");
                     break;
             }
 
@@ -115,22 +107,18 @@ public class RandomizedMovement : MonoBehaviour
     {
         if (movingUp)
         {
-            Debug.Log("move up triggered");
             transform.position = Vector3.MoveTowards(transform.position, CurrentDestination, movementSpeed * Time.deltaTime);
         }
         if (movingDown)
         {
-            Debug.Log("move down triggered");
             transform.position = Vector3.MoveTowards(transform.position, CurrentDestination, movementSpeed * Time.deltaTime);
         }
         if (movingLeft)
         {
-            Debug.Log("move left triggered");
             transform.position = Vector3.MoveTowards(transform.position, CurrentDestination, movementSpeed * Time.deltaTime);
         }
         if (movingRight)
         {
-            Debug.Log("move right triggered");
             transform.position = Vector3.MoveTowards(transform.position, CurrentDestination, movementSpeed * Time.deltaTime);
         }
     }

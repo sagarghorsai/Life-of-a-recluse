@@ -36,3 +36,4 @@ MonoBehaviour:
   m_ColliderType: 1
   groceryName: Mango
   numItem: 1
+  tileType: 0

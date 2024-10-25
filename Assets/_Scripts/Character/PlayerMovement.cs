@@ -30,6 +30,8 @@ public class PlayerMovement : MonoBehaviour
     public float maxStamina = 1f;             // Maximum stamina value
     public float staminaDecreaseRate = 0.5f;  // Rate at which stamina decreases when sprinting
     public float staminaRegenRate = 0.2f;     // Rate at which stamina regenerates when not sprinting
+    [SerializeField] private float footstepInterval = 0.5f; // Adjust based on speed
+    private float footstepTimer;
 
     [Header("---------- UI Component----------")]
     public Image staminaImage;              // Reference to the stamina UI slider
@@ -72,6 +74,7 @@ public class PlayerMovement : MonoBehaviour
         // Standard movement
         speedX = Input.GetAxisRaw("Horizontal") * activeSpeed;
         speedY = Input.GetAxisRaw("Vertical") * activeSpeed;
+        Vector2 movement = new Vector2(speedX, speedY);
 
         int dirHeld = -1; // Tracks which direction key is held
 
@@ -95,9 +98,7 @@ public class PlayerMovement : MonoBehaviour
             lastDirHeld = dirHeld; // Update last direction when a key is pressed
             if (!isMoving)
             {
-                PlayFootstepAudio(); // Play footstep audio when movement starts
                 isMoving = true; // Set moving state to true
-                AudioManager.Instance.PlaySFX("Footsteps");
             }
         }
         else
@@ -117,6 +118,9 @@ public class PlayerMovement : MonoBehaviour
         }
 
         anim.speed = 1; // Ensure animation speed is set to 1
+
+        HandleFootsteps(movement); // Play footstep audio when movement starts
+
     }
 
     private void HandleSprintInput()
@@ -126,7 +130,6 @@ public class PlayerMovement : MonoBehaviour
         {
             isSprinting = true;
             activeSpeed = sprintSpeed;
-            AudioManager.Instance.PlaySFX("Dashing");
         }
         else
         {
@@ -174,12 +177,28 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void PlayFootstepAudio()
+    private void HandleFootsteps(Vector2 movement)
     {
-        // Play footstep audio based on movement
-        if (audioManager != null)
+        // Only play footsteps when the player is moving
+        if (movement.magnitude > 0)
         {
-            audioManager.PlaySFX("Footsteps");
+            footstepTimer -= Time.deltaTime;
+            if (footstepTimer <= 0f)
+            {
+                if (isSprinting)
+                {
+                    audioManager.PlaySFX("Sprint"); // Play sprint footstep sound
+                }
+                else
+                {
+                    audioManager.PlaySFX("Footstep"); // Play normal footstep sound
+                }
+                footstepTimer = footstepInterval; // Reset the timer
+            }
+        }
+        else
+        {
+            footstepTimer = 0f; // Reset the timer if the player is not moving
         }
     }
 }

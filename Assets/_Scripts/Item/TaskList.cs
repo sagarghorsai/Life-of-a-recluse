@@ -4,10 +4,10 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.Linq;
 
 public class TaskList : MonoBehaviour
 {
-
     [Header("---------- Item List ----------")]
     public List<GroceryTile> allGroceryTiles; // All available grocery tiles
     public List<GroceryTile> items; // Selected items for the task list
@@ -16,7 +16,7 @@ public class TaskList : MonoBehaviour
     public GameObject buttonPrefab;
     public RectTransform scrollViewContent;
     public TextMeshProUGUI checkoutMessageText; // UI Text to show the message
-    private Dictionary<string, TextMeshProUGUI> itemButtons = new Dictionary<string, TextMeshProUGUI>();
+    public Dictionary<string, List<TextMeshProUGUI>> itemButtons = new Dictionary<string, List<TextMeshProUGUI>>();
 
     [Header("---------- Task List ----------")]
     private int completedTasks = 0;
@@ -42,32 +42,38 @@ public class TaskList : MonoBehaviour
             buttonImage.sprite = items[i].sprite;
 
             // Set the text for the button
-            buttonText.text = $"{items[i].numItem} X " + items[i].groceryName;
+            buttonText.text = items[i].groceryName;
 
             // Store button references
-            itemButtons[items[i].groceryName] = buttonText;
+            if (!itemButtons.ContainsKey(items[i].groceryName))
+            {
+                itemButtons[items[i].groceryName] = new List<TextMeshProUGUI>();
+            }
+            itemButtons[items[i].groceryName].Add(buttonText);
         }
-
-
-       
     }
-
-
 
     private void SelectRandomItems()
     {
-        // Create a list of items grouped by type
-        List<GroceryTile> groceryItems = allGroceryTiles.Where(item => item.tileType == TileType.Grocery).ToList();
-        List<GroceryTile> flowerItems = allGroceryTiles.Where(item => item.tileType == TileType.Flower).ToList();
-        List<GroceryTile> bakeryItems = allGroceryTiles.Where(item => item.tileType == TileType.Bakery).ToList();
-        List<GroceryTile> meatItems = allGroceryTiles.Where(item => item.tileType == TileType.Meat).ToList();
 
-        // Ensure at least one item from each type is selected
-        if (groceryItems.Count > 0) items.Add(groceryItems[Random.Range(0, groceryItems.Count)]);
-        if (flowerItems.Count > 0) items.Add(flowerItems[Random.Range(0, flowerItems.Count)]);
-        if (bakeryItems.Count > 0) items.Add(bakeryItems[Random.Range(0, bakeryItems.Count)]);
-        if (meatItems.Count > 0) items.Add(meatItems[Random.Range(0, meatItems.Count)]);
+        if (numberOfTasks > 5)
+        {
 
+
+            // Create a list of items grouped by type
+            List<GroceryTile> groceryItems = allGroceryTiles.Where(item => item.tileType == TileType.Grocery).ToList();
+            List<GroceryTile> flowerItems = allGroceryTiles.Where(item => item.tileType == TileType.Flower).ToList();
+            List<GroceryTile> bakeryItems = allGroceryTiles.Where(item => item.tileType == TileType.Bakery).ToList();
+            List<GroceryTile> meatItems = allGroceryTiles.Where(item => item.tileType == TileType.Meat).ToList();
+            List<GroceryTile> shelvingItem = allGroceryTiles.Where(item => item.tileType == TileType.Shelving).ToList();
+
+            // Ensure at least one item from each type is selected
+            if (groceryItems.Count > 0) items.Add(groceryItems[Random.Range(0, groceryItems.Count)]);
+            if (flowerItems.Count > 0) items.Add(flowerItems[Random.Range(0, flowerItems.Count)]);
+            if (bakeryItems.Count > 0) items.Add(bakeryItems[Random.Range(0, bakeryItems.Count)]);
+            if (meatItems.Count > 0) items.Add(meatItems[Random.Range(0, meatItems.Count)]);
+            if (shelvingItem.Count > 0) items.Add(shelvingItem[Random.Range(0, shelvingItem.Count)]);
+        }
         // Fill the remaining slots randomly from the whole grocery tile list, excluding already added items
         HashSet<int> selectedIndices = new HashSet<int>();
         while (items.Count < numberOfTasks && selectedIndices.Count < allGroceryTiles.Count)
@@ -83,39 +89,39 @@ public class TaskList : MonoBehaviour
         }
     }
 
-
     public void StrikeThroughItem(string itemName)
     {
         if (itemButtons.ContainsKey(itemName))
         {
-            TextMeshProUGUI buttonText = itemButtons[itemName];
-            if (!buttonText.text.Contains("<s>"))
+            foreach (var buttonText in itemButtons[itemName])
             {
-                completedTasks++;
-
-                // Create a new strike line
-                GameObject strikeLine = Instantiate(strikeLinePrefab, buttonText.transform);
-                RectTransform lineTransform = strikeLine.GetComponent<RectTransform>();
-
-                // Match the width of the text
-                lineTransform.sizeDelta = new Vector2(buttonText.preferredWidth * 0.8f, StrikeHeight); // Set to 80% of the preferred width
-                lineTransform.anchoredPosition = new Vector2(0, 0); // Adjust position to match the center of the text
-
-
-
-                // Check if all tasks are completed
-                if (completedTasks >= items.Count)
+                if (!buttonText.text.Contains("<s>"))
                 {
-                    OnAllTasksCompleted();
-                }
+                    completedTasks++;
 
+                    // Create a new strike line
+                    GameObject strikeLine = Instantiate(strikeLinePrefab, buttonText.transform);
+                    RectTransform lineTransform = strikeLine.GetComponent<RectTransform>();
+
+                    // Match the width of the text
+                    lineTransform.sizeDelta = new Vector2(buttonText.preferredWidth * 0.8f, StrikeHeight); // Set to 80% of the preferred width
+                    lineTransform.anchoredPosition = new Vector2(0, 0); // Adjust position to match the center of the text
+
+                    // Optionally, you can mark the text as struck through
+                    buttonText.text = "<s>" + buttonText.text + "</s>"; // Mark as struck through
+                }
+            }
+
+            // Check if all tasks are completed
+            if (completedTasks >= items.Count)
+            {
+                OnAllTasksCompleted();
             }
         }
-
-      
-
-
-
+        else
+        {
+            Debug.Log("Not in the list");
+        }
     }
 
     private void OnAllTasksCompleted()
@@ -127,57 +133,5 @@ public class TaskList : MonoBehaviour
         checkoutMessageText.text = "All tasks completed! Head to the cashier to check out.";
     }
 
-    // Method to get the button image based on the grocery name
-    public Image GetButtonImageForItem(string itemName)
-    {
-        foreach (var item in items)
-        {
-            if (item.groceryName == itemName)
-            {
-                // Find the button in the scrollViewContent matching this item
-                foreach (Transform child in scrollViewContent)
-                {
-                    var buttonText = child.GetComponentInChildren<TextMeshProUGUI>();
-                    var buttonImage = child.GetChild(1).GetComponent<Image>();
-
-                    if (buttonText.text.Contains(itemName))
-                    {
-                        return buttonImage;  // Return the corresponding image
-                    }
-                }
-            }
-        }
-        return null;  // If no match is found, return null
-    }
-
-    public bool ReduceNumItems(string itemName)
-    {
-        foreach (var item in items)
-        {
-            if (item.groceryName == itemName)
-            {
-                item.numItem--;  // Decrement the number of items
-                UpdateButtonText(item);  // Update the button text to reflect the new numItem count
-
-                // If all items are picked (numItem is 0), return true to strike through
-                if (item.numItem <= 0)
-                {
-                    return true;
-                }
-                return false;  // Still more items left
-            }
-        }
-        return false;
-    }
-
-    // Method to update the button text
-    private void UpdateButtonText(GroceryTile item)
-    {
-        if (itemButtons.ContainsKey(item.groceryName))
-        {
-            TextMeshProUGUI buttonText = itemButtons[item.groceryName];
-            buttonText.text = $"{item.numItem} X {item.groceryName}";  // Update text with the new numItem value
-        }
-    }
-
+    
 }

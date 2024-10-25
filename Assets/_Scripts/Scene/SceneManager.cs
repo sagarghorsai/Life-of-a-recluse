@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEditor;  // This is to reference the Unity Editor
 
 public class SceneManager : MonoBehaviour
 {
@@ -64,11 +63,15 @@ public class SceneManager : MonoBehaviour
     }
 
 
-    public void Reset()
+    public void ResetScore()
     {
-        PlayerPrefs.DeleteKey("HighCount");
+        PlayerPrefs.DeleteKey("HighCount"); // Deleting the high score
+        PlayerPrefs.Save(); // Save changes
+        Debug.Log("High score reset."); // Debug log for confirmation   
+        Debug.Log($"{DayCounter.Instance.HighCount}");
+     
+
+
     }
-
-
 }
-   
+

@@ -34,6 +34,5 @@ MonoBehaviour:
   m_InstancedGameObject: {fileID: 0}
   m_Flags: 1
   m_ColliderType: 1
-  groceryName: Steak
-  numItem: 1
+  groceryName: 1 X Steak
   tileType: 3

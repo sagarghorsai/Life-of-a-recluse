@@ -34,14 +34,23 @@ public class PlayerPickup : MonoBehaviour
         // If the player presses "E" and a grocery tile is detected
         if (currentGroceryTile != null && Input.GetKeyDown(KeyCode.E))
         {
-            if (taskList.items.Contains(currentGroceryTile))
+            foreach (var item in taskList.items)
             {
-                AudioManager.Instance.PlaySFX("PickUP");
-                PickUpGrocery();
-            }
-            else
-            {
-                Debug.Log("Not in the groceryList");
+
+
+                if (item.groceryName == currentGroceryTile.groceryName)
+                {
+
+
+                    AudioManager.Instance.PlaySFX("PickUP");
+                    PickUpGrocery();
+                }
+                else
+                {
+                    Debug.Log($"{item.groceryName} isnt the same as {currentGroceryTile.groceryName}");
+
+
+                }
             }
         }
     }
@@ -70,31 +79,14 @@ public class PlayerPickup : MonoBehaviour
     {
         Debug.Log("Pressed E to pick up: " + currentGroceryTile.groceryName);
 
-        // Find the corresponding button image in the TaskList
-        Image buttonImage = taskList.GetButtonImageForItem(currentGroceryTile.groceryName);
-
-        // Verify that the current grocery tile's sprite matches the button image
-        if (buttonImage != null && buttonImage.sprite == currentGroceryTile.sprite)
-        {
-            // Reduce the number of items in the task list and verify
-            if (taskList.ReduceNumItems(currentGroceryTile.groceryName))
-            {
-                // If numItem reaches zero, strike through the item
+            
                 groceryTilemap.SetTile(frontTilePosition, null);  // Remove the tile from the tilemap
                 pickUpText.gameObject.SetActive(false);  // Hide the text after picking up
 
                 // Strike through the item in the task list
                 taskList.StrikeThroughItem(currentGroceryTile.groceryName);
-            }
-            else
-            {
-                Debug.Log("Still more items left to pick up for " + currentGroceryTile.groceryName);
-            }
-        }
-        else
-        {
-            Debug.Log("No matching button image found or grocery item does not match.");
-        }
+            
+       
 
         currentGroceryTile = null;  // Clear the current tile reference
     }
