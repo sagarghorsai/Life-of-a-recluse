@@ -7,13 +7,16 @@ public class SceneManager : MonoBehaviour
     public GameObject MenuSetting;
     public GameObject TitleImage;
     public GameObject HelpSetting;
-    public GameObject HelpButton;
+    public GameObject ExtraSetting;
+
+    public GameObject Credits;
 
     private AudioManager audiomanager;
     private void Start()
     {
         settingOption.SetActive(false);
         HelpSetting.SetActive(false);
+        Credits.SetActive(false);
         MenuSetting.SetActive(true);
         TitleImage.SetActive(true);
 
@@ -38,7 +41,9 @@ public class SceneManager : MonoBehaviour
         MenuSetting.SetActive(false);
         TitleImage.SetActive(false);
         HelpSetting.SetActive(false);
-        HelpButton.SetActive(false);
+        ExtraSetting.SetActive(false);
+        Credits.SetActive(false);
+
     }
 
     public void Menu()
@@ -47,7 +52,9 @@ public class SceneManager : MonoBehaviour
         MenuSetting.SetActive(true);
         TitleImage.SetActive(true);
         HelpSetting.SetActive(false);
-        HelpButton.SetActive(true);
+        ExtraSetting.SetActive(true);
+        Credits.SetActive(false);
+
 
 
     }
@@ -58,7 +65,20 @@ public class SceneManager : MonoBehaviour
         MenuSetting.SetActive(false);
         TitleImage.SetActive(false);
         HelpSetting.SetActive(true);
-        HelpButton.SetActive(false);
+        ExtraSetting.SetActive(false);
+        Credits.SetActive(false);
+
+
+    }
+    public void Credit()
+    {
+        settingOption.SetActive(false);
+        MenuSetting.SetActive(false);
+        TitleImage.SetActive(false);
+        HelpSetting.SetActive(false);
+        ExtraSetting.SetActive(false);
+        Credits.SetActive(true);
+
 
     }
 
