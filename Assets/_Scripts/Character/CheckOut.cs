@@ -23,8 +23,7 @@ public class CheckOut : MonoBehaviour
             Debug.LogError("DayCounter not found in the scene! Make sure you have a DayCounter component.");
         }
         dayText.text = $"Day \n{dayCounter.dayCount}";
-        highText.text = $"Most Survived \n{dayCounter.HighCount}";
-
+        Debug.Log($"HighScore is {dayCounter.HighCount}");
         if (audioManager != null)
         {
             audioManager = FindObjectOfType<AudioManager>(); // Find the AudioManager in the scene
@@ -43,7 +42,7 @@ public class CheckOut : MonoBehaviour
             {
                 DayCounter.Instance.Next();
                 dayCounter.dayCount += 1;
-                AudioManager.Instance.PlaySFX("Checkout");
+                AudioManager.Instance.PlaySFX("CheckOut");
                 Debug.Log("Player checked out! Day count increased to: " + dayCounter.dayCount);
 
             }

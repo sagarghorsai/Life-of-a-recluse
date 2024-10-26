@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5043393601586559822}
   - component: {fileID: 8104765285531589098}
   - component: {fileID: 3498332104556764887}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Manager_Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2004665854322908946}
   - component: {fileID: 4103389640691236664}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: InteractionZone
   m_TagString: InteractionZone
   m_Icon: {fileID: 0}
@@ -196,7 +196,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1411872714049631358}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -230,7 +230,7 @@ GameObject:
   - component: {fileID: 5316351121339148591}
   - component: {fileID: 420470002047078011}
   - component: {fileID: 4163055383932045267}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ManagerIdle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -290,8 +290,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1729502109
-  m_SortingLayer: 2
+  m_SortingLayerID: -2135781163
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 1115222833, guid: 0db28720861cb4c409d4b9084fda6292, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

@@ -21,9 +21,5 @@ public class FinalScore : MonoBehaviour
         hiScoreText.text = $"Most days survived in one run \n{dayCounter.HighCount}";
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+ 
 }

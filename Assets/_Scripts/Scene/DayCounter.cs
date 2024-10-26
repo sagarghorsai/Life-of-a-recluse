@@ -7,6 +7,7 @@ public class DayCounter : MonoBehaviour
     public int dayCount = 1;
     public int HighCount = 0;
 
+
     private void Awake()
     {
         

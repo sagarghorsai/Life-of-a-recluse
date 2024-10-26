@@ -383,8 +383,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentRotation: 180
-  CounterClockwiseToPoint: 50
-  ClockwiseToPoint: -50
+  CounterClockwiseToPoint: 270
+  ClockwiseToPoint: 90
   RotationSpeed: 0.5
   anim: {fileID: 3860081931594944791}
   TurningLeft: 0
