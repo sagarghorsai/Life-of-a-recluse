@@ -7,10 +7,8 @@ public class DayCounter : MonoBehaviour
     public int dayCount = 1;
     public int HighCount = 0;
 
-
     private void Awake()
     {
-        
         // Ensure that only one instance of DayCounter exists and persists between scenes
         if (Instance == null)
         {
@@ -23,9 +21,7 @@ public class DayCounter : MonoBehaviour
         {
             Destroy(gameObject); // Destroy duplicates if they exist
         }
-
     }
-
 
     public void Next()
     {
@@ -33,17 +29,14 @@ public class DayCounter : MonoBehaviour
         {
             HighCount = dayCount;
             PlayerPrefs.SetInt("HighCount", HighCount);
-            Debug.Log(HighCount);
+            Debug.Log("New High Count: " + HighCount);
         }
-
     }
+
+
 
     private void OnDestroy()
     {
         PlayerPrefs.SetInt("HighCount", HighCount);
-    }
-    private void OnApplicationQuit()
-    {
-        PlayerPrefs.DeleteAll();
     }
 }

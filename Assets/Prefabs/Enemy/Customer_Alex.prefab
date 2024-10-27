@@ -428,8 +428,6 @@ MonoBehaviour:
   enemyWaypoints:
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   speed: 5
 --- !u!50 &4025075293566885860
 Rigidbody2D:

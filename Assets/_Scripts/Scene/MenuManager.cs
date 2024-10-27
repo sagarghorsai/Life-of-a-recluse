@@ -71,17 +71,13 @@ public class MenuManager : MonoBehaviour
 
 
     }
-
-
     public void ResetScore()
     {
-        PlayerPrefs.DeleteKey("HighCount"); // Deleting the high score
-        PlayerPrefs.Save(); // Save changes
-        Debug.Log("High score reset."); // Debug log for confirmation   
-        Debug.Log($"{DayCounter.Instance.HighCount}");
-     
-
-
+        PlayerPrefs.DeleteKey("HighCount");
+        DayCounter.Instance.HighCount = 1; // Reset HighCount to default in the script
+        PlayerPrefs.Save();
+        Debug.Log("High score reset.");
     }
+
 }
 

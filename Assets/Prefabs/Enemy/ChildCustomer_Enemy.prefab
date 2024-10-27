@@ -245,7 +245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fab8400c1ce5bc241bd5a1ffc2aa737d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 1
+  movementSpeed: 2
   directionChangeCooldown: 0
   anim: {fileID: 5447403464726634635}
   movingUp: 0

@@ -119,7 +119,7 @@ MonoBehaviour:
   buttonPrefab: {fileID: 2894186635379076600, guid: 4c9e5ea95f0aa45498a4a7ae7672aab8, type: 3}
   scrollViewContent: {fileID: 0}
   checkoutMessageText: {fileID: 0}
-  numberOfTasks: 5
+  numberOfTasks: 1
   canCheckout: 0
   uiText: {fileID: 2894186635379076600, guid: 4c9e5ea95f0aa45498a4a7ae7672aab8, type: 3}
   strikeLinePrefab: {fileID: 3145029118387883531, guid: 07153da1ba254c048acb7507778c85a5, type: 3}
