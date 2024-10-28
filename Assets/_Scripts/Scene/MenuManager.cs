@@ -8,9 +8,7 @@ public class MenuManager : MonoBehaviour
     public GameObject TitleImage;
     public GameObject HelpSetting;
     public GameObject ExtraSetting;
-
     public GameObject Credits;
-
     private AudioManager audiomanager;
     private void Start()
     {

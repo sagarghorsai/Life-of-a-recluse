@@ -34,6 +34,7 @@ public class CheckOut : MonoBehaviour
 
     public void Checkout()
     {
+
         if (tasklist.canCheckout)
         {
             Debug.Log($"{dayCounter}+1");
@@ -47,7 +48,7 @@ public class CheckOut : MonoBehaviour
 
             }
             tasklist.canCheckout = false;
-            UnityEngine.SceneManagement.SceneManager.LoadScene("Level1");
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Win");
 
         }
         else

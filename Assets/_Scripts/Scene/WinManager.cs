@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
-public class SceneManager : MonoBehaviour
+public class WinManager : MonoBehaviour
 {
+    public TextMeshProUGUI DayText;
+
+
     DayCounter dayCounter;
     private void Start()
     {
@@ -14,14 +18,10 @@ public class SceneManager : MonoBehaviour
             Debug.LogError("DayCounter not found in the scene! Make sure you have a DayCounter component.");
         }
     }
-
-    public void StartGame()
+    private void Update()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Level1");
-        AudioManager.Instance.PlayMusic("LevelMusic");
-        dayCounter.dayCount = 1;
+        DayText.text = $"Congrats you've completed day  \n{dayCounter.dayCount-1}"; 
     }
-
     public void BackToMenu()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("Menu");
