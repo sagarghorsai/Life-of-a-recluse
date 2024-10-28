@@ -19037,7 +19037,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 355bbf2877cb6ec44a689d38e2f8c76e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingTime: 180
+  startingTime: 130
   countdownText: {fileID: 2133446012}
   toSpawn:
   - {fileID: 46118064}

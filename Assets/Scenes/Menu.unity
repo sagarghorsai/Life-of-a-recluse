@@ -914,8 +914,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 10.15, y: 171}
-  m_SizeDelta: {x: 250, y: 250}
+  m_AnchoredPosition: {x: 0, y: 67}
+  m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &423705947
 MonoBehaviour:
@@ -1427,8 +1427,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00029278, y: -105}
-  m_SizeDelta: {x: 250, y: 250}
+  m_AnchoredPosition: {x: 0, y: -123}
+  m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &617111156
 MonoBehaviour:
@@ -1693,10 +1693,10 @@ RectTransform:
   - {fileID: 1568520033}
   m_Father: {fileID: 1440988719}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -87.46991, y: -82.24173}
-  m_SizeDelta: {x: 251.8796, y: 254.9669}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 75, y: -75}
+  m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &652675382
 MonoBehaviour:
@@ -1972,8 +1972,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 207.8076, y: 75.7213}
+  m_AnchoredPosition: {x: 0, y: 50}
+  m_SizeDelta: {x: 200, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &841383896
 MonoBehaviour:
@@ -2251,7 +2251,7 @@ RectTransform:
   m_GameObject: {fileID: 924702183}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0125, y: 1.0625, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1440988719}
@@ -3443,7 +3443,7 @@ RectTransform:
   m_GameObject: {fileID: 1568520032}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9125, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 423705946}
@@ -3452,8 +3452,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1, y: -10.776}
-  m_SizeDelta: {x: 257, y: -284.446}
+  m_AnchoredPosition: {x: 0.00046158, y: 187.186}
+  m_SizeDelta: {x: 150, y: -581.358}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1568520034
 MonoBehaviour:
@@ -3795,7 +3795,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -651, y: 322.48877}
+  m_AnchoredPosition: {x: -701, y: 195}
   m_SizeDelta: {x: 505.60828, y: 644.97754}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1808465996
@@ -3837,7 +3837,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 200}
-  m_SizeDelta: {x: 207.8076, y: 75.7213}
+  m_SizeDelta: {x: 200, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1808465998
 Animator:
@@ -4335,8 +4335,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -200}
-  m_SizeDelta: {x: 207.8076, y: 75.7213}
+  m_AnchoredPosition: {x: 0, y: -100}
+  m_SizeDelta: {x: 200, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1929979566
 MonoBehaviour:
@@ -4487,8 +4487,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -36.743664, y: -437}
-  m_SizeDelta: {x: 1358.2144, y: 1079.6495}
+  m_AnchoredPosition: {x: 37.283596, y: -384.6393}
+  m_SizeDelta: {x: 1217.3821, y: 974.9281}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2026673105
 MonoBehaviour:
@@ -4510,19 +4510,49 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Objective\n\nYour goal is to gather all the items on your Grocery List
-    as fast as possible.\nNavigate the aisles, find the groceries, and avoid any
-    obstacles or hazards.\n\nUI Elements\nPanic Meter: Watch your panic meter! If
-    it fills up, you lose control for a short time.\nGrocery List: Displays the items
-    you need to collect.\nCircular Dash Meter: Shows your dash cooldown. When the
-    meter is full, you can dash again.\n\n Grocery Placement\n\nItems are placed
-    randomly across the grocery store. Explore different aisles to find them.\nSome
-    items might be behind shelves or require interacting with NPCs to obtain.\n\nEnemies\n\nNPCs:
-    Avoid certain NPCs who may block your path. Some might move along set paths,
-    so time your moves carefully.\nTraps/Hazards: Look out for spilled liquids or
-    other hazards that could slow you down.\n\nWinning\n\nOnce you've collected all
-    the items on your grocery list, make your way to the checkout counter to complete
-    the level.\nFinish in the shortest time possible to earn higher scores!"
+  m_text: 'Objective
+
+
+    Your goal is to gather all the items on your Grocery List
+    as fast as possible.
+
+    Navigate the aisles, find the groceries, and avoid
+    any obstacles or hazards.
+
+
+    UI Elements
+
+    Panic Meter: Watch your panic
+    meter! If it fills up,.
+
+    Grocery List: Displays the items you need to collect.
+
+    Circular
+    Dash Meter: Shows your dash cooldown. When the meter is full, you can dash again.
+
+
+    Grocery
+    Placement
+
+    Items are placed randomly across the grocery store. Explore different
+    aisles to find them.
+
+
+    Enemies
+
+    NPCs: Avoid certain NPCs who may block
+    your path. Some might move along set paths, so time your moves carefully.
+
+    Traps/Hazards:
+    Look out for spilled liquids or other hazards that could slow you down.
+
+
+    Winning
+
+    Once
+    you''ve collected all the items on your grocery list, make your way to the checkout
+    counter to complete the level. You will be given the option to go into another
+    day to play the game again'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8b24b97e00dfc4049b972bed232d626d, type: 2}
   m_sharedMaterial: {fileID: 5212190068505998125, guid: 8b24b97e00dfc4049b972bed232d626d, type: 2}
