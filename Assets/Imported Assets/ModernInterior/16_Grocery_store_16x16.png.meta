@@ -6187,13 +6187,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 16_Grocery_store_16x16_336
+      name: WindowTop_1
       rect:
         serializedVersion: 2
         x: 176
-        y: 864
+        y: 867
         width: 16
-        height: 16
+        height: 13
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6208,13 +6208,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 16_Grocery_store_16x16_337
+      name: WindowTop_2
       rect:
         serializedVersion: 2
         x: 192
-        y: 864
+        y: 867
         width: 16
-        height: 16
+        height: 13
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6229,13 +6229,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 16_Grocery_store_16x16_338
+      name: WindowTop_3
       rect:
         serializedVersion: 2
         x: 208
-        y: 864
+        y: 867
         width: 16
-        height: 16
+        height: 13
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6250,13 +6250,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 16_Grocery_store_16x16_339
+      name: WindowTop_4
       rect:
         serializedVersion: 2
         x: 224
-        y: 864
+        y: 867
         width: 16
-        height: 16
+        height: 13
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6502,13 +6502,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 16_Grocery_store_16x16_351
+      name: WindowBottom_1
       rect:
         serializedVersion: 2
         x: 176
-        y: 848
+        y: 855
         width: 16
-        height: 16
+        height: 12
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6523,13 +6523,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 16_Grocery_store_16x16_352
+      name: WindowBottom_2
       rect:
         serializedVersion: 2
         x: 192
-        y: 848
+        y: 855
         width: 16
-        height: 16
+        height: 12
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6544,13 +6544,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 16_Grocery_store_16x16_353
+      name: WindowBottom_3
       rect:
         serializedVersion: 2
         x: 208
-        y: 848
+        y: 855
         width: 16
-        height: 16
+        height: 12
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6565,13 +6565,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 16_Grocery_store_16x16_354
+      name: WindowBottom_4
       rect:
         serializedVersion: 2
         x: 224
-        y: 848
+        y: 855
         width: 16
-        height: 16
+        height: 12
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -23278,10 +23278,6 @@ TextureImporter:
       16_Grocery_store_16x16_330: -1053588707
       16_Grocery_store_16x16_332: 1365905700
       16_Grocery_store_16x16_333: 2127694667
-      16_Grocery_store_16x16_336: -955237389
-      16_Grocery_store_16x16_337: 1257820385
-      16_Grocery_store_16x16_338: -1011079017
-      16_Grocery_store_16x16_339: 1831200652
       16_Grocery_store_16x16_34: 32422605
       16_Grocery_store_16x16_341: -211487405
       16_Grocery_store_16x16_342: 1523433613
@@ -23290,10 +23286,6 @@ TextureImporter:
       16_Grocery_store_16x16_349: 206259477
       16_Grocery_store_16x16_35: 1550377546
       16_Grocery_store_16x16_350: -761617367
-      16_Grocery_store_16x16_351: -1719265185
-      16_Grocery_store_16x16_352: -1274883208
-      16_Grocery_store_16x16_353: -286335616
-      16_Grocery_store_16x16_354: -1934916429
       16_Grocery_store_16x16_357: 2088423740
       16_Grocery_store_16x16_358: -780296450
       16_Grocery_store_16x16_36: -812333370
@@ -24116,6 +24108,14 @@ TextureImporter:
       WhiteFish_Bottom: 718732892
       WhiteFish_Top: -276115237
       WhiteFlower_Top: -1637740164
+      WindowBottom_1: -1719265185
+      WindowBottom_2: -1274883208
+      WindowBottom_3: -286335616
+      WindowBottom_4: -1934916429
+      WindowTop_1: -955237389
+      WindowTop_2: 1257820385
+      WindowTop_3: -1011079017
+      WindowTop_4: 1831200652
       WrapCounter: -1561998410
       YellowJar: -864526805
       YellowJars: -1678985553

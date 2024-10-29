@@ -20,6 +20,7 @@ public class CountdownClock : MonoBehaviour
     public float startingTime = 10f;
     public TextMeshProUGUI countdownText;
     public GameObject[] toSpawn;
+    public bool alarmTrigger = false;
 
     void Start()
     {
@@ -33,9 +34,19 @@ public class CountdownClock : MonoBehaviour
 
         if (currentTime <= 0)
         {
+            if (!alarmTrigger)
+            {
+                AudioManager.Instance.PlaySFX("Timer");
+                AudioManager.Instance.PlayMusic("BossMusic");
+
+                alarmTrigger = true;
+            }
+
+
             currentTime = 0;
             Spawn(toSpawn[0]);
         }
+       
     }
 
     void Spawn (GameObject spawnThis)

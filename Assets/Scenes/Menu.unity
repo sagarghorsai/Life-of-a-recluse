@@ -2320,6 +2320,42 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1400773602781632109, guid: cdc93fb9712536f4fbf3f5fe1b6d66ef, type: 3}
+      propertyPath: audioList.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1400773602781632109, guid: cdc93fb9712536f4fbf3f5fe1b6d66ef, type: 3}
+      propertyPath: backgroundList.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1400773602781632109, guid: cdc93fb9712536f4fbf3f5fe1b6d66ef, type: 3}
+      propertyPath: audioList.Array.data[2].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 31860fafb991a60489343a47ca63845c, type: 3}
+    - target: {fileID: 1400773602781632109, guid: cdc93fb9712536f4fbf3f5fe1b6d66ef, type: 3}
+      propertyPath: audioList.Array.data[4].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4585f6a389226f54ab643ba54e1eed41, type: 3}
+    - target: {fileID: 1400773602781632109, guid: cdc93fb9712536f4fbf3f5fe1b6d66ef, type: 3}
+      propertyPath: audioList.Array.data[4].name
+      value: Timer
+      objectReference: {fileID: 0}
+    - target: {fileID: 1400773602781632109, guid: cdc93fb9712536f4fbf3f5fe1b6d66ef, type: 3}
+      propertyPath: audioList.Array.data[5].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: e668fd8d3b2429d44980cbc31b220c92, type: 3}
+    - target: {fileID: 1400773602781632109, guid: cdc93fb9712536f4fbf3f5fe1b6d66ef, type: 3}
+      propertyPath: audioList.Array.data[5].name
+      value: Sprint
+      objectReference: {fileID: 0}
+    - target: {fileID: 1400773602781632109, guid: cdc93fb9712536f4fbf3f5fe1b6d66ef, type: 3}
+      propertyPath: backgroundList.Array.data[2].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: a0e9269d0e20e2b40b8a7e6d99ab2704, type: 3}
+    - target: {fileID: 1400773602781632109, guid: cdc93fb9712536f4fbf3f5fe1b6d66ef, type: 3}
+      propertyPath: backgroundList.Array.data[2].name
+      value: BossMusic
+      objectReference: {fileID: 0}
     - target: {fileID: 8541629338542176740, guid: cdc93fb9712536f4fbf3f5fe1b6d66ef, type: 3}
       propertyPath: m_LocalPosition.x
       value: 537.9773
@@ -4543,9 +4579,6 @@ MonoBehaviour:
     NPCs: Avoid certain NPCs who may block
     your path. Some might move along set paths, so time your moves carefully.
 
-    Traps/Hazards:
-    Look out for spilled liquids or other hazards that could slow you down.
-
 
     Winning
 
@@ -5025,30 +5058,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3820588797171355436, guid: f58defd54cb236c4b846615a357a407b, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3820588797171355436, guid: f58defd54cb236c4b846615a357a407b, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3820588797171355436, guid: f58defd54cb236c4b846615a357a407b, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6725531355916964989, guid: f58defd54cb236c4b846615a357a407b, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6725531355916964989, guid: f58defd54cb236c4b846615a357a407b, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6903367873711210672, guid: f58defd54cb236c4b846615a357a407b, type: 3}
-      propertyPath: m_Value
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6903367873711210672, guid: f58defd54cb236c4b846615a357a407b, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -5150,29 +5159,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1905669160606462684, guid: 3838dd271b21a394293679fdec0e0c5d, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0.5249525
-      objectReference: {fileID: 0}
-    - target: {fileID: 1905669160606462684, guid: 3838dd271b21a394293679fdec0e0c5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2975231299970205714, guid: 3838dd271b21a394293679fdec0e0c5d, type: 3}
       propertyPath: m_Name
       value: MusicSlider
-      objectReference: {fileID: 0}
-    - target: {fileID: 3496023717692645898, guid: 3838dd271b21a394293679fdec0e0c5d, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0.5249525
-      objectReference: {fileID: 0}
-    - target: {fileID: 3496023717692645898, guid: 3838dd271b21a394293679fdec0e0c5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3496023717692645898, guid: 3838dd271b21a394293679fdec0e0c5d, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0.5249525
       objectReference: {fileID: 0}
     - target: {fileID: 6488097757726560322, guid: 3838dd271b21a394293679fdec0e0c5d, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
