@@ -39,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isSprinting = false;         // Whether the player is currently sprinting
     private bool canSprint = true;            // Whether the player is allowed to sprint
     private float activeSpeed;                // Variable to track current speed
+    public GameObject tasklist;
 
     // Start is called before the first frame update
     void Start()
@@ -46,6 +47,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();   // Get the Rigidbody2D component
         anim = GetComponent<Animator>();    // Get the Animator component
         audioManager = FindObjectOfType<AudioManager>(); // Find the AudioManager in the scene
+        tasklist.SetActive(false);
 
         activeSpeed = walkSpeed;     // Set dash to player's normal movement speed initially.
         currentStamina = maxStamina;
@@ -66,7 +68,12 @@ public class PlayerMovement : MonoBehaviour
         HandleSprintInput();          // Check for sprint input
         UpdateStamina();              // Update stamina based on sprinting state
         UpdateUI();                   // Update the UI to reflect current stamina
-        
+
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            tasklist.SetActive(!tasklist.activeSelf);
+        }
+
     }
 
     void Movement()

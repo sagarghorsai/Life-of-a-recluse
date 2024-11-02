@@ -17,7 +17,13 @@ public class SceneManager : MonoBehaviour
 
     public void StartGame()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Level1");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("L1");
+        AudioManager.Instance.PlayMusic("LevelMusic");
+        dayCounter.dayCount = 1;
+    }
+    public void Tutorial()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Tutorial");
         AudioManager.Instance.PlayMusic("LevelMusic");
         dayCounter.dayCount = 1;
     }
