@@ -3,72 +3,85 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
-    public GameObject settingOption;
-    public GameObject MenuSetting;
-    public GameObject TitleImage;
-    public GameObject HelpSetting;
-    public GameObject ExtraSetting;
-    public GameObject Credits;
-    private AudioManager audiomanager;
+    public GameObject menuTitle;
+    public GameObject menuContent;
+    public GameObject OptionContent;
+    public GameObject SoundContent;
+    public GameObject ControlContent;
+    public GameObject creditContent;
     private void Start()
     {
-        settingOption.SetActive(false);
-        HelpSetting.SetActive(false);
-        Credits.SetActive(false);
-        MenuSetting.SetActive(true);
-        TitleImage.SetActive(true);
-
-        audiomanager = GetComponent<AudioManager>();
+        menuTitle.SetActive(true);
+        menuContent.SetActive(true);
+        OptionContent.SetActive(false);
+        SoundContent.SetActive(false);
+        ControlContent.SetActive(false);
+        creditContent.SetActive(false);
 
     }
-  
 
-    public void Options()
+    public void MainMenu()
     {
-        settingOption.SetActive(true);
-        MenuSetting.SetActive(false);
-        TitleImage.SetActive(false);
-        HelpSetting.SetActive(false);
-        ExtraSetting.SetActive(false);
-        Credits.SetActive(false);
+        menuTitle.SetActive(true);
+        menuContent.SetActive(true);
+        OptionContent.SetActive(false);
+        SoundContent.SetActive(false);
+        ControlContent.SetActive(false);
+        creditContent.SetActive(false);
+
 
     }
-
-    public void Menu()
+    public void Setting()
     {
-        settingOption.SetActive(false);
-        MenuSetting.SetActive(true);
-        TitleImage.SetActive(true);
-        HelpSetting.SetActive(false);
-        ExtraSetting.SetActive(true);
-        Credits.SetActive(false);
-
+        menuTitle.SetActive(false);
+        menuContent.SetActive(false);
+        OptionContent.SetActive(true);
+        SoundContent.SetActive(false);
+        ControlContent.SetActive(false);
+        creditContent.SetActive(false);
 
 
     }
 
-    public void Help()
+    public void SoundSetting()
     {
-        settingOption.SetActive(false);
-        MenuSetting.SetActive(false);
-        TitleImage.SetActive(false);
-        HelpSetting.SetActive(true);
-        ExtraSetting.SetActive(false);
-        Credits.SetActive(false);
-
+        menuTitle.SetActive(false);
+        menuContent.SetActive(false);
+        OptionContent.SetActive(false);
+        SoundContent.SetActive(true);
+        ControlContent.SetActive(false);
+        creditContent.SetActive(false);
 
     }
-    public void Credit()
+
+    public void ControlSetting()
     {
-        settingOption.SetActive(false);
-        MenuSetting.SetActive(false);
-        TitleImage.SetActive(false);
-        HelpSetting.SetActive(false);
-        ExtraSetting.SetActive(false);
-        Credits.SetActive(true);
-
+        menuTitle.SetActive(false);
+        menuContent.SetActive(false);
+        OptionContent.SetActive(false);
+        SoundContent.SetActive(false);
+        ControlContent.SetActive(true); 
+        creditContent.SetActive(false);
 
     }
+
+    public void CreditSetting()
+    {
+        menuTitle.SetActive(false);
+        menuContent.SetActive(false);
+        OptionContent.SetActive(false);
+        SoundContent.SetActive(false);
+        ControlContent.SetActive(false);
+        creditContent.SetActive(true);
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
+
+
+
     public void ResetScore()
     {
         PlayerPrefs.DeleteKey("HighCount");
