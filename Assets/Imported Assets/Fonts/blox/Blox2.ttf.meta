@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f0fe7a9f7883ccc4c8222e3d6caefb8e
+guid: 92e3cc073f5f5cb43955fed1bf04a890
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - UO Claudia
+  - Blox BRK
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

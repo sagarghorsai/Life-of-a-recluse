@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e24f03f002be10e4ab62b359c22222c8
+guid: 55d51b7a2d6b3d94ca93388283bf206d
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - UO Lydia
+  - Supply Center
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
