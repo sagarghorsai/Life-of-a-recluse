@@ -5,9 +5,8 @@ using UnityEngine;
 
 public class CheckOut : MonoBehaviour
 {
-    public DayCounter dayCounter;
+    private DayCounter dayCounter;
     public TextMeshProUGUI dayText;
-    public TextMeshProUGUI highText;
     private AudioManager audioManager;
 
     private TaskList tasklist;
