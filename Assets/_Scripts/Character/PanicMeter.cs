@@ -17,6 +17,8 @@ using UnityEngine.Events;
 
 public class PanicMeter : MonoBehaviour
 {
+    private AudioManager audioManager;
+
     [Header("---------- Panic Values ----------")]
     public float panicValue;
     public float panicMax = 10; //Maximum number the panic value can go up to
@@ -97,6 +99,7 @@ public class PanicMeter : MonoBehaviour
 
     private void FreakedOut()
     {
+        AudioManager.Instance.PlaySFX("Scream");
         UnityEngine.SceneManagement.SceneManager.LoadScene("Lose");
         Debug.Log("You freakedOut");
     }
