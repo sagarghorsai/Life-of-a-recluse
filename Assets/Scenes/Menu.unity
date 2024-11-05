@@ -2215,42 +2215,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1400773602781632109, guid: cdc93fb9712536f4fbf3f5fe1b6d66ef, type: 3}
-      propertyPath: audioList.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1400773602781632109, guid: cdc93fb9712536f4fbf3f5fe1b6d66ef, type: 3}
-      propertyPath: backgroundList.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1400773602781632109, guid: cdc93fb9712536f4fbf3f5fe1b6d66ef, type: 3}
-      propertyPath: audioList.Array.data[2].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 31860fafb991a60489343a47ca63845c, type: 3}
-    - target: {fileID: 1400773602781632109, guid: cdc93fb9712536f4fbf3f5fe1b6d66ef, type: 3}
-      propertyPath: audioList.Array.data[4].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 4585f6a389226f54ab643ba54e1eed41, type: 3}
-    - target: {fileID: 1400773602781632109, guid: cdc93fb9712536f4fbf3f5fe1b6d66ef, type: 3}
-      propertyPath: audioList.Array.data[4].name
-      value: Timer
-      objectReference: {fileID: 0}
-    - target: {fileID: 1400773602781632109, guid: cdc93fb9712536f4fbf3f5fe1b6d66ef, type: 3}
-      propertyPath: audioList.Array.data[5].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 9cdfb2ad5d25bcd4b9bede9f6c9281de, type: 3}
-    - target: {fileID: 1400773602781632109, guid: cdc93fb9712536f4fbf3f5fe1b6d66ef, type: 3}
-      propertyPath: audioList.Array.data[5].name
-      value: Scream
-      objectReference: {fileID: 0}
-    - target: {fileID: 1400773602781632109, guid: cdc93fb9712536f4fbf3f5fe1b6d66ef, type: 3}
-      propertyPath: backgroundList.Array.data[2].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: a0e9269d0e20e2b40b8a7e6d99ab2704, type: 3}
-    - target: {fileID: 1400773602781632109, guid: cdc93fb9712536f4fbf3f5fe1b6d66ef, type: 3}
-      propertyPath: backgroundList.Array.data[2].name
-      value: BossMusic
-      objectReference: {fileID: 0}
     - target: {fileID: 8541629338542176740, guid: cdc93fb9712536f4fbf3f5fe1b6d66ef, type: 3}
       propertyPath: m_LocalPosition.x
       value: 537.9773

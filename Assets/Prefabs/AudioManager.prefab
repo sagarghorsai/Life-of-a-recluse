@@ -309,12 +309,18 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 4ab761bcbcd3da245a56a6599ec55e17, type: 3}
   - name: LevelMusic
     clip: {fileID: 8300000, guid: e61cfc15ecec652439247052e0650cc3, type: 3}
+  - name: BossMusic
+    clip: {fileID: 8300000, guid: a0e9269d0e20e2b40b8a7e6d99ab2704, type: 3}
   audioList:
   - name: Footstep
     clip: {fileID: 8300000, guid: 565c9c32d62f63246bd7a98f607296e6, type: 3}
   - name: PickUP
     clip: {fileID: 8300000, guid: f27b4065d5f25674fbd1dd8b9ee14513, type: 3}
   - name: CheckOut
-    clip: {fileID: 8300000, guid: 96e58660ba90c7a44a4d37c9fa6c9400, type: 3}
+    clip: {fileID: 8300000, guid: 31860fafb991a60489343a47ca63845c, type: 3}
   - name: Sprint
     clip: {fileID: 8300000, guid: e668fd8d3b2429d44980cbc31b220c92, type: 3}
+  - name: Timer
+    clip: {fileID: 8300000, guid: 4585f6a389226f54ab643ba54e1eed41, type: 3}
+  - name: Scream
+    clip: {fileID: 8300000, guid: 9cdfb2ad5d25bcd4b9bede9f6c9281de, type: 3}
