@@ -45,6 +45,8 @@ public class HuntPlayerMovement : EnemyController
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
+
+        agent.speed = agent.speed * movementSpeed; // Attempt to make speed adhere to changes to EnemyController speed, however this has failed before. [AKA if speed bug, look here]
     }
 
      void FixedUpdate()

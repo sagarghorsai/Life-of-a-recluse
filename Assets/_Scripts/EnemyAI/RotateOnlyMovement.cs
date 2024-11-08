@@ -14,7 +14,7 @@ using UnityEngine;
  *          
  *          +++++++Consider following player if player enters view, then return to normal pattern when they leave view?
  */
-public class RotateOnlyMovement : MonoBehaviour
+public class RotateOnlyMovement : EnemyController
 {
     [SerializeField]
     float CurrentRotation;
@@ -30,7 +30,9 @@ public class RotateOnlyMovement : MonoBehaviour
     [SerializeField]
     float RotationSpeed = 0.5f;
 
-    public Animator anim;
+    // In Attempt to make speed adhere to changes to EnemyController speed,  These variables have been commented out forcing inheritance from EnemyControler. [AKA if bug, look here]
+    //public Animator anim;
+    //---------------
 
     [SerializeField]
     bool TurningLeft;
@@ -56,6 +58,7 @@ public class RotateOnlyMovement : MonoBehaviour
         //CurrentRotation = 0;
         //transform.up = transform.forward;
         TurningLeft = true;
+        RotationSpeed = RotationSpeed * movementSpeed; // Attempt to make speed adhere to changes to EnemyController speed, however this has failed before. [AKA if speed bug, look here]
     }
    
     // Update is called once per frame

@@ -15,22 +15,33 @@ using UnityEngine;
  *              the enemy should either trying to avoid enviromental obstacles (shelves, displays, etc.) or simply stop upon collision with them.
  */              
 
-public class RandomizedMovement : MonoBehaviour
+public class RandomizedMovement : EnemyController
 {
     float randomizedDirection;
     float randomizedDistance;
-    private Vector3 PreviousDestination;
-    private Vector3 CurrentDestination;
 
-    public float movementSpeed = 1f;
+    // In Attempt to make speed adhere to changes to EnemyController speed,  These variables have been commented out forcing inheritance from EnemyControler. [AKA if bug, look here]
+    ////private Vector3 PreviousDestination;
+    ////private Vector3 CurrentDestination;
+    //// public float movementSpeed = 1f;
+
+
+    //public Animator anim;
+
+    //[Header("-------Directions------")]
+    //public bool movingUp;
+    //public bool movingDown;
+    //public bool movingLeft;
+    //public bool movingRight;
+    //------------------------------------
+
     public float directionChangeCooldown;
-    public Animator anim;
+    
 
-    [Header("-------Directions------")]
-    public bool movingUp;
-    public bool movingDown;
-    public bool movingLeft;
-    public bool movingRight;
+    private int moveYCount;
+    private int moveXCount;
+
+
     public bool isStationary;
 
     // Start is called before the first frame update
@@ -38,6 +49,8 @@ public class RandomizedMovement : MonoBehaviour
     {
         PreviousDestination = transform.position;
         anim.GetComponent<Animator>();
+
+
     }
 
     // Update is called once per frame
@@ -60,6 +73,30 @@ public class RandomizedMovement : MonoBehaviour
             randomizedDirection = Random.Range(1, 5);
 
             randomizedDistance = Random.Range(1, 15);
+
+            //Attempts to prevent enemy from ping-ponging in place
+            if (randomizedDirection == 1 || randomizedDirection == 3)
+            {
+                moveYCount++;
+                moveXCount = 0;
+
+                if(moveYCount == 3)
+                {
+                    randomizedDirection++;
+                }
+            }
+
+            if (randomizedDirection == 2 || randomizedDirection == 4)
+            {
+                moveXCount++;
+                moveYCount = 0;
+
+                if (moveXCount == 3)
+                {
+                    randomizedDirection--;
+                }
+            }
+            //--------------------------------------------
 
             switch (randomizedDirection)
             {

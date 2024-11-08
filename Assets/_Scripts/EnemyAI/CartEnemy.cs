@@ -9,6 +9,8 @@ public class CartEnemy : EnemyController
     private void Awake()
     {
         base.Awake();
+
+        _waypointMovement.speed = _waypointMovement.speed * movementSpeed; // Attempt to make speed adhere to changes to EnemyController speed, however this has failed before. [AKA if speed bug, look here]
     }
     protected virtual void Update()
     {
@@ -16,45 +18,54 @@ public class CartEnemy : EnemyController
         PreviousDestination = _waypointMovement.GetPreviousDestination();
         CurrentDestination = _waypointMovement.GetCurrentDestination();
 
-        if (PreviousDestination.x < CurrentDestination.x)
+        float changeInY = transform.position.y - CurrentDestination.x;
+        float changeInX = transform.position.x - CurrentDestination.x;
+
+        if (Mathf.Abs(changeInY) >= Mathf.Abs(changeInX)) // if Y is a greater difference or equal to, then move in the y direction
         {
-            movingRight = true;
-            movingLeft = false;
-            movingUp = false;
-            movingDown = false;
+            if (PreviousDestination.y < CurrentDestination.y)
+            {
+                interactorZone.transform.rotation = Quaternion.Euler(0, 0, 90);
 
+                movingUp = true;
+                movingRight = false;
+                movingLeft = false;
+                movingDown = false;
 
-            interactorZone.transform.rotation = Quaternion.Euler(0, 0, 0);
+            }
+            if (PreviousDestination.y > CurrentDestination.y)
+            {
+                interactorZone.transform.rotation = Quaternion.Euler(0, 0, 270);
+
+                movingDown = true;
+                movingRight = false;
+                movingLeft = false;
+                movingUp = false;
+
+            }
         }
-        if (PreviousDestination.x > CurrentDestination.x)
+        if (Mathf.Abs(changeInY) < Mathf.Abs(changeInX)) // if X is greater difference, then move in the x direction
         {
-            interactorZone.transform.rotation = Quaternion.Euler(0, 0, 180);
+            if (PreviousDestination.x < CurrentDestination.x)
+            {
+                movingRight = true;
+                movingLeft = false;
+                movingUp = false;
+                movingDown = false;
 
-            movingLeft = true;
-            movingRight = false;
-            movingUp = false;
-            movingDown = false;
 
-        }
-        if (PreviousDestination.y < CurrentDestination.y)
-        {
-            interactorZone.transform.rotation = Quaternion.Euler(0, 0, 90);
+                interactorZone.transform.rotation = Quaternion.Euler(0, 0, 0);
+            }
+            if (PreviousDestination.x > CurrentDestination.x)
+            {
+                interactorZone.transform.rotation = Quaternion.Euler(0, 0, 180);
 
-            movingUp = true;
-            movingRight = false;
-            movingLeft = false;
-            movingDown = false;
+                movingLeft = true;
+                movingRight = false;
+                movingUp = false;
+                movingDown = false;
 
-        }
-        if (PreviousDestination.y > CurrentDestination.y)
-        {
-            interactorZone.transform.rotation = Quaternion.Euler(0, 0, 270);
-
-            movingDown = true;
-            movingRight = false;
-            movingLeft = false;
-            movingUp = false;
-
+            }
         }
     }
 
