@@ -28,7 +28,7 @@ public class RotateOnlyMovement : EnemyController
 
     //Designate How Quickly you would like the enemy to rotate. (Reccomended 0.5 for more realistic outcome)
     [SerializeField]
-    float RotationSpeed = 0.5f;
+    public float RotationSpeed = 0.5f;
 
     // In Attempt to make speed adhere to changes to EnemyController speed,  These variables have been commented out forcing inheritance from EnemyControler. [AKA if bug, look here]
     //public Animator anim;

@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: animated_door_glass_right_0
+      name: RightDoor
       rect:
         serializedVersion: 2
         x: 0
@@ -105,7 +105,7 @@ TextureImporter:
         width: 16
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -118,7 +118,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animated_door_glass_right_1
+      name: DoorOpen_2
       rect:
         serializedVersion: 2
         x: 16
@@ -126,7 +126,7 @@ TextureImporter:
         width: 16
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -139,7 +139,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animated_door_glass_right_2
+      name: DoorOpen_3
       rect:
         serializedVersion: 2
         x: 32
@@ -147,7 +147,7 @@ TextureImporter:
         width: 16
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -160,7 +160,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animated_door_glass_right_3
+      name: DoorOpen_4
       rect:
         serializedVersion: 2
         x: 48
@@ -168,7 +168,7 @@ TextureImporter:
         width: 16
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -181,7 +181,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animated_door_glass_right_4
+      name: DoorClose_1
       rect:
         serializedVersion: 2
         x: 64
@@ -189,7 +189,7 @@ TextureImporter:
         width: 16
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -202,7 +202,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animated_door_glass_right_5
+      name: DoorClose_2
       rect:
         serializedVersion: 2
         x: 80
@@ -210,7 +210,7 @@ TextureImporter:
         width: 16
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -223,7 +223,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animated_door_glass_right_6
+      name: DoorClose_3
       rect:
         serializedVersion: 2
         x: 96
@@ -231,7 +231,7 @@ TextureImporter:
         width: 16
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -244,7 +244,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animated_door_glass_right_7
+      name: DoorClose_4
       rect:
         serializedVersion: 2
         x: 112
@@ -252,7 +252,7 @@ TextureImporter:
         width: 16
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -275,14 +275,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      animated_door_glass_right_0: -483750502
-      animated_door_glass_right_1: -995329536
-      animated_door_glass_right_2: 330997693
-      animated_door_glass_right_3: -1298163069
-      animated_door_glass_right_4: 701092960
-      animated_door_glass_right_5: 515892078
-      animated_door_glass_right_6: -1876371586
-      animated_door_glass_right_7: -948809798
+      DoorClose_1: 701092960
+      DoorClose_2: 515892078
+      DoorClose_3: -1876371586
+      DoorClose_4: -948809798
+      DoorOpen_2: -995329536
+      DoorOpen_3: 330997693
+      DoorOpen_4: -1298163069
+      RightDoor: -483750502
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

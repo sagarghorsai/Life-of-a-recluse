@@ -8,17 +8,19 @@ public class TutorialUI : MonoBehaviour
     public TextMeshProUGUI tutorialText; // Reference to the UI text element
     public GameObject tasklist; // Reference to the grocery list UI
     private string[] messages = {
-        "Press W, A, S, or D to move around",
-        "Holding Shift lets you sprint, but your sprint meter goes down.\n [F] To Continue",
-        "By pressing the ESC key, You can open the Pause Menu.\n [F] To Continue",
-        "You can Open Grocery List by pressing Tab. \n [F] To Continue",
-        "Look at the name and picture in the grocery list. \n [F] To Continue",
-        "Press E to pick up the item.\n [F] To Continue",
-        "Watch out for random people! If you get too close, your panic meter will fill up.\n [F] To Continue",
-        "Once your panic meter fills up, You Lose \n [F] To Continue",
-        "Watch the clock! If it hits 0, the manager will kick you out.\n [F] To Continue",
-        "Once you've collected everything on your grocery list, go to check out.\n [F] To Continue"
-    };
+    "Use W, A, S, D to move around.",
+    "Hold Shift to sprint, but watch your sprint meter!\n [F] To Continue",
+    "Press ESC to open the Pause Menu. Here you can resume, exit to the menu, or check stats.\nPress ESC again to unpause.\n [F] To Continue",
+    "Press Tab to open your Grocery List.\n [F] To Continue",
+    "Check the name and picture in your Grocery List to know what items to collect.\n [F] To Continue",
+    "Press E to pick up an item—but only if it’s on your list.\n [F] To Continue",
+    "Be careful around other shoppers! Getting too close will raise your panic meter.\n [F] To Continue",
+    "If your panic meter fills completely, you’ll lose!\n [F] To Continue",
+    "Watch the clock! If it hits 0, the manager will come kick you out.\n [F] To Continue",
+    "Once you've collected all items, head to checkout to finish.\n [F] To Continue",
+    "Collect groceries to earn EXP. Level up to unlock upgrade points and improve your stats through the Stats option in the Pause Menu.\n [F] To Continue"
+};
+
 
     private int currentStep = 0;
     private bool hasMoved = false;
@@ -47,7 +49,7 @@ public class TutorialUI : MonoBehaviour
                 AdvanceStep();
             }
         }
-       
+
 
 
     }

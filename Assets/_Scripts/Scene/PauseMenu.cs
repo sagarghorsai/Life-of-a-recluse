@@ -10,8 +10,12 @@ public class PauseMenu : MonoBehaviour
     public GameObject menuButton;
     public GameObject optionButton;
     public GameObject quitButton;
-    public GameObject returnButton;
-    public GameObject settingsMenu;
+    public GameObject optionreturnButton;
+    public GameObject statsreturnButton;
+
+    public GameObject OptionMenu;
+    public GameObject StatsMenu;
+    public GameObject statsButton;
 
 
     private void Update()
@@ -71,9 +75,29 @@ public class PauseMenu : MonoBehaviour
         menuButton.SetActive(false);
         optionButton.SetActive(false);
         quitButton.SetActive(false);
-        returnButton.SetActive(true);
-        settingsMenu.SetActive(true);
+        statsButton.SetActive(false);
+        optionreturnButton.SetActive(true);
+        statsreturnButton.SetActive(false);
+        OptionMenu.SetActive(true);
+        StatsMenu.SetActive(false);
+
         Debug.Log("Load Options");
+    }
+
+    public void Stats()
+    {
+        resumeButton.SetActive(false);
+        menuButton.SetActive(false);
+        optionButton.SetActive(false);
+        quitButton.SetActive(false);
+        statsButton.SetActive(false);
+        optionreturnButton.SetActive(false);
+        statsreturnButton.SetActive(true);
+        OptionMenu.SetActive(false);
+        StatsMenu.SetActive(true);
+        Debug.Log("Load Stats");
+
+
     }
 
     public void Return()
@@ -82,8 +106,11 @@ public class PauseMenu : MonoBehaviour
         menuButton.SetActive(true);
         optionButton.SetActive(true);
         quitButton.SetActive(true);
-        returnButton.SetActive(false);
-        settingsMenu.SetActive(false);
+        statsButton.SetActive(true);
+        optionreturnButton.SetActive(false);
+        statsreturnButton.SetActive(false);
+        OptionMenu.SetActive(false);
+        StatsMenu.SetActive(false);
         Debug.Log("Load Return");
     }
 
