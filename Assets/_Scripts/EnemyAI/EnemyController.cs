@@ -27,6 +27,7 @@ public class EnemyController : MonoBehaviour
     public Vector2 _targetDirection;
     public Animator anim;
     public GameObject interactorZone;
+    public float movementSpeed;
 
 
     [Header("---------- Direction ----------")]

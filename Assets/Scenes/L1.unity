@@ -3878,6 +3878,18 @@ PrefabInstance:
       propertyPath: dayText
       value: 
       objectReference: {fileID: 1717865052}
+    - target: {fileID: 1252277393337312605, guid: baff312dfedcb5e4aa38c19df2817096, type: 3}
+      propertyPath: enemySpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1252277393337312605, guid: baff312dfedcb5e4aa38c19df2817096, type: 3}
+      propertyPath: rotationSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1252277393337312605, guid: baff312dfedcb5e4aa38c19df2817096, type: 3}
+      propertyPath: randomizedSpeed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2946010284361534661, guid: baff312dfedcb5e4aa38c19df2817096, type: 3}
       propertyPath: scrollViewContent
       value: 
@@ -7474,11 +7486,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c25629cd0a423f84097bb3f848721a0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: 0
-  playerStamina: 0
   playerSprintSpeed: 0
   playerWalkSpeed: 0
-  playerStaminaRegen: 0
+  playerStamina: 0
+  playerStaminaRegenRate: 0
 --- !u!1001 &1389841369
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28313,10 +28324,10 @@ SceneRoots:
   - {fileID: 47490805}
   - {fileID: 1409625272}
   - {fileID: 456377077}
-  - {fileID: 1007083169}
   - {fileID: 1274879851}
   - {fileID: 619106550}
   - {fileID: 26883611}
   - {fileID: 1308147838}
   - {fileID: 824849397}
   - {fileID: 5430509018402019375}
+  - {fileID: 1007083169}
