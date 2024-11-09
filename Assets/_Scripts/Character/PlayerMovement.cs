@@ -41,6 +41,9 @@ public class PlayerMovement : MonoBehaviour
     private float activeSpeed;                // Variable to track current speed
     public GameObject tasklist;
 
+ 
+
+
     // Start is called before the first frame update
     void Start()
     {

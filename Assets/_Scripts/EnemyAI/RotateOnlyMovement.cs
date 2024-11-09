@@ -28,7 +28,7 @@ public class RotateOnlyMovement : MonoBehaviour
 
     //Designate How Quickly you would like the enemy to rotate. (Reccomended 0.5 for more realistic outcome)
     [SerializeField]
-    float RotationSpeed = 0.5f;
+    public float RotationSpeed = 0.5f;
 
     public Animator anim;
 

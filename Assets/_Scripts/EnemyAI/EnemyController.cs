@@ -19,7 +19,6 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     [Header("---------- Refrences ----------")]
-
     public WaypointMovement _waypointMovement;
     //public ScriptReference movementScript;
     private Rigidbody2D _rigidbody;
@@ -29,6 +28,7 @@ public class EnemyController : MonoBehaviour
     public Animator anim;
     public GameObject interactorZone;
 
+
     [Header("---------- Direction ----------")]
 
     public bool movingRight;
@@ -36,20 +36,16 @@ public class EnemyController : MonoBehaviour
     public bool movingUp;
     public bool movingDown;
     bool directionChange;
-    public float movementSpeed;
     // Start is called before the first frame update
+
+
     protected virtual void Awake()
     {
         anim.GetComponent<Animator>();
         _waypointMovement = GetComponent<WaypointMovement>();
         _rigidbody = GetComponent<Rigidbody2D>();
 
-        if (_waypointMovement != null)
-        {
-
-
-            _waypointMovement.speed = movementSpeed;
-        }
+       
     }
 
     protected virtual void UpdateAnimation()
@@ -59,5 +55,6 @@ public class EnemyController : MonoBehaviour
         anim.SetBool("isMovingLeft", movingLeft);
         anim.SetBool("isMovingRight", movingRight);
     }
+
 
 }

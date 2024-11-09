@@ -14,11 +14,14 @@ public class PlayerPickup : MonoBehaviour
 
     public TaskList taskList;  // Reference to the TaskList script
     private AudioManager audioManager; // Reference to the AudioManager script
+    private EXPManager expManager;
 
     void Start()
     {
         playerMovement = GetComponent<PlayerMovement>(); // Get PlayerMovement component
         pickUpText.gameObject.SetActive(false);  // Hide pickup text initially
+        expManager = FindObjectOfType<EXPManager>();
+
 
         if (audioManager != null)
         {
@@ -43,6 +46,8 @@ public class PlayerPickup : MonoBehaviour
 
 
                     AudioManager.Instance.PlaySFX("PickUP");
+
+                    expManager.AddExperience(50);
                     PickUpGrocery();
                 }
                 else
