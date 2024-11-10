@@ -45,7 +45,7 @@ public class RandomizedMovement : EnemyController
     public bool isStationary;
 
     // Start is called before the first frame update
-    void Awake()
+    public override void Awake()
     {
         PreviousDestination = transform.position;
         anim.GetComponent<Animator>();
@@ -160,7 +160,7 @@ public class RandomizedMovement : EnemyController
         }
     }
 
-    protected virtual void UpdateAnimation()
+    public override void UpdateAnimation()
     {
         anim.SetBool("isMovingUp", movingUp);
         anim.SetBool("isMovingDown", movingDown);

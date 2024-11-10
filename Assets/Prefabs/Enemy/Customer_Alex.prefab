@@ -428,15 +428,7 @@ MonoBehaviour:
   enemyWaypoints:
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  speed: 5
+  speed: 3
 --- !u!50 &4025075293566885860
 Rigidbody2D:
   serializedVersion: 4
@@ -527,12 +519,11 @@ MonoBehaviour:
   _targetDirection: {x: 0, y: 0}
   anim: {fileID: 4530401438122167374}
   interactorZone: {fileID: 2631096150312764029}
-  enemyType: 3
+  movementSpeed: 1
   movingRight: 0
   movingLeft: 0
   movingUp: 0
   movingDown: 0
-  movementSpeed: 3
 --- !u!1 &7348669717029927426
 GameObject:
   m_ObjectHideFlags: 0

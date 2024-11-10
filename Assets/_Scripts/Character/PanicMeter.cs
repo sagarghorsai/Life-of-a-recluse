@@ -18,6 +18,8 @@ using UnityEngine.Events;
 public class PanicMeter : MonoBehaviour
 {
     private AudioManager audioManager;
+    private EXPManager expManager;
+    private PlayerStats playerStats;
 
     [Header("---------- Panic Values ----------")]
     public float panicValue;
@@ -31,7 +33,11 @@ public class PanicMeter : MonoBehaviour
 
     bool inInteractionZone;
     bool freakedOut; //Whether or not the panic max has been reached and player has "freaked out" (resulting in game loss or life loss)
-
+    private void Start()
+    {
+        expManager = FindAnyObjectByType<EXPManager>();
+        playerStats = FindAnyObjectByType<PlayerStats>();
+    }
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -99,6 +105,8 @@ public class PanicMeter : MonoBehaviour
 
     private void FreakedOut()
     {
+        expManager.ResetProgress();
+        playerStats.ResetStats();
         AudioManager.Instance.PlaySFX("Scream");
         UnityEngine.SceneManagement.SceneManager.LoadScene("Lose");
         Debug.Log("You freakedOut");

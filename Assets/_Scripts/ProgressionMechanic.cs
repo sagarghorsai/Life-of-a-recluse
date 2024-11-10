@@ -24,7 +24,7 @@ public class ProgressionMechanic : MonoBehaviour
 
     private void Awake()
     {
-        activeEnemies = new List<EnemyController>(FindObjectsOfType<EnemyController>());
+        activeEnemies = new List<EnemyController>(FindObjectsOfType<CartEnemy>());
         rotatingEnemies = new List<RotateOnlyMovement>(FindObjectsOfType<RotateOnlyMovement>());
         randomMovementEnemies = new List<RandomizedMovement>(FindObjectsOfType<RandomizedMovement>());
 
@@ -62,8 +62,10 @@ public class ProgressionMechanic : MonoBehaviour
         {
             if (enemy._waypointMovement != null)
             {
-                enemy._waypointMovement.speed = enemySpeed; 
+                enemy._waypointMovement.speed = enemySpeed;
+                Debug.Log($"{enemy} Speed = {enemy._waypointMovement.speed}");
             }
+           
         }
 
         foreach (RotateOnlyMovement enemy in rotatingEnemies)

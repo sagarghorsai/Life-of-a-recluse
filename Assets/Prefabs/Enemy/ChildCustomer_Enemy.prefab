@@ -245,13 +245,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fab8400c1ce5bc241bd5a1ffc2aa737d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 2
-  directionChangeCooldown: 0
+  _waypointMovement: {fileID: 0}
+  CurrentDestination: {x: 0, y: 0}
+  PreviousDestination: {x: 0, y: 0}
+  _targetDirection: {x: 0, y: 0}
   anim: {fileID: 5447403464726634635}
+  interactorZone: {fileID: 763830680430011802}
+  movementSpeed: 2
+  movingRight: 0
+  movingLeft: 0
   movingUp: 0
   movingDown: 0
-  movingLeft: 0
-  movingRight: 0
+  directionChangeCooldown: 0
   isStationary: 0
 --- !u!50 &2774291365223194347
 Rigidbody2D:

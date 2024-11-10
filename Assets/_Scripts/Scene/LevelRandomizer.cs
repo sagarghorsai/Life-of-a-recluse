@@ -10,14 +10,14 @@ public class LevelRandomizer : MonoBehaviour
 
     private void Start()
     {
-        randomGen = rnd.Next(1, 3);
+        randomGen = rnd.Next(1, 4);
     }
 
     public void RandomizedLevel()
     {
         //Needs to change to randomize
         
-        UnityEngine.SceneManagement.SceneManager.LoadScene($"L1");
+        UnityEngine.SceneManagement.SceneManager.LoadScene($"L{randomGen}");
 
     }
 

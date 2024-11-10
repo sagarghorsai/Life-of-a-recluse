@@ -48,6 +48,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allGroceryTiles:
+  - {fileID: 11400000, guid: 9a4e97f880a1bfa4080114faa5e57f63, type: 2}
+  - {fileID: 11400000, guid: cd7fae7cd2c0f0948a0789b9930c6d79, type: 2}
+  - {fileID: 11400000, guid: e29e10048e7d36d4db89df096909a04c, type: 2}
+  - {fileID: 11400000, guid: e1106178edbd041429835a7ff731942d, type: 2}
+  - {fileID: 11400000, guid: 8383071b75c08184fa8ce9b9c02c3063, type: 2}
+  - {fileID: 11400000, guid: fed62dbc739fbff45a3091b43d960622, type: 2}
+  - {fileID: 11400000, guid: 50fc8f30dc5f79c4e867ac734223aac9, type: 2}
+  - {fileID: 11400000, guid: 97f28d9b75b0f84468c09139e7c8e1ff, type: 2}
+  - {fileID: 11400000, guid: a1e846b3ba9e7f14098d6fe41bdc4fe9, type: 2}
+  - {fileID: 11400000, guid: 293a115380a505341b137be21b85031b, type: 2}
+  - {fileID: 11400000, guid: 6d0a5a04404fede439f94bf7a8a2ce56, type: 2}
+  - {fileID: 11400000, guid: c538ab913abca7f40a3371fd5ac91326, type: 2}
+  - {fileID: 11400000, guid: 72391e3cc6494f047a3aa627af3f4985, type: 2}
+  - {fileID: 11400000, guid: 957624fc1b94f014a9dc2e8d352960b6, type: 2}
+  - {fileID: 11400000, guid: 48963ffaabab0e747a9ddff8d7706691, type: 2}
+  - {fileID: 11400000, guid: f0bb12ae1de9bb34da559ed6f9a874a1, type: 2}
+  - {fileID: 11400000, guid: 61b3dbce914a2fd48b54e0dc0b082761, type: 2}
+  - {fileID: 11400000, guid: b68deca30b56aa8448e811b7edb67e13, type: 2}
+  - {fileID: 11400000, guid: 9951a6c5df92523478ceb7fe6b41739a, type: 2}
+  - {fileID: 11400000, guid: aa8f69b889063694db9121eeb0cef021, type: 2}
+  - {fileID: 11400000, guid: b9e52a9daf9fd854d8174f0a9f9b4534, type: 2}
+  - {fileID: 11400000, guid: bbfc7a32d795ef64b820aec7b7afa8c6, type: 2}
+  - {fileID: 11400000, guid: 006b0b4667be81242a5c306f599e9c7c, type: 2}
   - {fileID: 11400000, guid: 5012541d64c81ec48a188f93b1d36f83, type: 2}
   - {fileID: 11400000, guid: 81d4eb36db90de54092542a9b5b0682f, type: 2}
   - {fileID: 11400000, guid: 7ee48111366dac745beadfae1ffec087, type: 2}
@@ -60,6 +83,41 @@ MonoBehaviour:
   - {fileID: 11400000, guid: bf5c1324974b46d429add8f7f70fd2bb, type: 2}
   - {fileID: 11400000, guid: d10a395cec59cee4aa4482b5a651c2c0, type: 2}
   - {fileID: 11400000, guid: d0e42c8a76f38fe43bf89728a4e1c4e8, type: 2}
+  - {fileID: 11400000, guid: 1a7781a4b8d24364bbbf1ec43f11730e, type: 2}
+  - {fileID: 11400000, guid: 5bed0deaee55fe04e973491597ef1f11, type: 2}
+  - {fileID: 11400000, guid: ce4179a469cffb840933ded8fffb7780, type: 2}
+  - {fileID: 11400000, guid: 9d6af48f585463140b2bf8e5c409ce56, type: 2}
+  - {fileID: 11400000, guid: 1c7f3bdd376361541aabe0cfacc13c5c, type: 2}
+  - {fileID: 11400000, guid: 3205ecb6f15042d40bae5ed82127ef5b, type: 2}
+  - {fileID: 11400000, guid: 1eb4e7a7607b85249ae3e5f2420acc3b, type: 2}
+  - {fileID: 11400000, guid: 76942b97c73394b41b50d120eda60247, type: 2}
+  - {fileID: 11400000, guid: 73494d490a357814884aee3b63a701d4, type: 2}
+  - {fileID: 11400000, guid: eb96c97e64e921846a74f22fd50aa24a, type: 2}
+  - {fileID: 11400000, guid: 958818da7fe25dc4daa33a8b179c7dcb, type: 2}
+  - {fileID: 11400000, guid: bdfd0e938d7599f43af1c2a7c8c447f8, type: 2}
+  - {fileID: 11400000, guid: 58bc2252f36b19f4e87f0ccf37845f4b, type: 2}
+  - {fileID: 11400000, guid: b423fb26dba643c4cb25c3a7532ef2c8, type: 2}
+  - {fileID: 11400000, guid: 379fa6f71a772b14baefaadb04f33383, type: 2}
+  - {fileID: 11400000, guid: 2dcf3dcab702bb344aad8de466be35a1, type: 2}
+  - {fileID: 11400000, guid: b00c3dedd58b79f45b11db570b55bcb1, type: 2}
+  - {fileID: 11400000, guid: 78e45beed955068498d34760a822895a, type: 2}
+  - {fileID: 11400000, guid: ba4591c18870cde46843ef06fc3162f4, type: 2}
+  - {fileID: 11400000, guid: 0f112bcc1d4ad1a4fac1b95220db2303, type: 2}
+  - {fileID: 11400000, guid: 03c862481650399429aeb7c78bacb23c, type: 2}
+  - {fileID: 11400000, guid: f8b8dbfc945ee8d4395975a79fd52388, type: 2}
+  - {fileID: 11400000, guid: bc76e93e978461747b9a464154ed0795, type: 2}
+  - {fileID: 11400000, guid: 74519f60c4886e7498fd39dfe6c77992, type: 2}
+  - {fileID: 11400000, guid: 740310a34c7bf9e4cb8b1a32908d965d, type: 2}
+  - {fileID: 11400000, guid: e54790c85a6dcb444a6f84411b6edc22, type: 2}
+  - {fileID: 11400000, guid: 5e390f7fe950f3149ba833ebd229705b, type: 2}
+  - {fileID: 11400000, guid: 8aee737a40d353643bb4542510af67b0, type: 2}
+  - {fileID: 11400000, guid: 0fb34d69f9cc647468da211e49162d04, type: 2}
+  - {fileID: 11400000, guid: b8cc284ac41123d42a0b3674cd0898c0, type: 2}
+  - {fileID: 11400000, guid: 03abe8c9794f8024f93cb619ee66309c, type: 2}
+  - {fileID: 11400000, guid: 97d3b9672962ef445867f41169aec996, type: 2}
+  - {fileID: 11400000, guid: b8d210fdcdcf39645bb5d8a9fcb94f4d, type: 2}
+  - {fileID: 11400000, guid: 27870d9333d6cd04d9fba302f63eb51a, type: 2}
+  - {fileID: 11400000, guid: 485604ab2a2f64946839ed826ee9401a, type: 2}
   items: []
   buttonPrefab: {fileID: 16241487634867423, guid: 07d00b9b617af8d41ae946c9df12f050, type: 3}
   scrollViewContent: {fileID: 0}
@@ -207,8 +265,8 @@ MonoBehaviour:
   activeEnemies: []
   rotatingEnemies: []
   randomMovementEnemies: []
-  enemySpeed: 5
+  enemySpeed: 3
   countdownTime: 200
-  taskAmount: 5
-  rotationSpeed: 1
-  randomizedSpeed: 5
+  taskAmount: 15
+  rotationSpeed: 0.2
+  randomizedSpeed: 1

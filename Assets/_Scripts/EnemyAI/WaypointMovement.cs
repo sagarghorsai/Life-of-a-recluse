@@ -22,7 +22,7 @@ public class WaypointMovement : MonoBehaviour
     private GameObject previousDestination; //The waypoint the enemy just passed through
     private int waypointIndex; //Number to help interact with list
 
-    public float speed = 1.0f;
+    public float speed = 3.0f;
 
 
     private void FixedUpdate()

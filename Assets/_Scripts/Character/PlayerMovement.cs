@@ -39,6 +39,8 @@ public class PlayerMovement : MonoBehaviour
     private bool isSprinting = false;         // Whether the player is currently sprinting
     private bool canSprint = true;            // Whether the player is allowed to sprint
     private float activeSpeed;                // Variable to track current speed
+    private PlayerStats playerStats; // Reference to PlayerStats for updating values
+
     public GameObject tasklist;
 
  
@@ -62,6 +64,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.Log("AudioManager not found on the scene");
         }
+        playerStats = FindObjectOfType<PlayerStats>();
     }
 
     // Update is called once per frame
@@ -214,4 +217,16 @@ public class PlayerMovement : MonoBehaviour
             footstepTimer = 0f; // Reset the timer if the player is not moving
         }
     }
+    public void UpdateStatsFromPlayerStats()
+    {
+        // Pull values from PlayerStats and apply them here
+        if (playerStats != null)
+        {
+            sprintSpeed = playerStats.playerSprintSpeed;
+            walkSpeed = playerStats.playerWalkSpeed;
+            maxStamina = playerStats.playerStamina;
+            staminaRegenRate = playerStats.playerStaminaRegenRate;
+        }
+    }
+
 }

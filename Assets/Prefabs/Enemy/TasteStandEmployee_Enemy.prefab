@@ -387,7 +387,7 @@ MonoBehaviour:
   PreviousDestination: {x: 0, y: 0}
   _targetDirection: {x: 0, y: 0}
   anim: {fileID: 3860081931594944791}
-  interactorZone: {fileID: 0}
+  interactorZone: {fileID: 8633504141379461395}
   movementSpeed: 0.5
   movingRight: 0
   movingLeft: 0
@@ -396,7 +396,7 @@ MonoBehaviour:
   CurrentRotation: 180
   CounterClockwiseToPoint: 270
   ClockwiseToPoint: 90
-  RotationSpeed: 0.5
+  RotationSpeed: 0.1
   TurningLeft: 0
   TurningRight: 0
   FacingRight: 0

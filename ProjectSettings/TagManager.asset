@@ -10,6 +10,7 @@ TagManager:
   - Enemy
   - Cashier
   - Walls
+  - SetDifficulty
   layers:
   - Default
   - TransparentFX
@@ -53,14 +54,14 @@ TagManager:
   - name: Ground
     uniqueID: 827680221
     locked: 0
-  - name: WalkBehind
-    uniqueID: 1812123475
+  - name: WalkInFront
+    uniqueID: 2340975913
     locked: 0
   - name: Player
     uniqueID: 1228504197
     locked: 0
-  - name: WalkInFront
-    uniqueID: 2340975913
+  - name: WalkBehind
+    uniqueID: 1812123475
     locked: 0
   - name: Interactable
     uniqueID: 3315031003

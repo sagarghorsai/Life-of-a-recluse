@@ -18,12 +18,16 @@ using UnityEngine;
  */
 public class EnemyController : MonoBehaviour
 {
+
     [Header("---------- Refrences ----------")]
     public WaypointMovement _waypointMovement;
     //public ScriptReference movementScript;
     private Rigidbody2D _rigidbody;
+    [HideInInspector]
     public Vector2 CurrentDestination;
+    [HideInInspector]
     public Vector2 PreviousDestination;
+    [HideInInspector]
     public Vector2 _targetDirection;
     public Animator anim;
     public GameObject interactorZone;
@@ -40,21 +44,21 @@ public class EnemyController : MonoBehaviour
     // Start is called before the first frame update
 
 
-    protected virtual void Awake()
+    public virtual void Awake()
     {
-        anim.GetComponent<Animator>();
         _waypointMovement = GetComponent<WaypointMovement>();
         _rigidbody = GetComponent<Rigidbody2D>();
-
-       
     }
 
-    protected virtual void UpdateAnimation()
+    public virtual void UpdateAnimation()
     {
-        anim.SetBool("isMovingUp", movingUp);
-        anim.SetBool("isMovingDown", movingDown);
-        anim.SetBool("isMovingLeft", movingLeft);
-        anim.SetBool("isMovingRight", movingRight);
+        if (anim != null) // Check if the animator is available
+        {
+            anim.SetBool("isMovingUp", movingUp);
+            anim.SetBool("isMovingDown", movingDown);
+            anim.SetBool("isMovingLeft", movingLeft);
+            anim.SetBool("isMovingRight", movingRight);
+        }
     }
 
 
