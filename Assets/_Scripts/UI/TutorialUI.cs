@@ -6,19 +6,21 @@ using UnityEngine;
 public class TutorialUI : MonoBehaviour
 {
     public TextMeshProUGUI tutorialText; // Reference to the UI text element
-    public GameObject tasklist; // Reference to the grocery list UI
     private string[] messages = {
-    "Use W, A, S, D to move around.",
-    "Hold Shift to sprint, but watch your sprint meter!\n [F] To Continue",
-    "Press ESC to open the Pause Menu. Here you can resume, exit to the menu, or check stats.\nPress ESC again to unpause.\n [F] To Continue",
-    "Press Tab to open your Grocery List.\n [F] To Continue",
-    "Check the name and picture in your Grocery List to know what items to collect.\n [F] To Continue",
-    "Press E to pick up an item—but only if it’s on your list.\n [F] To Continue",
-    "Be careful around other shoppers! Getting too close will raise your panic meter.\n [F] To Continue",
-    "If your panic meter fills completely, you’ll lose!\n [F] To Continue",
-    "Watch the clock! If it hits 0, the manager will come kick you out.\n [F] To Continue",
-    "Once you've collected all items, head to checkout to finish.\n [F] To Continue",
-    "Collect groceries to earn EXP. Level up to unlock upgrade points and improve your stats through the Stats option in the Pause Menu.\n [F] To Continue"
+   "Use WASD to move around the store.\n[E] to continue",
+    "Press TAB to open your Grocery List.\n[E] to continue",
+    "Check the name and image in the Grocery List to see what you need to pick up.\n[E] to continue",
+    "To finish your day, you must collect all items on your grocery list.\n[E] to continue",
+    "When you pick up items, you gain XP, which helps you level up.\n[E] to continue",
+    "Each time you level up, you earn an upgrade point to improve your stats.\n[E] to continue",
+    "Watch the timer! If it hits 0, the manager will come after you.\n[E] to continue",
+    "Be careful with your Panic Meter. If it fills up completely, you lose.\n[E] to continue",
+    "There are other customers in the store. Your goal is to avoid them.\n[E] to continue",
+    "If you get too close to other customers, your Panic Meter will increase.\n[E] to continue",
+    "Press ESC to open the pause menu.\n[E] to continue",
+    "In the pause menu, you can adjust sound settings or use upgrade points to improve your stats.\n[E] to continue",
+    "Press Resume or ESC again to return to the game.\n[E] to continue",
+    "Good Luck Player!"
 };
 
 
@@ -41,17 +43,15 @@ public class TutorialUI : MonoBehaviour
                 AdvanceStep();
             }
         }
+       
         else
         {
             // For all other steps, wait for the player to press 'E' to continue
-            if (Input.GetKeyDown(KeyCode.F))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 AdvanceStep();
             }
         }
-
-
-
     }
 
     void ShowMessage()

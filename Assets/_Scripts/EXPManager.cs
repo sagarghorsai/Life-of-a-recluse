@@ -81,6 +81,11 @@ public class EXPManager : MonoBehaviour
     void UpdateInterface()
     {
         int start = totalExperience - previousLevelsExperience;
+        if (start < 0)
+        {
+            start = 0;
+        }
+
         int end = nextLevelsExperience - previousLevelsExperience;
 
         if (levelText != null)

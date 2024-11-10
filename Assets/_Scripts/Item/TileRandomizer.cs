@@ -5,7 +5,9 @@ using UnityEngine.Tilemaps;
 public class TileRandomizer : MonoBehaviour
 {
     [Header("---------- TileMap References ----------")]
-    public Tilemap collisionTilemap; // Assign this in the Inspector
+    public Tilemap inFrontTile; // Assign this in the Inspector
+    public Tilemap behindTile; // Assign this in the Inspector
+
     public Tilemap interactorTilemap; // The Tilemap where both grocery and flower tiles will be placed
     [Header("---------- GroceryTiles ----------")]
     public TileBase[] groceryPlacementTiles; // Array of grocery placement tiles
@@ -206,14 +208,30 @@ public class TileRandomizer : MonoBehaviour
     private List<Vector3Int> GetAvailablePositions(TileBase[] placementTiles)
     {
         List<Vector3Int> availablePositions = new List<Vector3Int>();
-        BoundsInt bounds = collisionTilemap.cellBounds;
+        BoundsInt bounds = inFrontTile.cellBounds;
+        BoundsInt bounds1 = behindTile.cellBounds;
 
         for (int x = bounds.x; x < bounds.xMax; x++)
         {
             for (int y = bounds.y; y < bounds.yMax; y++)
             {
                 Vector3Int currentPos = new Vector3Int(x, y, 0);
-                TileBase currentTile = collisionTilemap.GetTile(currentPos);
+                TileBase currentTile = inFrontTile.GetTile(currentPos);
+
+                // Check if the current tile is one of the specified placement tiles
+                if (currentTile != null && IsPlacementTile(currentTile, placementTiles))
+                {
+                    availablePositions.Add(currentPos);
+                }
+            }
+        }
+
+        for (int x = bounds1.x; x < bounds1.xMax; x++)
+        {
+            for (int y = bounds1.y; y < bounds1.yMax; y++)
+            {
+                Vector3Int currentPos = new Vector3Int(x, y, 0);
+                TileBase currentTile = behindTile.GetTile(currentPos);
 
                 // Check if the current tile is one of the specified placement tiles
                 if (currentTile != null && IsPlacementTile(currentTile, placementTiles))
