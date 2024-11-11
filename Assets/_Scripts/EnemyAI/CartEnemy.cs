@@ -6,70 +6,59 @@ public class CartEnemy : EnemyController
 {
     // Update is called once per frame
 
-    private void Awake()
+    public override void Awake()
     {
         base.Awake();
-
+        anim = GetComponentInChildren<Animator>();
         _waypointMovement.speed = _waypointMovement.speed * movementSpeed; // Attempt to make speed adhere to changes to EnemyController speed, however this has failed before. [AKA if speed bug, look here]
     }
-    protected virtual void Update()
+    void Update()
     {
-        UpdateAnimation();
         PreviousDestination = _waypointMovement.GetPreviousDestination();
         CurrentDestination = _waypointMovement.GetCurrentDestination();
 
         float changeInY = transform.position.y - CurrentDestination.y;
         float changeInX = transform.position.x - CurrentDestination.x;
 
-        if (Mathf.Abs(changeInY) >= Mathf.Abs(changeInX)) // if Y is a greater difference or equal to, then move in the y direction
+        // Check Y-axis movement first
+        if (Mathf.Abs(changeInY) >= Mathf.Abs(changeInX))
         {
             if (PreviousDestination.y < CurrentDestination.y)
             {
-                interactorZone.transform.rotation = Quaternion.Euler(0, 0, 90);
-
-                movingUp = true;
-                movingRight = false;
-                movingLeft = false;
-                movingDown = false;
-
+                SetMovementDirection(90, true, false, false, false);
             }
-            if (PreviousDestination.y > CurrentDestination.y)
+            else if (PreviousDestination.y > CurrentDestination.y)
             {
-                interactorZone.transform.rotation = Quaternion.Euler(0, 0, 270);
-
-                movingDown = true;
-                movingRight = false;
-                movingLeft = false;
-                movingUp = false;
-
+                SetMovementDirection(270, false, false, false, true);
             }
         }
-        if (Mathf.Abs(changeInY) < Mathf.Abs(changeInX)) // if X is greater difference, then move in the x direction
+        else // Otherwise, check X-axis movement
         {
             if (PreviousDestination.x < CurrentDestination.x)
             {
-                movingRight = true;
-                movingLeft = false;
-                movingUp = false;
-                movingDown = false;
-
-
-                interactorZone.transform.rotation = Quaternion.Euler(0, 0, 0);
+                SetMovementDirection(0, false, true, false, false);
             }
-            if (PreviousDestination.x > CurrentDestination.x)
+            else if (PreviousDestination.x > CurrentDestination.x)
             {
-                interactorZone.transform.rotation = Quaternion.Euler(0, 0, 180);
-
-                movingLeft = true;
-                movingRight = false;
-                movingUp = false;
-                movingDown = false;
-
+                SetMovementDirection(180, false, false, true, false);
             }
         }
     }
 
+    // SetMovementDirection to immediately call UpdateAnimation after setting directions
+    private void SetMovementDirection(float rotationAngle, bool up, bool right, bool left, bool down)
+    {
+        // Update animation based on the flags set
+        UpdateAnimation();
+        // Rotate interactorZone to face the appropriate direction
+        interactorZone.transform.rotation = Quaternion.Euler(0, 0, rotationAngle);
 
+        // Set movement direction flags and trigger animation
+        movingUp = up;
+        movingRight = right;
+        movingLeft = left;
+        movingDown = down;
 
-
+       
+    }
 }

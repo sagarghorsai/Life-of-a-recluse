@@ -18,16 +18,21 @@ using UnityEngine;
  */
 public class EnemyController : MonoBehaviour
 {
-    [Header("---------- Refrences ----------")]
 
+    [Header("---------- Refrences ----------")]
     public WaypointMovement _waypointMovement;
     //public ScriptReference movementScript;
     private Rigidbody2D _rigidbody;
+    [HideInInspector]
     public Vector2 CurrentDestination;
+    [HideInInspector]
     public Vector2 PreviousDestination;
+    [HideInInspector]
     public Vector2 _targetDirection;
     public Animator anim;
     public GameObject interactorZone;
+    public float movementSpeed;
+
 
     [Header("---------- Direction ----------")]
 
@@ -36,28 +41,25 @@ public class EnemyController : MonoBehaviour
     public bool movingUp;
     public bool movingDown;
     bool directionChange;
-    public float movementSpeed;
     // Start is called before the first frame update
-    protected virtual void Awake()
+
+
+    public virtual void Awake()
     {
-        anim.GetComponent<Animator>();
         _waypointMovement = GetComponent<WaypointMovement>();
         _rigidbody = GetComponent<Rigidbody2D>();
+    }
 
-        if (_waypointMovement != null)
+    public virtual void UpdateAnimation()
+    {
+        if (anim != null) // Check if the animator is available
         {
-
-
-            _waypointMovement.speed = movementSpeed;
+            anim.SetBool("isMovingUp", movingUp);
+            anim.SetBool("isMovingDown", movingDown);
+            anim.SetBool("isMovingLeft", movingLeft);
+            anim.SetBool("isMovingRight", movingRight);
         }
     }
 
-    protected virtual void UpdateAnimation()
-    {
-        anim.SetBool("isMovingUp", movingUp);
-        anim.SetBool("isMovingDown", movingDown);
-        anim.SetBool("isMovingLeft", movingLeft);
-        anim.SetBool("isMovingRight", movingRight);
-    }
 
 }

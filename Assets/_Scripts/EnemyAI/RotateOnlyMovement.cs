@@ -28,7 +28,7 @@ public class RotateOnlyMovement : EnemyController
 
     //Designate How Quickly you would like the enemy to rotate. (Reccomended 0.5 for more realistic outcome)
     [SerializeField]
-    float RotationSpeed = 0.5f;
+    public float RotationSpeed = 0.5f;
 
     // In Attempt to make speed adhere to changes to EnemyController speed,  These variables have been commented out forcing inheritance from EnemyControler. [AKA if bug, look here]
     //public Animator anim;
@@ -50,19 +50,18 @@ public class RotateOnlyMovement : EnemyController
     bool FacingDown;
 
 
-
     // Start is called before the first frame update
-    void Start()
+    public override void Awake()
     {
-        anim.GetComponent<Animator>();
-        //CurrentRotation = 0;
+        base.Awake();
+      //CurrentRotation = 0;
         //transform.up = transform.forward;
         TurningLeft = true;
         RotationSpeed = RotationSpeed * movementSpeed; // Attempt to make speed adhere to changes to EnemyController speed, however this has failed before. [AKA if speed bug, look here]
     }
    
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         //Debug.Log("Update Triggered");
         UpdateAnimation();
@@ -136,7 +135,7 @@ public class RotateOnlyMovement : EnemyController
         }
     }
 
-    void UpdateAnimation()
+    public override void UpdateAnimation()
     {
         anim.SetBool("isFacingUp", FacingUp);
         anim.SetBool("isFacingDown", FacingDown);

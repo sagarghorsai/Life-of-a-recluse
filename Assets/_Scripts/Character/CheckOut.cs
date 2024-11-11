@@ -8,6 +8,8 @@ public class CheckOut : MonoBehaviour
     private DayCounter dayCounter;
     public TextMeshProUGUI dayText;
     private AudioManager audioManager;
+    EXPManager expManager;
+    PlayerStats playerStats;
 
     private TaskList tasklist;
     private void Start()
@@ -15,6 +17,9 @@ public class CheckOut : MonoBehaviour
         // Find and reference the DayCounter script in the scene
         dayCounter = FindObjectOfType<DayCounter>();
         tasklist = FindObjectOfType<TaskList>();
+
+        expManager = FindObjectOfType<EXPManager>();
+        playerStats = FindObjectOfType<PlayerStats>();
 
         // Log an error if DayCounter is not found
         if (dayCounter == null)
@@ -36,6 +41,15 @@ public class CheckOut : MonoBehaviour
 
         if (tasklist.canCheckout)
         {
+           if (UnityEngine.SceneManagement.SceneManager.sceneCount ==0)
+            {
+                expManager.ResetProgress();
+                playerStats.ResetStats();
+                UnityEngine.SceneManagement.SceneManager.LoadScene("Menu");
+                AudioManager.Instance.PlayMusic("MenuMusic");
+            }
+
+
             Debug.Log($"{dayCounter}+1");
             // Increment the day counter
             if (dayCounter != null)

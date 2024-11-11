@@ -6,19 +6,23 @@ using UnityEngine;
 public class TutorialUI : MonoBehaviour
 {
     public TextMeshProUGUI tutorialText; // Reference to the UI text element
-    public GameObject tasklist; // Reference to the grocery list UI
     private string[] messages = {
-        "Press W, A, S, or D to move around",
-        "Holding Shift lets you sprint, but your sprint meter goes down.\n [F] To Continue",
-        "By pressing the ESC key, You can open the Pause Menu.\n [F] To Continue",
-        "You can Open Grocery List by pressing Tab. \n [F] To Continue",
-        "Look at the name and picture in the grocery list. \n [F] To Continue",
-        "Press E to pick up the item.\n [F] To Continue",
-        "Watch out for random people! If you get too close, your panic meter will fill up.\n [F] To Continue",
-        "Once your panic meter fills up, You Lose \n [F] To Continue",
-        "Watch the clock! If it hits 0, the manager will kick you out.\n [F] To Continue",
-        "Once you've collected everything on your grocery list, go to check out.\n [F] To Continue"
-    };
+   "Use WASD to move around the store.\n[E] to continue",
+    "Press TAB to open your Grocery List.\n[E] to continue",
+    "Check the name and image in the Grocery List to see what you need to pick up.\n[E] to continue",
+    "To finish your day, you must collect all items on your grocery list.\n[E] to continue",
+    "When you pick up items, you gain XP, which helps you level up.\n[E] to continue",
+    "Each time you level up, you earn an upgrade point to improve your stats.\n[E] to continue",
+    "Watch the timer! If it hits 0, the manager will come after you.\n[E] to continue",
+    "Be careful with your Panic Meter. If it fills up completely, you lose.\n[E] to continue",
+    "There are other customers in the store. Your goal is to avoid them.\n[E] to continue",
+    "If you get too close to other customers, your Panic Meter will increase.\n[E] to continue",
+    "Press ESC to open the pause menu.\n[E] to continue",
+    "In the pause menu, you can adjust sound settings or use upgrade points to improve your stats.\n[E] to continue",
+    "Press Resume or ESC again to return to the game.\n[E] to continue",
+    "Good Luck Player!"
+};
+
 
     private int currentStep = 0;
     private bool hasMoved = false;
@@ -39,17 +43,15 @@ public class TutorialUI : MonoBehaviour
                 AdvanceStep();
             }
         }
+       
         else
         {
             // For all other steps, wait for the player to press 'E' to continue
-            if (Input.GetKeyDown(KeyCode.F))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 AdvanceStep();
             }
         }
-       
-
-
     }
 
     void ShowMessage()

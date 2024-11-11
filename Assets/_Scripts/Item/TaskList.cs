@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using System.Linq;
 
 public class TaskList : MonoBehaviour
 {
@@ -20,10 +20,9 @@ public class TaskList : MonoBehaviour
 
     [Header("---------- Task List ----------")]
     private int completedTasks = 0;
-    public int numberOfTasks = 5; // Number of tasks to select randomly
+    public int numberOfTasks; // Number of tasks to select randomly
     public bool canCheckout = false; // Flag to indicate if player can checkout
 
-    public GameObject uiText; // Reference to your Text or TextMeshPro object
     public GameObject strikeLinePrefab; // Prefab for the line renderer (or use a UI Image)
     public int StrikeHeight;
 

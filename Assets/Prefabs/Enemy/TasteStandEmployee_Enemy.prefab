@@ -382,11 +382,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e4305895fc58bc4fa3123a845c9b272, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _waypointMovement: {fileID: 0}
+  CurrentDestination: {x: 0, y: 0}
+  PreviousDestination: {x: 0, y: 0}
+  _targetDirection: {x: 0, y: 0}
+  anim: {fileID: 3860081931594944791}
+  interactorZone: {fileID: 8633504141379461395}
+  movementSpeed: 0.5
+  movingRight: 0
+  movingLeft: 0
+  movingUp: 0
+  movingDown: 0
   CurrentRotation: 180
   CounterClockwiseToPoint: 270
   ClockwiseToPoint: 90
-  RotationSpeed: 0.5
-  anim: {fileID: 3860081931594944791}
+  RotationSpeed: 0.1
   TurningLeft: 0
   TurningRight: 0
   FacingRight: 0
