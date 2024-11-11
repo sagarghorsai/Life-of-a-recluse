@@ -18,7 +18,7 @@ public class CartEnemy : EnemyController
         PreviousDestination = _waypointMovement.GetPreviousDestination();
         CurrentDestination = _waypointMovement.GetCurrentDestination();
 
-        float changeInY = transform.position.y - CurrentDestination.x;
+        float changeInY = transform.position.y - CurrentDestination.y;
         float changeInX = transform.position.x - CurrentDestination.x;
 
         if (Mathf.Abs(changeInY) >= Mathf.Abs(changeInX)) // if Y is a greater difference or equal to, then move in the y direction
