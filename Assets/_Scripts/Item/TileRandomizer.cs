@@ -68,7 +68,6 @@ public class TileRandomizer : MonoBehaviour
             interactorTilemap.SetTile(availablePositions[i], tileToPlace);
         }
 
-        Debug.Log($"Placed {shelvingTileCount} grocery tiles initially, and {positionsCount - shelvingTileCount} additional tiles in the remaining spaces.");
     }
     void PlaceMeatTiles()
     {
@@ -93,7 +92,6 @@ public class TileRandomizer : MonoBehaviour
             interactorTilemap.SetTile(availablePositions[i], tileToPlace);
         }
 
-        Debug.Log($"Placed {shelvingTileCount} grocery tiles initially, and {positionsCount - shelvingTileCount} additional tiles in the remaining spaces.");
     }
 
 
@@ -122,7 +120,6 @@ public class TileRandomizer : MonoBehaviour
             interactorTilemap.SetTile(availablePositions[i], tileToPlace);
         }
 
-        Debug.Log($"Placed {shelvingTileCount} grocery tiles initially, and {positionsCount - shelvingTileCount} additional tiles in the remaining spaces.");
     }
     void PlaceRightShelvingTiles()
     {
@@ -147,7 +144,6 @@ public class TileRandomizer : MonoBehaviour
             interactorTilemap.SetTile(availablePositions[i], tileToPlace);
         }
 
-        Debug.Log($"Placed {shelvingTileCount} grocery tiles initially, and {positionsCount - shelvingTileCount} additional tiles in the remaining spaces.");
     }
 
 
@@ -175,7 +171,6 @@ public class TileRandomizer : MonoBehaviour
             interactorTilemap.SetTile(availablePositions[i], tileToPlace);
         }
 
-        Debug.Log($"Placed {groceryTileCount} grocery tiles initially, and {positionsCount - groceryTileCount} additional tiles in the remaining spaces.");
     }
 
     void PlaceFlowerTiles()
@@ -201,7 +196,6 @@ public class TileRandomizer : MonoBehaviour
             interactorTilemap.SetTile(availablePositions[i], tileToPlace);
         }
 
-        Debug.Log($"Placed {flowerTileCount} flower tiles initially, and {positionsCount - flowerTileCount} additional tiles in the remaining spaces.");
     }
 
     // Helper method to get available positions based on the provided placement tiles

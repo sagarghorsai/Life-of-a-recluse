@@ -26,6 +26,11 @@ public class EXPManager : MonoBehaviour
     private const int DEFAULT_EXP = 0;
     private const int DEFAULT_UPGRADE_POINTS = 0;
 
+    private PlayerStatsUI playerStatsUI;
+
+    int start = 0;
+    int end;
+
     void Awake()
     {
         LoadProgress();
@@ -33,6 +38,7 @@ public class EXPManager : MonoBehaviour
 
     void Start()
     {
+        playerStatsUI =FindAnyObjectByType<PlayerStatsUI>();
         UpdateLevel();
     }
 
@@ -75,18 +81,19 @@ public class EXPManager : MonoBehaviour
     {
         previousLevelsExperience = (int)experienceCurve.Evaluate(currentLevel);
         nextLevelsExperience = (int)experienceCurve.Evaluate(currentLevel + 1);
+
+        playerStatsUI.UpdateUI();
         UpdateInterface();
     }
 
     void UpdateInterface()
     {
-        int start = totalExperience - previousLevelsExperience;
-        if (start < 0)
-        {
-            start = 0;
-        }
+        start = Mathf.Max(0, totalExperience - previousLevelsExperience);  // Clamp start to 0 if it's below 0
+        end = nextLevelsExperience - previousLevelsExperience;
 
-        int end = nextLevelsExperience - previousLevelsExperience;
+       
+
+        Debug.Log($"{totalExperience} - {previousLevelsExperience} = {start}");
 
         if (levelText != null)
             levelText.text = $"{currentLevel}";
@@ -109,7 +116,6 @@ public class EXPManager : MonoBehaviour
         return false;
     }
 
-    // Optional: Add method to reset progress
     public void ResetProgress()
     {
         currentLevel = DEFAULT_LEVEL;
@@ -120,13 +126,11 @@ public class EXPManager : MonoBehaviour
         Debug.Log("Progress reset to default values");
     }
 
-    // Optional: Save when the game is quitting
     private void OnApplicationQuit()
     {
         SaveProgress();
     }
 
-    // Optional: Save when the game is paused/backgrounded
     private void OnApplicationPause(bool pauseStatus)
     {
         if (pauseStatus)

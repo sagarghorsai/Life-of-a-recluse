@@ -5,34 +5,22 @@ using UnityEngine;
 public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false; // Static variable to track game state
-    public GameObject pauseMenuUI;           // Reference to the pause menu UI
-    public GameObject resumeButton;
-    public GameObject menuButton;
-    public GameObject optionButton;
-    public GameObject quitButton;
-    public GameObject optionreturnButton;
-    public GameObject statsreturnButton;
+    public GameObject pauseMenuUI;
+    public GameObject optionMenuUI;
+    public GameObject statsMenuUI;
 
-    public GameObject OptionMenu;
-    public GameObject StatsMenu;
-    public GameObject statsButton;
+
+
+
 
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape)) // Detect "Escape" key press
         {
-            Debug.Log("Pressed ESC");
-            // Toggle pause/resume based on the current state
-            if (GameIsPaused)
-            {
-                Resume();  // If the game is already paused, resume it
-
-            }
-            else
-            {
+           
                 Pause();   // If the game is not paused, pause it
-            }
+            
         }
     }
 
@@ -71,30 +59,18 @@ public class PauseMenu : MonoBehaviour
 
     public void Options()
     {
-        resumeButton.SetActive(false);
-        menuButton.SetActive(false);
-        optionButton.SetActive(false);
-        quitButton.SetActive(false);
-        statsButton.SetActive(false);
-        optionreturnButton.SetActive(true);
-        statsreturnButton.SetActive(false);
-        OptionMenu.SetActive(true);
-        StatsMenu.SetActive(false);
+        pauseMenuUI.SetActive(false);   // Show the pause menu UI
+        statsMenuUI.SetActive(false);
+        optionMenuUI.SetActive(true);
 
         Debug.Log("Load Options");
     }
 
     public void Stats()
     {
-        resumeButton.SetActive(false);
-        menuButton.SetActive(false);
-        optionButton.SetActive(false);
-        quitButton.SetActive(false);
-        statsButton.SetActive(false);
-        optionreturnButton.SetActive(false);
-        statsreturnButton.SetActive(true);
-        OptionMenu.SetActive(false);
-        StatsMenu.SetActive(true);
+        pauseMenuUI.SetActive(false);   // Show the pause menu UI
+        statsMenuUI.SetActive(true);
+        optionMenuUI.SetActive(false);
         Debug.Log("Load Stats");
 
 
@@ -102,15 +78,9 @@ public class PauseMenu : MonoBehaviour
 
     public void Return()
     {
-        resumeButton.SetActive(true);
-        menuButton.SetActive(true);
-        optionButton.SetActive(true);
-        quitButton.SetActive(true);
-        statsButton.SetActive(true);
-        optionreturnButton.SetActive(false);
-        statsreturnButton.SetActive(false);
-        OptionMenu.SetActive(false);
-        StatsMenu.SetActive(false);
+        pauseMenuUI.SetActive(true);   // Show the pause menu UI
+        statsMenuUI.SetActive(false);
+        optionMenuUI.SetActive(false);
         Debug.Log("Load Return");
     }
 

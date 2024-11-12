@@ -5,6 +5,7 @@ public class SceneManager : MonoBehaviour
 {
     DayCounter dayCounter;
     LevelRandomizer randomizer;
+
     private void Start()
     {
         dayCounter = FindObjectOfType<DayCounter>();
@@ -45,7 +46,7 @@ public class SceneManager : MonoBehaviour
 
     public void NextDay()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Level1");
+        randomizer.RandomizedLevel();
         AudioManager.Instance.PlayMusic("LevelMusic");
     }
 }
