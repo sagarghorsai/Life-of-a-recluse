@@ -23,6 +23,7 @@ public class PlayerStats : MonoBehaviour
     private PlayerMovement playerMovement;
     private EXPManager expManager;
     private PlayerStatsUI playerStatsUI;
+    private EXPManager xpManager;
 
     void Awake()
     {
@@ -75,7 +76,7 @@ public class PlayerStats : MonoBehaviour
         playerStaminaRegenRate = DEFAULT_STAMINA_REGEN;
         SaveStats();
     }
-
+   
     public void LoadStats()
     {
         playerSprintSpeed = PlayerPrefs.GetFloat(SPRINT_SPEED_KEY, DEFAULT_SPRINT_SPEED);
@@ -149,7 +150,6 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
-    // Optional: Add method to reset stats
     public void ResetStats()
     {
         SetDefaultStats();
@@ -158,7 +158,6 @@ public class PlayerStats : MonoBehaviour
         Debug.Log("Stats reset to default values");
     }
 
-    // Optional: Save stats when the game is quitting
     private void OnApplicationQuit()
     {
         SaveStats();

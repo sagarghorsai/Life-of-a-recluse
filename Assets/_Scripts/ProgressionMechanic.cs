@@ -1,87 +1,53 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ProgressionMechanic : MonoBehaviour
 {
     [Header("---------- Enemies ----------")]
-    public List<EnemyController> activeEnemies;
+    public List<CartEnemy> activeEnemies;
     public List<RotateOnlyMovement> rotatingEnemies;
-    public List<RandomizedMovement> randomMovementEnemies;
-
-
-    [Header("---------- Refrences ----------")]
+    public List<RandomizedMovement> randomMovementEnemies; 
+    [Header("---------- References ----------")]
     private TaskList taskList;
     private CountdownClock countdownClock;
+    private DifficultyManager difficultyManager;
 
 
-    [Header("---------- Changable Variables ----------")]
-    public float enemySpeed = 5f;
-    public float countdownTime = 150f;
-    public int taskAmount = 5;
-    public float rotationSpeed = 0.1f;
-    public float randomizedSpeed = 1f;
-
-    private void Awake()
+    private void OnEnable()
     {
-        activeEnemies = new List<EnemyController>(FindObjectsOfType<CartEnemy>());
+        difficultyManager = FindObjectOfType<DifficultyManager>();
+        activeEnemies = new List<CartEnemy>(FindObjectsOfType<CartEnemy>());
         rotatingEnemies = new List<RotateOnlyMovement>(FindObjectsOfType<RotateOnlyMovement>());
         randomMovementEnemies = new List<RandomizedMovement>(FindObjectsOfType<RandomizedMovement>());
 
         taskList = GetComponent<TaskList>();
-        countdownClock =FindAnyObjectByType<CountdownClock>();
+        countdownClock = FindAnyObjectByType<CountdownClock>();
 
-        SetDifficulty();
-        Debug.Log("Set Difficulty");
-    }
-
-  
-
-    public void SetDifficulty()
-    {
-        CountDownClockDifficulty();
-        TaskListDifficulty();
         EnemyDifficulty();
-    }
-
-
-
-    void CountDownClockDifficulty()
-    {
-        countdownClock.startingTime = countdownTime;
-    }
-
-    void TaskListDifficulty()
-    {
-        taskList.numberOfTasks = taskAmount;
     }
 
     void EnemyDifficulty()
     {
-        foreach (EnemyController enemy in activeEnemies)
+        foreach (CartEnemy enemy in activeEnemies)
         {
             if (enemy._waypointMovement != null)
             {
-                enemy._waypointMovement.speed = enemySpeed;
+                enemy._waypointMovement.speed = difficultyManager.enemySpeed;
                 Debug.Log($"{enemy} Speed = {enemy._waypointMovement.speed}");
             }
-           
         }
-
         foreach (RotateOnlyMovement enemy in rotatingEnemies)
         {
-            enemy.RotationSpeed = rotationSpeed;
-        }
+            enemy.RotationSpeed = difficultyManager.rotationSpeed;
+            Debug.Log($"{enemy} Speed = {enemy.RotationSpeed}");
 
+        }
         foreach (RandomizedMovement enemy in randomMovementEnemies)
         {
-            enemy.movementSpeed = randomizedSpeed;
+            enemy.movementSpeed = difficultyManager.randomizedSpeed;
+            Debug.Log($"{enemy} Speed = {enemy.movementSpeed}");
 
         }
-
-
-
     }
-
 
 }

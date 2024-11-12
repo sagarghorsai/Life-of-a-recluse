@@ -8,61 +8,64 @@ public class CheckOut : MonoBehaviour
     private DayCounter dayCounter;
     public TextMeshProUGUI dayText;
     private AudioManager audioManager;
-    EXPManager expManager;
-    PlayerStats playerStats;
-
+    private EXPManager expManager;
+    private PlayerStats playerStats;
     private TaskList tasklist;
+    private DifficultyManager difficultyManager;
+
+
+
     private void Start()
     {
-        // Find and reference the DayCounter script in the scene
         dayCounter = FindObjectOfType<DayCounter>();
         tasklist = FindObjectOfType<TaskList>();
-
         expManager = FindObjectOfType<EXPManager>();
         playerStats = FindObjectOfType<PlayerStats>();
+        difficultyManager = FindAnyObjectByType<DifficultyManager>();
 
-        // Log an error if DayCounter is not found
         if (dayCounter == null)
         {
             Debug.LogError("DayCounter not found in the scene! Make sure you have a DayCounter component.");
         }
         dayText.text = $"Day \n{dayCounter.dayCount}";
         Debug.Log($"HighScore is {dayCounter.HighCount}");
+
         if (audioManager != null)
         {
-            audioManager = FindObjectOfType<AudioManager>(); // Find the AudioManager in the scene
+            audioManager = FindObjectOfType<AudioManager>();
         }
-
-
     }
 
     public void Checkout()
     {
-
         if (tasklist.canCheckout)
         {
-           if (UnityEngine.SceneManagement.SceneManager.sceneCount ==0)
+            if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "Tutorial")
             {
                 expManager.ResetProgress();
                 playerStats.ResetStats();
                 UnityEngine.SceneManagement.SceneManager.LoadScene("Menu");
                 AudioManager.Instance.PlayMusic("MenuMusic");
             }
-
-
-            Debug.Log($"{dayCounter}+1");
-            // Increment the day counter
-            if (dayCounter != null)
+            else
             {
-                DayCounter.Instance.Next();
-                dayCounter.dayCount += 1;
-                AudioManager.Instance.PlaySFX("CheckOut");
-                Debug.Log("Player checked out! Day count increased to: " + dayCounter.dayCount);
+                if (dayCounter != null)
+                {
+                    DayCounter.Instance.Next();
+                    dayCounter.dayCount += 1;
+                    AudioManager.Instance.PlaySFX("CheckOut");
+                    Debug.Log("Player checked out! Day count increased to: " + dayCounter.dayCount);
+                }
 
+                // Increase the difficulty in the ProgressionMechanic script
+                if (difficultyManager != null)
+                {
+                    difficultyManager.IncreaseDifficulty();
+                }
+
+                tasklist.canCheckout = false;
+                UnityEngine.SceneManagement.SceneManager.LoadScene("Win");
             }
-            tasklist.canCheckout = false;
-            UnityEngine.SceneManagement.SceneManager.LoadScene("Win");
-
         }
         else
         {

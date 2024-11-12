@@ -71,7 +71,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   currentLevel: 0
   totalExperience: 0
-  upgradePoints: 20
+  upgradePoints: 0
   levelText: {fileID: 0}
   experienceText: {fileID: 0}
   experienceFill: {fileID: 0}

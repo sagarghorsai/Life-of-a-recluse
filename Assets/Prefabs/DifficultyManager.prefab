@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5210582167985996233}
   - component: {fileID: 6774096854911444769}
+  - component: {fileID: 7012585878055907513}
   m_Layer: 0
-  m_Name: DayCounter
+  m_Name: DifficultyManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,3 +47,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dayCount: 1
   HighCount: 1
+--- !u!114 &7012585878055907513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6638092942421148911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fca1760aed55954e9eb3c0a1591f6f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySpeed: 5
+  rotationSpeed: 0.1
+  randomizedSpeed: 1
+  speedIncreaseFactor: 0.5
+  rotationSpeedIncreaseFactor: 0.1
+  randomizedSpeedIncreaseFactor: 0.2

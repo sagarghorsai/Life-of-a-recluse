@@ -20,6 +20,7 @@ public class PanicMeter : MonoBehaviour
     private AudioManager audioManager;
     private EXPManager expManager;
     private PlayerStats playerStats;
+    private DifficultyManager difficultyManager;
 
     [Header("---------- Panic Values ----------")]
     public float panicValue;
@@ -37,6 +38,7 @@ public class PanicMeter : MonoBehaviour
     {
         expManager = FindAnyObjectByType<EXPManager>();
         playerStats = FindAnyObjectByType<PlayerStats>();
+        difficultyManager = FindAnyObjectByType<DifficultyManager>();
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -107,6 +109,7 @@ public class PanicMeter : MonoBehaviour
     {
         expManager.ResetProgress();
         playerStats.ResetStats();
+        difficultyManager.DifficultyReset();
         AudioManager.Instance.PlaySFX("Scream");
         UnityEngine.SceneManagement.SceneManager.LoadScene("Lose");
         Debug.Log("You freakedOut");
