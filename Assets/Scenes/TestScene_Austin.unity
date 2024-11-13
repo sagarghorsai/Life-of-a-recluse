@@ -786,11 +786,11 @@ MonoBehaviour:
   _targetDirection: {x: 0, y: 0}
   anim: {fileID: 337233739}
   interactorZone: {fileID: 1798398688}
+  movementSpeed: 10
   movingRight: 0
   movingLeft: 0
   movingUp: 0
   movingDown: 0
-  movementSpeed: 10
 --- !u!114 &263970256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3874,13 +3874,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fab8400c1ce5bc241bd5a1ffc2aa737d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 4
-  directionChangeCooldown: 0
+  _waypointMovement: {fileID: 0}
+  CurrentDestination: {x: 0, y: 0}
+  PreviousDestination: {x: 0, y: 0}
+  _targetDirection: {x: 0, y: 0}
   anim: {fileID: 1759080739}
+  interactorZone: {fileID: 0}
+  movementSpeed: 4
+  movingRight: 0
+  movingLeft: 0
   movingUp: 0
   movingDown: 0
-  movingLeft: 0
-  movingRight: 0
+  directionChangeCooldown: 0
   isStationary: 0
 --- !u!50 &1058819322
 Rigidbody2D:
@@ -4542,11 +4547,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e4305895fc58bc4fa3123a845c9b272, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentRotation: 0
-  RotateLeftToPoint: 180
-  RotateRightToPoint: 0
-  RotationSpeed: 0.5
+  _waypointMovement: {fileID: 0}
+  CurrentDestination: {x: 0, y: 0}
+  PreviousDestination: {x: 0, y: 0}
+  _targetDirection: {x: 0, y: 0}
   anim: {fileID: 1243678351}
+  interactorZone: {fileID: 0}
+  movementSpeed: 0
+  movingRight: 0
+  movingLeft: 0
+  movingUp: 0
+  movingDown: 0
+  CurrentRotation: 0
+  CounterClockwiseToPoint: 50
+  ClockwiseToPoint: -50
+  RotationSpeed: 0.5
   TurningLeft: 0
   TurningRight: 0
   FacingRight: 0
