@@ -10,8 +10,21 @@ public class PauseMenu : MonoBehaviour
     public GameObject statsMenuUI;
 
 
+    EXPManager expManager;
+    PlayerStats playerStats;
+    DifficultyManager difficultyManager;
+    DayCounter dayCounter;
 
 
+
+    private void Start()
+    {
+        expManager = FindAnyObjectByType<EXPManager>();
+        playerStats = FindAnyObjectByType<PlayerStats>();
+        difficultyManager = FindAnyObjectByType<DifficultyManager>();
+        dayCounter = FindAnyObjectByType<DayCounter>(); 
+
+    }
 
 
     private void Update()
@@ -48,6 +61,12 @@ public class PauseMenu : MonoBehaviour
 
     public void Menu()
     {
+
+        expManager.ResetProgress();
+        playerStats.ResetStats();
+        difficultyManager.DifficultyReset();
+        dayCounter.dayCount = 1;
+
         Debug.Log("Load Menu");
         Time.timeScale = 1f;           
         UnityEngine.SceneManagement.SceneManager.LoadScene("Menu");

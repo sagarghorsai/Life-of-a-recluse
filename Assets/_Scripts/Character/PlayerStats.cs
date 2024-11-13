@@ -4,19 +4,16 @@ public class PlayerStats : MonoBehaviour
 {
     [Header("---------- Player Stats ----------")]
     public float playerSprintSpeed;
-    public float playerWalkSpeed;
     public float playerStamina;
     public float playerStaminaRegenRate;
 
     // Default values for initialization
     private const float DEFAULT_SPRINT_SPEED = 5f;
-    private const float DEFAULT_WALK_SPEED = 3f;
     private const float DEFAULT_STAMINA = 1f;
     private const float DEFAULT_STAMINA_REGEN = 0.2f;
 
     // PlayerPrefs keys
     private const string SPRINT_SPEED_KEY = "PlayerSprintSpeed";
-    private const string WALK_SPEED_KEY = "PlayerWalkSpeed";
     private const string STAMINA_KEY = "PlayerStamina";
     private const string STAMINA_REGEN_KEY = "PlayerStaminaRegen";
 
@@ -57,7 +54,6 @@ public class PlayerStats : MonoBehaviour
         if (playerMovement != null)
         {
             playerSprintSpeed = playerMovement.sprintSpeed;
-            playerWalkSpeed = playerMovement.walkSpeed;
             playerStamina = playerMovement.maxStamina;
             playerStaminaRegenRate = playerMovement.staminaRegenRate;
             SaveStats();
@@ -71,7 +67,6 @@ public class PlayerStats : MonoBehaviour
     private void SetDefaultStats()
     {
         playerSprintSpeed = DEFAULT_SPRINT_SPEED;
-        playerWalkSpeed = DEFAULT_WALK_SPEED;
         playerStamina = DEFAULT_STAMINA;
         playerStaminaRegenRate = DEFAULT_STAMINA_REGEN;
         SaveStats();
@@ -80,7 +75,6 @@ public class PlayerStats : MonoBehaviour
     public void LoadStats()
     {
         playerSprintSpeed = PlayerPrefs.GetFloat(SPRINT_SPEED_KEY, DEFAULT_SPRINT_SPEED);
-        playerWalkSpeed = PlayerPrefs.GetFloat(WALK_SPEED_KEY, DEFAULT_WALK_SPEED);
         playerStamina = PlayerPrefs.GetFloat(STAMINA_KEY, DEFAULT_STAMINA);
         playerStaminaRegenRate = PlayerPrefs.GetFloat(STAMINA_REGEN_KEY, DEFAULT_STAMINA_REGEN);
     }
@@ -88,7 +82,6 @@ public class PlayerStats : MonoBehaviour
     public void SaveStats()
     {
         PlayerPrefs.SetFloat(SPRINT_SPEED_KEY, playerSprintSpeed);
-        PlayerPrefs.SetFloat(WALK_SPEED_KEY, playerWalkSpeed);
         PlayerPrefs.SetFloat(STAMINA_KEY, playerStamina);
         PlayerPrefs.SetFloat(STAMINA_REGEN_KEY, playerStaminaRegenRate);
         PlayerPrefs.Save();

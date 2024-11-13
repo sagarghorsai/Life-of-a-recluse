@@ -223,7 +223,6 @@ public class PlayerMovement : MonoBehaviour
         if (playerStats != null)
         {
             sprintSpeed = playerStats.playerSprintSpeed;
-            walkSpeed = playerStats.playerWalkSpeed;
             maxStamina = playerStats.playerStamina;
             staminaRegenRate = playerStats.playerStaminaRegenRate;
         }

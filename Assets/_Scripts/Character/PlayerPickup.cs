@@ -47,7 +47,7 @@ public class PlayerPickup : MonoBehaviour
 
                     AudioManager.Instance.PlaySFX("PickUP");
 
-                    expManager.AddExperience(1000);
+                    expManager.AddExperience(50);
                     PickUpGrocery();
                 }
                 else

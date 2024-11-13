@@ -706,7 +706,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 16_Grocery_store_16x16_29
+      name: shopingCart_5
       rect:
         serializedVersion: 2
         x: 144
@@ -727,7 +727,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 16_Grocery_store_16x16_30
+      name: shopingCart_1
       rect:
         serializedVersion: 2
         x: 160
@@ -748,7 +748,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 16_Grocery_store_16x16_31
+      name: shopingCart_2
       rect:
         serializedVersion: 2
         x: 176
@@ -874,7 +874,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 16_Grocery_store_16x16_39
+      name: shopingCart_6
       rect:
         serializedVersion: 2
         x: 144
@@ -895,7 +895,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 16_Grocery_store_16x16_40
+      name: shopingCart_3
       rect:
         serializedVersion: 2
         x: 160
@@ -916,7 +916,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 16_Grocery_store_16x16_41
+      name: shopingCart_4
       rect:
         serializedVersion: 2
         x: 176
@@ -23242,7 +23242,6 @@ TextureImporter:
       16_Grocery_store_16x16_285: 142282445
       16_Grocery_store_16x16_286: -1567682449
       16_Grocery_store_16x16_289: -774392364
-      16_Grocery_store_16x16_29: 523621523
       16_Grocery_store_16x16_291: -1842436854
       16_Grocery_store_16x16_292: -440620347
       16_Grocery_store_16x16_293: 685028262
@@ -23250,14 +23249,12 @@ TextureImporter:
       16_Grocery_store_16x16_296: 301052744
       16_Grocery_store_16x16_299: -1983367724
       16_Grocery_store_16x16_3: 1434723371
-      16_Grocery_store_16x16_30: -1598390618
       16_Grocery_store_16x16_300: 1476083977
       16_Grocery_store_16x16_301: -749756470
       16_Grocery_store_16x16_302: -1620730777
       16_Grocery_store_16x16_306: 1142369120
       16_Grocery_store_16x16_307: 1020681246
       16_Grocery_store_16x16_309: 1495584702
-      16_Grocery_store_16x16_31: 800490932
       16_Grocery_store_16x16_311: 576066541
       16_Grocery_store_16x16_312: -344776995
       16_Grocery_store_16x16_313: -1518473342
@@ -23304,10 +23301,8 @@ TextureImporter:
       16_Grocery_store_16x16_378: -738032100
       16_Grocery_store_16x16_38: -1823999699
       16_Grocery_store_16x16_389: 2146797174
-      16_Grocery_store_16x16_39: 385117897
       16_Grocery_store_16x16_393: 312113222
       16_Grocery_store_16x16_4: 433178757
-      16_Grocery_store_16x16_40: -688092566
       16_Grocery_store_16x16_400: 1193964080
       16_Grocery_store_16x16_401: -347207871
       16_Grocery_store_16x16_402: 561128814
@@ -23317,7 +23312,6 @@ TextureImporter:
       16_Grocery_store_16x16_406: -1603268796
       16_Grocery_store_16x16_407: -1347706590
       16_Grocery_store_16x16_408: 806566091
-      16_Grocery_store_16x16_41: -1275545238
       16_Grocery_store_16x16_416: -1022736720
       16_Grocery_store_16x16_417: -482100250
       16_Grocery_store_16x16_418: 1340361433
@@ -24123,6 +24117,12 @@ TextureImporter:
       Yellow_Fish_Bottom2: -2126281300
       Yellow_Fish_Top: -1745478785
       Yellow_Fish_Top2: 277542885
+      shopingCart_1: -1598390618
+      shopingCart_2: 800490932
+      shopingCart_3: -688092566
+      shopingCart_4: -1275545238
+      shopingCart_5: 523621523
+      shopingCart_6: 385117897
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
