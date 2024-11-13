@@ -11,6 +11,7 @@ public class ProgressionMechanic : MonoBehaviour
     private TaskList taskList;
     private CountdownClock countdownClock;
     private DifficultyManager difficultyManager;
+    private PanicMeter panicMeter;
 
 
     private void OnEnable()
@@ -19,8 +20,9 @@ public class ProgressionMechanic : MonoBehaviour
         activeEnemies = new List<CartEnemy>(FindObjectsOfType<CartEnemy>());
         rotatingEnemies = new List<RotateOnlyMovement>(FindObjectsOfType<RotateOnlyMovement>());
         randomMovementEnemies = new List<RandomizedMovement>(FindObjectsOfType<RandomizedMovement>());
+        panicMeter = FindAnyObjectByType<PanicMeter>();
 
-        taskList = GetComponent<TaskList>();
+        taskList = FindAnyObjectByType<TaskList>();
         countdownClock = FindAnyObjectByType<CountdownClock>();
 
         EnemyDifficulty();
@@ -48,6 +50,19 @@ public class ProgressionMechanic : MonoBehaviour
             Debug.Log($"{enemy} Speed = {enemy.movementSpeed}");
 
         }
+
+        //TaskList Difficulty
+        taskList.numberOfTasks = difficultyManager.tasknum;
+        //Manager countdown Difficulty
+        countdownClock.startingTime = difficultyManager.startingTime;
+
+
+        //PanicMeter Difficulty
+        panicMeter.panicScale = difficultyManager.panicScale;
+        panicMeter.calmDownScale = difficultyManager.calmDownScale;
+        panicMeter.calmDownPause = difficultyManager.calmDownPause;
     }
+
+  
 
 }

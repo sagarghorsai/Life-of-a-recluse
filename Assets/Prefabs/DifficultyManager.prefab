@@ -59,9 +59,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fca1760aed55954e9eb3c0a1591f6f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeed: 5
+  enemySpeed: 3
   rotationSpeed: 0.1
   randomizedSpeed: 1
   speedIncreaseFactor: 0.5
-  rotationSpeedIncreaseFactor: 0.1
+  rotationSpeedIncreaseFactor: 0.05
   randomizedSpeedIncreaseFactor: 0.2
+  panicScale: 10
+  calmDownScale: 1
+  calmDownPause: 10
+  panicScaleIncreaseFactor: 0.5
+  calmDownScaleDecreaseeFactor: 0.1
+  calmDownPauseIncreaseeFactor: 0.2
+  tasknum: 5
+  taskIncreaseFactor: 1
+  startingTime: 300
+  startingTimeDecreaseFactor: 2
