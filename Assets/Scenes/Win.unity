@@ -549,7 +549,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Play Again
+  m_text: Next Day
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4f1e51a7d6f448f43bfe18d744f7ebd3, type: 2}
   m_sharedMaterial: {fileID: -8983668218378873856, guid: 4f1e51a7d6f448f43bfe18d744f7ebd3, type: 2}
@@ -1470,7 +1470,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 637632527}
         m_TargetAssemblyTypeName: SceneManager, Assembly-CSharp
-        m_MethodName: StartGame
+        m_MethodName: NextDay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
