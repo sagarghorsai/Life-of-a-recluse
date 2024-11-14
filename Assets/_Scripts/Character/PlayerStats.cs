@@ -6,21 +6,25 @@ public class PlayerStats : MonoBehaviour
     public float playerSprintSpeed;
     public float playerStamina;
     public float playerStaminaRegenRate;
+    public float panicMax;
 
     // Default values for initialization
     private const float DEFAULT_SPRINT_SPEED = 5f;
     private const float DEFAULT_STAMINA = 1f;
     private const float DEFAULT_STAMINA_REGEN = 0.2f;
+    private const float DEFAULT_PANICMAX = 10f;
 
     // PlayerPrefs keys
     private const string SPRINT_SPEED_KEY = "PlayerSprintSpeed";
     private const string STAMINA_KEY = "PlayerStamina";
     private const string STAMINA_REGEN_KEY = "PlayerStaminaRegen";
+    private const string PANICMAX_KEY = "PanicMax";
 
     private PlayerMovement playerMovement;
     private EXPManager expManager;
     private PlayerStatsUI playerStatsUI;
     private EXPManager xpManager;
+    private PanicMeter PanicMeter;
 
     void Awake()
     {
@@ -32,6 +36,7 @@ public class PlayerStats : MonoBehaviour
         expManager = FindObjectOfType<EXPManager>();
         playerMovement = FindObjectOfType<PlayerMovement>();
         playerStatsUI = FindObjectOfType<PlayerStatsUI>();
+        PanicMeter = FindObjectOfType<PanicMeter>();
 
         // Only initialize from PlayerMovement if no saved data exists
         if (!PlayerPrefs.HasKey(SPRINT_SPEED_KEY))
@@ -56,6 +61,7 @@ public class PlayerStats : MonoBehaviour
             playerSprintSpeed = playerMovement.sprintSpeed;
             playerStamina = playerMovement.maxStamina;
             playerStaminaRegenRate = playerMovement.staminaRegenRate;
+            panicMax = PanicMeter.panicMax;
             SaveStats();
         }
         else
@@ -69,6 +75,7 @@ public class PlayerStats : MonoBehaviour
         playerSprintSpeed = DEFAULT_SPRINT_SPEED;
         playerStamina = DEFAULT_STAMINA;
         playerStaminaRegenRate = DEFAULT_STAMINA_REGEN;
+        panicMax = DEFAULT_PANICMAX;
         SaveStats();
     }
    
@@ -77,6 +84,7 @@ public class PlayerStats : MonoBehaviour
         playerSprintSpeed = PlayerPrefs.GetFloat(SPRINT_SPEED_KEY, DEFAULT_SPRINT_SPEED);
         playerStamina = PlayerPrefs.GetFloat(STAMINA_KEY, DEFAULT_STAMINA);
         playerStaminaRegenRate = PlayerPrefs.GetFloat(STAMINA_REGEN_KEY, DEFAULT_STAMINA_REGEN);
+        panicMax = PlayerPrefs.GetFloat(PANICMAX_KEY, DEFAULT_PANICMAX);
     }
 
     public void SaveStats()
@@ -84,6 +92,7 @@ public class PlayerStats : MonoBehaviour
         PlayerPrefs.SetFloat(SPRINT_SPEED_KEY, playerSprintSpeed);
         PlayerPrefs.SetFloat(STAMINA_KEY, playerStamina);
         PlayerPrefs.SetFloat(STAMINA_REGEN_KEY, playerStaminaRegenRate);
+        PlayerPrefs.SetFloat(PANICMAX_KEY, DEFAULT_PANICMAX);
         PlayerPrefs.Save();
     }
 
@@ -95,7 +104,7 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
-    public void IncreaseStamina()
+    public void IncreaseMaxStamina()
     {
         if (expManager.UseUpgradePoint())
         {
@@ -132,6 +141,22 @@ public class PlayerStats : MonoBehaviour
         if (expManager.UseUpgradePoint())
         {
             playerStaminaRegenRate += 0.1f;
+            UpdatePlayerMovement();
+            SaveStats();
+            playerStatsUI.UpdateUI();
+            Debug.Log($"Stamina Regen increased to: {playerStaminaRegenRate}");
+        }
+        else
+        {
+            Debug.Log("No Upgrade Point");
+        }
+    }
+
+    public void IncreasePanicMax()
+    {
+        if (expManager.UseUpgradePoint())
+        {
+            panicMax += 0.1f;
             UpdatePlayerMovement();
             SaveStats();
             playerStatsUI.UpdateUI();

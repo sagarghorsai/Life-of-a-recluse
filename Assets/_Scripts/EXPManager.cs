@@ -9,7 +9,7 @@ public class EXPManager : MonoBehaviour
     [Header("Experience")]
     [SerializeField] AnimationCurve experienceCurve;
     public int currentLevel, totalExperience, upgradePoints;
-    int previousLevelsExperience, nextLevelsExperience;
+    public int previousLevelsExperience, nextLevelsExperience;
 
     [Header("Interface")]
     [SerializeField] TextMeshProUGUI levelText;
@@ -73,7 +73,8 @@ public class EXPManager : MonoBehaviour
             upgradePoints++;  // Add upgrade points for leveling up
             UpdateLevel();
             SaveProgress();
-            // Start level up sequence (SFX)
+
+            AudioManager.Instance.PlaySFX("LevelUP");
         }
     }
 
@@ -82,7 +83,6 @@ public class EXPManager : MonoBehaviour
         previousLevelsExperience = (int)experienceCurve.Evaluate(currentLevel);
         nextLevelsExperience = (int)experienceCurve.Evaluate(currentLevel + 1);
 
-        playerStatsUI.UpdateUI();
         UpdateInterface();
     }
 
@@ -103,6 +103,8 @@ public class EXPManager : MonoBehaviour
 
         if (experienceFill != null)
             experienceFill.fillAmount = (float)start / end;
+        playerStatsUI.UpdateUI();
+
     }
 
     public bool UseUpgradePoint()

@@ -2722,6 +2722,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1400773602781632109, guid: cdc93fb9712536f4fbf3f5fe1b6d66ef, type: 3}
+      propertyPath: audioList.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1400773602781632109, guid: cdc93fb9712536f4fbf3f5fe1b6d66ef, type: 3}
+      propertyPath: audioList.Array.data[6].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: bd5bc0353eae108449c2e9ff10e963a7, type: 3}
+    - target: {fileID: 1400773602781632109, guid: cdc93fb9712536f4fbf3f5fe1b6d66ef, type: 3}
+      propertyPath: audioList.Array.data[6].name
+      value: LevelUP
+      objectReference: {fileID: 0}
     - target: {fileID: 8541629338542176740, guid: cdc93fb9712536f4fbf3f5fe1b6d66ef, type: 3}
       propertyPath: m_LocalPosition.x
       value: 537.9773
