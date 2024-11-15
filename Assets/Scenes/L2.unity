@@ -1389,6 +1389,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1412562066}
     - target: {fileID: 2946010284361534661, guid: baff312dfedcb5e4aa38c19df2817096, type: 3}
+      propertyPath: taskCompleteMessageText
+      value: 
+      objectReference: {fileID: 1858525665}
+    - target: {fileID: 2946010284361534661, guid: baff312dfedcb5e4aa38c19df2817096, type: 3}
       propertyPath: checkoutCompleteMessageText
       value: 
       objectReference: {fileID: 1858525665}
