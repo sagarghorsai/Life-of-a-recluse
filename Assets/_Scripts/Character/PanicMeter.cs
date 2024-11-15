@@ -21,6 +21,7 @@ public class PanicMeter : MonoBehaviour
     private EXPManager expManager;
     private PlayerStats playerStats;
     private DifficultyManager difficultyManager;
+    private PanicMeterUI panicMeterUI;
 
     [Header("---------- Panic Values ----------")]
     public float panicValue;
@@ -39,6 +40,8 @@ public class PanicMeter : MonoBehaviour
         expManager = FindAnyObjectByType<EXPManager>();
         playerStats = FindAnyObjectByType<PlayerStats>();
         difficultyManager = FindAnyObjectByType<DifficultyManager>();
+        panicMeterUI = FindAnyObjectByType<PanicMeterUI>();
+
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -104,6 +107,7 @@ public class PanicMeter : MonoBehaviour
             calmDownPauseTimer = calmDownPause;
         }
     }
+
 
     private void FreakedOut()
     {

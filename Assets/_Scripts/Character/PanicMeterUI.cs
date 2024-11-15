@@ -17,7 +17,7 @@ public class PanicMeterUI : MonoBehaviour
     public Slider PanicSlider; // Attach slider Parent
     public PanicMeter panicScript; //Attach game object containing the instance of script you want
 
-    float panicSliderValue;
+    public float panicSliderValue;
 
     void Start()
     {
