@@ -15,7 +15,7 @@ public class TaskList : MonoBehaviour
     [Header("---------- References ----------")]
     public GameObject buttonPrefab;
     public RectTransform scrollViewContent;
-    public TextMeshProUGUI checkoutCompleteMessageText; // UI Text to show the message
+    public TextMeshProUGUI taskCompleteMessageText; // UI Text to show the message
     public Dictionary<string, List<TextMeshProUGUI>> itemButtons = new Dictionary<string, List<TextMeshProUGUI>>();
 
     [Header("---------- Task List ----------")]
@@ -129,7 +129,7 @@ public class TaskList : MonoBehaviour
         canCheckout = true;
         Debug.Log("All tasks completed! You can now check out at the cashier.");
 
-        checkoutCompleteMessageText.text = "All tasks completed! Head to the cashier to check out.";
+        taskCompleteMessageText.text = "All tasks completed! Head to the cashier to check out.";
     }
 
     
