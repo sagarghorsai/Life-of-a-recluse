@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     Animator anim;          // Reference to Animator component
     AudioManager audioManager; // Reference to the AudioManager
     PanicMeter panicMeter;
+    PanicMeterUI panicMeterUI;
 
     public Vector2Int FacingDirection { get; private set; } = Vector2Int.right;
 
@@ -54,6 +55,7 @@ public class PlayerMovement : MonoBehaviour
         anim = GetComponent<Animator>();    // Get the Animator component
         audioManager = FindObjectOfType<AudioManager>(); // Find the AudioManager in the scene
         panicMeter = FindObjectOfType<PanicMeter>();
+        panicMeterUI = FindAnyObjectByType<PanicMeterUI>();     
         tasklist.SetActive(false);
 
         activeSpeed = walkSpeed;     // Set dash to player's normal movement speed initially.
@@ -229,6 +231,7 @@ public class PlayerMovement : MonoBehaviour
             staminaRegenRate = playerStats.playerStaminaRegenRate;
             panicMeter.panicMax = playerStats.panicMax;
 
+            panicMeterUI.PanicSlider.maxValue = playerStats.panicMax;
 
         }
     }

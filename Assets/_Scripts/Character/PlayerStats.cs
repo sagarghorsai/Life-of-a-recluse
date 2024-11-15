@@ -92,7 +92,7 @@ public class PlayerStats : MonoBehaviour
         PlayerPrefs.SetFloat(SPRINT_SPEED_KEY, playerSprintSpeed);
         PlayerPrefs.SetFloat(STAMINA_KEY, playerStamina);
         PlayerPrefs.SetFloat(STAMINA_REGEN_KEY, playerStaminaRegenRate);
-        PlayerPrefs.SetFloat(PANICMAX_KEY, DEFAULT_PANICMAX);
+        PlayerPrefs.SetFloat(PANICMAX_KEY, panicMax);
         PlayerPrefs.Save();
     }
 
@@ -106,7 +106,7 @@ public class PlayerStats : MonoBehaviour
 
     public void IncreaseMaxStamina()
     {
-        if (expManager.UseUpgradePoint())
+        if (expManager.UseUpgradePoint() &&playerStamina <5f)
         {
             playerStamina += 0.2f;
             UpdatePlayerMovement();
@@ -122,9 +122,9 @@ public class PlayerStats : MonoBehaviour
 
     public void IncreaseSprintSpeed()
     {
-        if (expManager.UseUpgradePoint())
+        if (expManager.UseUpgradePoint()&&playerSprintSpeed<10)
         {
-            playerSprintSpeed += 0.5f;
+            playerSprintSpeed += 0.2f;
             UpdatePlayerMovement();
             SaveStats();
             playerStatsUI.UpdateUI();
@@ -138,9 +138,9 @@ public class PlayerStats : MonoBehaviour
 
     public void IncreaseStaminaRegen()
     {
-        if (expManager.UseUpgradePoint())
+        if (expManager.UseUpgradePoint()&&playerStaminaRegenRate < 2f)
         {
-            playerStaminaRegenRate += 0.1f;
+            playerStaminaRegenRate += 0.05f;
             UpdatePlayerMovement();
             SaveStats();
             playerStatsUI.UpdateUI();
@@ -154,9 +154,9 @@ public class PlayerStats : MonoBehaviour
 
     public void IncreasePanicMax()
     {
-        if (expManager.UseUpgradePoint())
+        if (expManager.UseUpgradePoint() && panicMax <25)
         {
-            panicMax += 0.1f;
+            panicMax += 1f;
             UpdatePlayerMovement();
             SaveStats();
             playerStatsUI.UpdateUI();
