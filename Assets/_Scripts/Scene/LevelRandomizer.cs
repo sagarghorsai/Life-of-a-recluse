@@ -10,7 +10,7 @@ public class LevelRandomizer : MonoBehaviour
 
     private void Start()
     {
-        randomGen = rnd.Next(1, 4);
+        randomGen = rnd.Next(1, 8);
     }
 
     public void RandomizedLevel()
