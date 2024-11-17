@@ -24,6 +24,7 @@ public class SceneManager : MonoBehaviour
         randomizer.RandomizedLevel();
         AudioManager.Instance.PlayMusic("LevelMusic");
         dayCounter.dayCount = 1;
+        Debug.Log("New Game Clicked");
     }
     public void Tutorial()
     {

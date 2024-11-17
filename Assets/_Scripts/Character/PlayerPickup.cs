@@ -2,12 +2,14 @@ using UnityEngine.Tilemaps;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System.Collections;
 
 public class PlayerPickup : MonoBehaviour
 {
 
     public Tilemap groceryTilemap;  // Reference to the grocery Tilemap
-    public TextMeshProUGUI pickUpText;  // Reference to UI Text for pickup
+    public TextMeshProUGUI pickUpText; // Reference to UI Text for pickup
+    public TextMeshProUGUI invalidText; // Reference to UI Text for wrong item text
     private PlayerMovement playerMovement;  // Reference to the PlayerMovement script
     private GroceryTile currentGroceryTile;  // The tile in front of the player (if it's a grocery item)
     private Vector3Int frontTilePosition;  // Position of the tile in front of the player
@@ -15,13 +17,14 @@ public class PlayerPickup : MonoBehaviour
     public TaskList taskList;  // Reference to the TaskList script
     private AudioManager audioManager; // Reference to the AudioManager script
     private EXPManager expManager;
+    float countDown; // Assigns the number/variable for countdown start position.
 
     void Start()
     {
         playerMovement = GetComponent<PlayerMovement>(); // Get PlayerMovement component
         pickUpText.gameObject.SetActive(false);  // Hide pickup text initially
         expManager = FindObjectOfType<EXPManager>();
-
+        countDown = 3;
 
         if (audioManager != null)
         {
@@ -46,21 +49,38 @@ public class PlayerPickup : MonoBehaviour
 
 
                     AudioManager.Instance.PlaySFX("PickUP");
-
+                    invalidText.gameObject.SetActive(false); // Hide the invalid text
                     expManager.AddExperience(50);
                     PickUpGrocery();
+                    
+                    
                 }
-                else
+                else if (item.groceryName != currentGroceryTile.groceryName)
                 {
                     Debug.Log($"{item.groceryName} isnt the same as {currentGroceryTile.groceryName}");
-
-
+                    StartCoroutine(InvalidPickup()); // This is required if you are calling an IEnumerator.
+                    
                 }
             }
         }
+
     }
 
-    private void CheckForPickup()
+    IEnumerator InvalidPickup()
+    {
+                    // Debug.Log($"{item.groceryName} isnt the same as {currentGroceryTile.groceryName}");
+                    invalidText.gameObject.SetActive(true); // Show the invalid text
+                    invalidText.text = "This isn't on your list!"; //Updates the text
+                    yield return new WaitForSeconds(3f);
+                    invalidText.gameObject.SetActive(false);
+
+                    // if (countDown <= 0)
+                   // {
+                       // invalidText.gameObject.SetActive(false);
+                   // }
+    }
+
+private void CheckForPickup()
     {
         Vector3Int playerGridPosition = groceryTilemap.WorldToCell(transform.position);
         frontTilePosition = playerGridPosition + new Vector3Int(playerMovement.FacingDirection.x, playerMovement.FacingDirection.y, 0);
