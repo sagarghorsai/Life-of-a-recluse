@@ -3142,7 +3142,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Movement\n\n\t\tW / A / S / D - Move Up / Left / Down / Right\n\n\n\n\n\nSprint\n\n\t\tLeft
     Shift - Hold to Sprint\n\n\n\n\n\nInteract\n\n\t\tE - Interact / Pick Up Items\n\n\n\n\n\nPause
-    Menu\n\n\t\tEsc - Open/Close Pause Menu\n"
+    Menu\n\n\t\tEsc - Open Pause Menu\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4f1e51a7d6f448f43bfe18d744f7ebd3, type: 2}
   m_sharedMaterial: {fileID: -8983668218378873856, guid: 4f1e51a7d6f448f43bfe18d744f7ebd3, type: 2}

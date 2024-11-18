@@ -27,6 +27,7 @@ public class TutorialUI : MonoBehaviour
 
     private int currentStep = 0;
     private bool hasMoved = false;
+    public GameObject textBackground;
 
     void Start()
     {
@@ -63,7 +64,7 @@ public class TutorialUI : MonoBehaviour
         }
         else
         {
-            tutorialText.text = ""; // Clear text when the tutorial is done
+            textBackground.SetActive(false);
         }
     }
 
