@@ -8,6 +8,7 @@ public class FinalScore : MonoBehaviour
     public DayCounter dayCounter;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI hiScoreText;
+    public TextMeshProUGUI finalText;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,8 +18,9 @@ public class FinalScore : MonoBehaviour
         {
             Debug.LogError("DayCounter not found in the scene! Make sure you have a DayCounter component.");
         }
-        scoreText.text = $"You failed on \n{dayCounter.dayCount}";
-        hiScoreText.text = $"Most days survived in one run \n{dayCounter.HighCount}";
+        scoreText.text = $"You're moving onto Day: \n{dayCounter.dayCount}";
+        hiScoreText.text = $"Most days survived in one run: \n{dayCounter.HighCount}";
+        finalText.text = $"You failed on Day: \n{dayCounter.dayCount}";
     }
 
  
