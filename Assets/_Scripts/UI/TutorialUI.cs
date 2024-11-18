@@ -9,24 +9,26 @@ public class TutorialUI : MonoBehaviour
     private string[] messages = {
     "Use WASD to move around the store.\n[E] to continue",
     "You can hold Shift to sprint, Once you used all of yours stamina bar, you must wait for it to regen.\n[E] to continue",
-    "Press TAB to open your Grocery List.\n[E] to continue",
+    "Press TAB to open/close your Grocery List.\n[E] to continue",
     "Check the name and image in the Grocery List to see what you need to pick up.\n[E] to continue",
     "To finish your day, you must collect all items on your grocery list.\n[E] to continue",
     "When you pick up items, you gain XP, which helps you level up.\n[E] to continue",
     "Each time you level up, you earn an upgrade point to improve your stats.\n[E] to continue",
     "Watch the timer! If it hits 0, the manager will come after you.\n[E] to continue",
-    "Be careful with your Panic Meter. If it fills up completely, you lose.\n[E] to continue",
     "There are other customers in the store. Your goal is to avoid them.\n[E] to continue",
     "If you get too close to other customers, your Panic Meter will increase.\n[E] to continue",
+    "Be careful with your Panic Meter. If it fills up completely, you lose.\n[E] to continue",
+    "The Panic Meter will decrease after a short time of staying way from the enemies interaction zone. \n[E] tp continue",
     "Press ESC to open the pause menu.\n[E] to continue",
     "In the pause menu, you can adjust sound settings or use upgrade points to improve your stats.\n[E] to continue",
     "Press Resume to return to the game.\n[E] to continue",
-    "Good Luck Player!"
+    "Good Luck Player!\n[E] to close!"
 };
 
 
     private int currentStep = 0;
     private bool hasMoved = false;
+    public GameObject textBackground;
 
     void Start()
     {
@@ -63,7 +65,7 @@ public class TutorialUI : MonoBehaviour
         }
         else
         {
-            tutorialText.text = ""; // Clear text when the tutorial is done
+            textBackground.SetActive(false);
         }
     }
 
