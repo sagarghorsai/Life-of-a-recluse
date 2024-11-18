@@ -3073,6 +3073,10 @@ PrefabInstance:
       propertyPath: panicScale
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7012585878055907513, guid: 5cb1272dffde34040b62f054b7c630b9, type: 3}
+      propertyPath: startingTimeDecreaseFactor
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
