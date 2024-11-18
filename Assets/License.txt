@@ -14,3 +14,112 @@ Link:https://penzilla.itch.io/vector-icon-pack
 Date: 9/10/24
 Asset:Vector-icon-pack
 Author: Penzilla
+
+Link: https://mrbreakfastsdelight.itch.io/mr-breakfasts-free-prompts
+Asset: Mr. Breakfast's FreePrompts
+Author: Mr. Breakfast
+License: Creative Commons Zero v1.0 Universal
+
+Link: https://www.1001fonts.com/supply-center-font.html
+Asset: Supply Center font
+Author: nhfonts
+License: Free for commercial use
+
+Link: https://www.1001freefonts.com/blox.font
+Asset: BLOX font
+Author: Aenigma fonts
+License: Free Use
+
+Link: https://www.1001freefonts.com/8-bit-limit.font
+Asset: 8 bit limit font
+Author: Aenigma fonts, Brian Kent
+License: Free Use
+
+Link: https://www.1001freefonts.com/blockstepped.font
+Asset: Blockstepped font
+Author: Gem Fonts
+License: Free Use
+
+Link: https://www.1001freefonts.com/joystix.font
+Asset: Joystix font
+Author: Typodermic Fonts
+License: Free Use
+
+Link: https://www.1001freefonts.com/karmatic-arcade.font
+Asset: Karmatic Arcade font
+Author: Vic Fieger
+License: Free Use
+
+Link: https://www.1001freefonts.com/kirby-no-kira-kizzu.font
+Asset: Kirby No Kira Kizzu font
+Author: Aenigma fonts, Brian Kent
+License: Free Use
+
+Link: https://www.1001fonts.com/lunchtime-doubly-so-font.html
+Asset: Lunchtime Doubly So font
+Author: codeman38
+License: Free Use
+
+Link: https://www.1001fonts.com/never-font.html
+Asset: Never font
+Author: Matthew Welch
+License: Free Use
+
+Link: https://www.1001fonts.com/sf-atarian-system-font.html
+Asset: SF Atarian System font
+Author: ShyFoundryFonts
+License: Free for commercial Use
+
+Link: https://www.1001fonts.com/yoster-island-font.html
+Asset: Yoster Island font
+Author: codeman38
+License: Free for commercial Use
+
+Link: https://www.pexels.com/photo/reflection-of-birds-in-flight-above-water-2952659/
+Site: Pexels
+Asset: Puddle with Reflection of Birds
+Author: Engin Akyurt
+License: Free to Use
+
+Link: https://www.pexels.com/photo/metal-gate-on-a-closed-business-establishment-8417818/
+Site: Pexels
+Asset: Metal Gate on Closed Business
+Author: Chris F
+License: Free to Use
+
+Link: https://www.pexels.com/photo/photo-of-supermarket-3423860/
+Site: Pexels
+Asset: Photo of Grocery Store Aisle
+Author: Aleksandar Pasaric
+License: Free For Use
+
+Link: https://pixabay.com/sound-effects/cartoon-scream-1-6835/
+Site: Pixabay
+Asset: Audio Cartoon Scream For Lose Screen
+Author: tonsil5 (Freesound)/freesound_community
+License: Free For Use
+
+Link: https://www.pexels.com/photo/gray-wooden-sideboard-271816/
+Site: Pexels
+Asset: Blue wall with furniture, books, and painting
+Author: Pixabay
+License: Free to Use (CCO)
+
+Link: https://www.pexels.com/photo/alleyway-2421297/
+Site: Pexels
+Asset: Alleyway
+Author: Aleksandar pasaric
+License: Free to use
+
+Link: https://opengameart.org/content/elevator-music-2
+Site: OpenGameArt.Org
+Asset: Level Music
+Author: Pro Sensory/Alex McCulloch
+Licenses: CCO, (Author appreciates Attribution but is not Required)
+
+Link: https://sfbgames.itch.io/chiptone
+Site: Itch.io
+Asset: Sound making tool that helped create: Footsteps, Dashing, Pickup, Checkout, & Beep sounds.
+Author: SFBGames
+License: Free to Use (CCO)
+
