@@ -15,8 +15,6 @@ public class LevelRandomizer : MonoBehaviour
 
     public void RandomizedLevel()
     {
-        //Needs to change to randomize
-        
         UnityEngine.SceneManagement.SceneManager.LoadScene($"L{randomGen}");
 
     }

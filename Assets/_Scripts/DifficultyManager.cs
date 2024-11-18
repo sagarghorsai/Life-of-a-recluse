@@ -53,6 +53,8 @@ public class DifficultyManager : MonoBehaviour
 
     public void DifficultyReset()
     {
+        tasknum = 5;
+        startingTime = 300;
         enemySpeed = 3f;
         rotationSpeed = 0.1f;
         Debug.Log("DifficultyReset");
