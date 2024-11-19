@@ -47,6 +47,10 @@ public class DifficultyManager : MonoBehaviour
         tasknum += taskIncreaseFactor;
         startingTime -= startingTimeDecreaseFactor;
 
+        if(startingTime <= 0)
+        {
+            startingTime = 10;
+        }
         // Debug logging after setting new difficulty
         Debug.Log($"After Increase - EnemySpeed: {enemySpeed}, RotationSpeed: {rotationSpeed}, RandomizedSpeed: {randomizedSpeed}");
     }
