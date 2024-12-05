@@ -42,6 +42,13 @@ public class SceneManager : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
+        //#if (UNITY_EDITOR)
+        //        UnityEditor.EditorApplication.isPlaying = false;
+        //#elif (UNITY_STANDALONE) 
+        //    Application.Quit();
+        //#elif (UNITY_WEBGL)
+        //    Application.OpenURL("https://hornaus.itch.io/life-of-a-recluse");
+        //#endif
 
     }
 
