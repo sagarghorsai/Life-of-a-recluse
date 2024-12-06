@@ -22,7 +22,6 @@ public class PanicMeter : MonoBehaviour
     private PlayerStats playerStats;
     private DifficultyManager difficultyManager;
     private PanicMeterUI panicMeterUI;
-
     [Header("---------- Panic Values ----------")]
     public float panicValue;
     public float panicMax = 10; //Maximum number the panic value can go up to
@@ -41,6 +40,8 @@ public class PanicMeter : MonoBehaviour
         playerStats = FindAnyObjectByType<PlayerStats>();
         difficultyManager = FindAnyObjectByType<DifficultyManager>();
         panicMeterUI = FindAnyObjectByType<PanicMeterUI>();
+        audioManager = FindAnyObjectByType<AudioManager>();
+
 
     }
     // Update is called once per frame
@@ -65,6 +66,19 @@ public class PanicMeter : MonoBehaviour
             if (inInteractionZone) // Increase panic when in an interaction zone
             {
                 panicValue = panicValue + (panicScale * Time.deltaTime);
+
+                if (panicValue <= panicMax / 2)
+                {
+
+
+                    audioManager.PlaySFXLoop("heartbeat_Slow");
+                }
+                if (panicValue >= panicMax / 2)
+                {
+                   audioManager.PlaySFXLoop("heartbeat_Fast");
+
+                }
+
             }
 
 
@@ -82,6 +96,7 @@ public class PanicMeter : MonoBehaviour
                     if (panicValue < 0)
                     {
                         panicValue = 0;
+                        audioManager.StopSFXLoop();
                     }
 
                     calmDownPauseTimer = 0;

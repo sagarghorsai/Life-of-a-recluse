@@ -66,6 +66,43 @@ public class AudioManager : MonoBehaviour
         }
 
     }
+
+    private string currentLoopingSFX; // To track the currently looping SFX
+
+    public void PlaySFXLoop(string audioName)
+    {
+        // Avoid restarting the same loop
+        if (currentLoopingSFX == audioName && SFXSource.isPlaying && SFXSource.loop)
+        {
+            return;
+        }
+
+        foreach (AudioClipInfo audioInfo in audioList)
+        {
+            if (audioInfo.name == audioName)
+            {
+                SFXSource.clip = audioInfo.clip; // Assign the clip
+                SFXSource.loop = true;          // Enable looping
+                SFXSource.Play();               // Start playing
+                currentLoopingSFX = audioName;  // Update current looping SFX
+                return;                         // Exit after playing the desired sound
+            }
+        }
+
+        Debug.LogWarning($"Audio clip with name {audioName} not found in the audio list.");
+    }
+
+    public void StopSFXLoop()
+    {
+        if (SFXSource != null && SFXSource.isPlaying)
+        {
+            SFXSource.Stop();
+            SFXSource.loop = false; // Disable looping
+            currentLoopingSFX = null; // Clear the tracking variable
+        }
+    }
+
+
 }
 
 
