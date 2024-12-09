@@ -37,6 +37,7 @@ public class ProgressionMechanic : MonoBehaviour
                 enemy._waypointMovement.speed = difficultyManager.enemySpeed;
                 Debug.Log($"{enemy} Speed = {enemy._waypointMovement.speed}");
             }
+
         }
         foreach (RotateOnlyMovement enemy in rotatingEnemies)
         {

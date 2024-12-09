@@ -3086,16 +3086,24 @@ PrefabInstance:
       value: DifficultyManager
       objectReference: {fileID: 0}
     - target: {fileID: 7012585878055907513, guid: 5cb1272dffde34040b62f054b7c630b9, type: 3}
+      propertyPath: tasknum
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7012585878055907513, guid: 5cb1272dffde34040b62f054b7c630b9, type: 3}
       propertyPath: panicScale
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7012585878055907513, guid: 5cb1272dffde34040b62f054b7c630b9, type: 3}
       propertyPath: startingTime
-      value: 200
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7012585878055907513, guid: 5cb1272dffde34040b62f054b7c630b9, type: 3}
+      propertyPath: rotationSpeed
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 7012585878055907513, guid: 5cb1272dffde34040b62f054b7c630b9, type: 3}
       propertyPath: startingTimeDecreaseFactor
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
