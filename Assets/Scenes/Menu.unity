@@ -2887,7 +2887,7 @@ PrefabInstance:
     - target: {fileID: 1400773602781632109, guid: cdc93fb9712536f4fbf3f5fe1b6d66ef, type: 3}
       propertyPath: audioList.Array.data[7].clip
       value: 
-      objectReference: {fileID: 8300000, guid: cb69e5f7d38480b458ec691efe1f2801, type: 3}
+      objectReference: {fileID: 8300000, guid: 2221f154d67a6d941b395c1905ea34fd, type: 3}
     - target: {fileID: 1400773602781632109, guid: cdc93fb9712536f4fbf3f5fe1b6d66ef, type: 3}
       propertyPath: audioList.Array.data[7].name
       value: heartbeat_Fast
@@ -2895,7 +2895,7 @@ PrefabInstance:
     - target: {fileID: 1400773602781632109, guid: cdc93fb9712536f4fbf3f5fe1b6d66ef, type: 3}
       propertyPath: audioList.Array.data[8].clip
       value: 
-      objectReference: {fileID: 8300000, guid: 6a4d6b4a1bc2f4e43ae17329cb589b1d, type: 3}
+      objectReference: {fileID: 8300000, guid: d2a26ba05f575714287d52f64b5aeb31, type: 3}
     - target: {fileID: 1400773602781632109, guid: cdc93fb9712536f4fbf3f5fe1b6d66ef, type: 3}
       propertyPath: audioList.Array.data[8].name
       value: heartbeat_Slow
@@ -3095,7 +3095,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7012585878055907513, guid: 5cb1272dffde34040b62f054b7c630b9, type: 3}
       propertyPath: startingTime
-      value: 10
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 7012585878055907513, guid: 5cb1272dffde34040b62f054b7c630b9, type: 3}
       propertyPath: rotationSpeed
@@ -3103,7 +3103,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7012585878055907513, guid: 5cb1272dffde34040b62f054b7c630b9, type: 3}
       propertyPath: startingTimeDecreaseFactor
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5459,6 +5459,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 15324409}
+    - target: {fileID: 1734915018134878898, guid: 5a02f572f73e9e748a9f582f437c07b8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6896159504162051201, guid: 5a02f572f73e9e748a9f582f437c07b8, type: 3}
       propertyPath: m_Name
       value: QuitButton
