@@ -11,6 +11,7 @@ TagManager:
   - Cashier
   - Walls
   - SetDifficulty
+  - Manager
   layers:
   - Default
   - TransparentFX

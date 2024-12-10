@@ -4,7 +4,7 @@ public class DifficultyManager : MonoBehaviour
 {
     [Header("Enemy")]
     public float enemySpeed = 3f;
-    public float rotationSpeed = 0.1f;
+    public float rotationSpeed = 0.25f;
     public float randomizedSpeed = 1f;
 
     public float speedIncreaseFactor = 0.5f;
@@ -60,7 +60,7 @@ public class DifficultyManager : MonoBehaviour
         tasknum = 5;
         startingTime = 300;
         enemySpeed = 3f;
-        rotationSpeed = 0.1f;
+        rotationSpeed = 0.25f;
         Debug.Log("DifficultyReset");
     }
 }
