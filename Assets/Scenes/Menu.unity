@@ -2887,7 +2887,7 @@ PrefabInstance:
     - target: {fileID: 1400773602781632109, guid: cdc93fb9712536f4fbf3f5fe1b6d66ef, type: 3}
       propertyPath: audioList.Array.data[7].clip
       value: 
-      objectReference: {fileID: 8300000, guid: 2221f154d67a6d941b395c1905ea34fd, type: 3}
+      objectReference: {fileID: 8300000, guid: cb69e5f7d38480b458ec691efe1f2801, type: 3}
     - target: {fileID: 1400773602781632109, guid: cdc93fb9712536f4fbf3f5fe1b6d66ef, type: 3}
       propertyPath: audioList.Array.data[7].name
       value: heartbeat_Fast
@@ -2895,7 +2895,7 @@ PrefabInstance:
     - target: {fileID: 1400773602781632109, guid: cdc93fb9712536f4fbf3f5fe1b6d66ef, type: 3}
       propertyPath: audioList.Array.data[8].clip
       value: 
-      objectReference: {fileID: 8300000, guid: d2a26ba05f575714287d52f64b5aeb31, type: 3}
+      objectReference: {fileID: 8300000, guid: 6a4d6b4a1bc2f4e43ae17329cb589b1d, type: 3}
     - target: {fileID: 1400773602781632109, guid: cdc93fb9712536f4fbf3f5fe1b6d66ef, type: 3}
       propertyPath: audioList.Array.data[8].name
       value: heartbeat_Slow
